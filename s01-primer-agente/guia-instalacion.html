@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>S01 · Guía de instalación de OpenClaw + Codex</title>
+  <meta name="description" content="Guía de la Sesión 1 para instalar OpenClaw, conectar Codex y Telegram, completar el pairing y verificar el primer agente.">
+  <style>
+    :root {
+      color-scheme: light;
+      --p:#533afd;
+      --pd:#4434d4;
+      --ps:#9d91ff;
+      --ink:#0d253d;
+      --ink2:#273951;
+      --muted:#64748d;
+      --soft:#f6f9fc;
+      --line:#e3e8ee;
+      --dark:#0d253d;
+      --pink:#f96bee;
+      --ok:#087f5b;
+      --ok-bg:#eaf8f2;
+      --warn:#8a4b08;
+      --warn-bg:#fff7e6;
+      --page:#ffffff;
+      --card:#ffffff;
+      --code:#0b1b2d;
+      --code-ink:#dbe7f3;
+      --shadow:0 16px 48px rgba(13,37,61,.08);
+      --font:system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+    html[data-theme="dark"] {
+      color-scheme:dark;
+      --ink:#f5f7fb;
+      --ink2:#c9d4e2;
+      --muted:#93a2b6;
+      --soft:#142d46;
+      --line:#29435c;
+      --page:#081a2b;
+      --card:#0d253d;
+      --ok:#8ce3c0;
+      --ok-bg:#0e3b31;
+      --warn:#ffd18a;
+      --warn-bg:#3b2a13;
+      --shadow:0 18px 54px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.58}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    a{color:var(--pd)}
+    html[data-theme="dark"] a{color:#b7abff}
+    .hero{position:relative;overflow:hidden;background:var(--dark);color:#fff}
+    .hero::before{content:"";position:absolute;inset:-38% -15% auto;height:95%;background:radial-gradient(60% 80% at 25% 40%,#533afd88,transparent 60%),radial-gradient(48% 72% at 72% 25%,#f96bee44,transparent 62%);filter:blur(8px);pointer-events:none}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .topbar{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:22px 0;color:#c9d4e2}
+    .brand{font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+    .theme{border:1px solid #ffffff3d;background:#ffffff12;color:#fff;border-radius:999px;padding:8px 13px}
+    .theme:hover,.theme:focus-visible{background:#ffffff20;outline:none;border-color:var(--ps)}
+    .hero-copy{position:relative;z-index:1;padding:64px 0 74px;max-width:920px}
+    .eyebrow{margin:0 0 20px;color:var(--ps);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    h1{max-width:16ch;margin:0;font-size:clamp(42px,7vw,76px);font-weight:300;line-height:1.02;letter-spacing:-.045em}
+    .lead{max-width:66ch;margin:26px 0 0;color:#c9d4e2;font-size:clamp(18px,2vw,22px);font-weight:300}
+    .route{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:34px}
+    .route span:not(.arrow){border:1px solid #ffffff2e;background:#ffffff0d;border-radius:9px;padding:11px 15px;font-size:14px}
+    .route .hi{border-color:var(--ps)!important;background:#533afd38!important;color:#d8d2ff}
+    .route .arrow{color:#8394a9}
+    .jump{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--page) 92%,transparent);backdrop-filter:blur(14px)}
+    .jump .wrap{display:flex;gap:8px;overflow:auto;padding:12px 0;scrollbar-width:none}
+    .jump .wrap::-webkit-scrollbar{display:none}
+    .jump a{flex:none;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:13px;background:var(--card)}
+    .jump a:hover,.jump a:focus-visible{border-color:var(--p);color:var(--pd);outline:none}
+    main{padding:58px 0 80px}
+    .intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-bottom:34px}
+    .intro h2{margin:0;max-width:20ch;font-size:clamp(30px,4.3vw,48px);font-weight:300;line-height:1.08;letter-spacing:-.035em}
+    .os{display:flex;gap:5px;padding:5px;border:1px solid var(--line);border-radius:11px;background:var(--soft)}
+    .os button{border:0;border-radius:8px;padding:10px 15px;background:transparent;color:var(--muted);font-weight:600;font-size:14px}
+    .os button[aria-pressed="true"]{background:var(--p);color:#fff;box-shadow:0 6px 16px rgba(83,58,253,.24)}
+    .step{scroll-margin-top:76px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:var(--shadow);padding:clamp(24px,4vw,42px);margin:22px 0}
+    .step-head{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;align-items:start;margin-bottom:28px}
+    .num{width:52px;height:52px;border:1px solid var(--p);border-radius:13px;display:grid;place-items:center;color:var(--pd);font-size:18px;font-weight:650;background:color-mix(in srgb,var(--p) 8%,var(--card))}
+    html[data-theme="dark"] .num{color:#c8c1ff}
+    .step-kicker{margin:0 0 5px;color:var(--pd);font-size:12px;font-weight:650;letter-spacing:.11em;text-transform:uppercase}
+    html[data-theme="dark"] .step-kicker{color:var(--ps)}
+    h2,h3,p{overflow-wrap:anywhere}
+    .step h2{margin:0;font-size:clamp(26px,3vw,38px);font-weight:350;line-height:1.12;letter-spacing:-.025em}
+    .goal{margin:9px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}
+    .panel{border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:20px}
+    .panel h3{margin:0 0 8px;color:var(--pd);font-size:16px}
+    html[data-theme="dark"] .panel h3{color:var(--ps)}
+    .panel p{margin:0;color:var(--ink2);font-size:15px}
+    .cmd{overflow:hidden;border:1px solid #ffffff1a;border-radius:11px;background:var(--code);margin:18px 0}
+    .cmd-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 12px 8px 18px;border-bottom:1px solid #ffffff17;color:#91a5ba;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+    .copy{border:1px solid #ffffff28;border-radius:7px;background:#ffffff0d;color:#dbe7f3;padding:5px 9px;font-size:12px;text-transform:none;letter-spacing:0}
+    .copy:hover,.copy:focus-visible{border-color:var(--ps);outline:none}
+    pre{margin:0;padding:18px 20px;overflow-x:auto;color:var(--code-ink);font:14px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}
+    code{border-radius:5px;background:var(--soft);padding:2px 6px;color:var(--pd);font:inherit}
+    html[data-theme="dark"] code{color:#c8c1ff}
+    .check,.warn,.note{border-left:3px solid;padding:15px 17px;margin:16px 0;border-radius:0 9px 9px 0;font-size:15px}
+    .check{border-color:var(--ok);background:var(--ok-bg);color:var(--ink2)}
+    .warn{border-color:#f59f00;background:var(--warn-bg);color:var(--ink2)}
+    .note{border-color:var(--p);background:color-mix(in srgb,var(--p) 9%,var(--card));color:var(--ink2)}
+    .check b,.warn b,.note b{color:var(--ink)}
+    .lane{border:1px solid var(--line);border-radius:12px;padding:20px;margin:15px 0}
+    .lane h3{margin:0 0 8px;font-size:17px}
+    .lane p{margin:0;color:var(--ink2)}
+    .sample{border:1px solid var(--line);border-radius:11px;background:var(--soft);padding:18px 20px;margin:16px 0;color:var(--ink2);font-style:italic}
+    .clean{margin:15px 0 0;padding:0;list-style:none;display:grid;gap:11px}
+    .clean li{position:relative;padding-left:24px;color:var(--ink2)}
+    .clean li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:2px;background:var(--p)}
+    .accept{scroll-margin-top:76px;margin-top:34px;border-radius:16px;background:var(--dark);color:#fff;padding:clamp(28px,5vw,48px);position:relative;overflow:hidden}
+    .accept::before{content:"";position:absolute;inset:-55% -25% auto;height:115%;background:radial-gradient(55% 85% at 28% 45%,#533afd77,transparent 64%),radial-gradient(44% 70% at 75% 32%,#f96bee32,transparent 67%)}
+    .accept>*{position:relative}
+    .accept .eyebrow{margin-bottom:12px}
+    .accept h2{margin:0;max-width:22ch;font-size:clamp(30px,4vw,46px);font-weight:300;line-height:1.1}
+    .accept .clean{margin-top:24px}
+    .accept .clean li{color:#c9d4e2}
+    footer{border-top:1px solid var(--line);padding:30px 0 42px;color:var(--muted);font-size:14px}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    [hidden]{display:none!important}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 28px,1120px)}
+      .topbar{padding:15px 0}
+      .brand{font-size:11px}
+      .hero-copy{padding:48px 0 58px}
+      .intro{grid-template-columns:1fr;align-items:start}
+      .os{width:100%}
+      .os button{flex:1}
+      .grid{grid-template-columns:1fr}
+      .step-head{grid-template-columns:42px minmax(0,1fr);gap:13px}
+      .num{width:42px;height:42px;border-radius:10px}
+      .step{padding:23px 19px}
+      pre{font-size:12px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <span class="brand">Agentes AI con OpenClaw + Codex</span>
+        <button class="theme" type="button" aria-label="Cambiar tema">◐ Tema</button>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Sesión 1 · Guía de instalación</p>
+        <h1>Tu primer agente, en cuatro pasos</h1>
+        <p class="lead">Al terminar esta guía tendrás OpenClaw instalado, Codex conectado y un agente que recibe tareas desde Telegram. No necesitas empezar escribiendo código.</p>
+        <div class="route" aria-label="Recorrido de una tarea">
+          <span>Telegram</span><span class="arrow">→</span><span class="hi">gateway</span><span class="arrow">→</span><span>Codex</span><span class="arrow">→</span><span>herramienta</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="jump" aria-label="Pasos de la guía">
+    <div class="wrap">
+      <a href="#paso-1">1 · Instalar</a>
+      <a href="#paso-2">2 · Onboarding</a>
+      <a href="#paso-3">3 · Telegram</a>
+      <a href="#paso-4">4 · Identidad</a>
+      <a href="#criterio">Comprobación final</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="elige-sistema">
+      <div>
+        <p class="eyebrow">Antes de comenzar</p>
+        <h2 id="elige-sistema">Selecciona tu sistema operativo</h2>
+      </div>
+      <div class="os" role="group" aria-label="Sistema operativo">
+        <button type="button" data-os="mac" aria-pressed="true">macOS / Linux</button>
+        <button type="button" data-os="win" aria-pressed="false">Windows</button>
+      </div>
+    </section>
+
+    <section class="step" id="paso-1">
+      <div class="step-head">
+        <span class="num">01</span>
+        <div>
+          <p class="step-kicker">El cuerpo</p>
+          <h2>Instala OpenClaw por el camino soportado</h2>
+          <p class="goal">El instalador prepara el programa y sus dependencias. Después comprobaremos la versión.</p>
+        </div>
+      </div>
+
+      <div class="os-only" data-os="win" hidden>
+        <p>Abre <strong>PowerShell</strong> —tecla Windows y escribe “PowerShell”— y pega esta línea:</p>
+        <div class="cmd">
+          <div class="cmd-bar"><span>PowerShell · Windows</span><button class="copy" type="button">Copiar</button></div>
+          <pre>iwr -useb https://openclaw.ai/install.ps1 | iex</pre>
+        </div>
+        <div class="warn"><b>Durante esta sesión no usamos Windows Hub ni WSL.</b> El carril de PowerShell instala el gateway nativo de Windows y evita permisos de administrador y reinicios innecesarios.</div>
+      </div>
+
+      <div class="os-only" data-os="mac">
+        <p>Abre <strong>Terminal</strong> —Cmd + Espacio y escribe “Terminal”— y pega esta línea:</p>
+        <div class="cmd">
+          <div class="cmd-bar"><span>Terminal · macOS y Linux</span><button class="copy" type="button">Copiar</button></div>
+          <pre>curl -fsSL https://openclaw.ai/install.sh | bash</pre>
+        </div>
+        <div class="warn"><b>Si el comando todavía no aparece:</b> cierra Terminal, vuelve a abrirla e inténtalo otra vez. Una instalación nueva puede requerir una sesión de terminal nueva.</div>
+      </div>
+
+      <div class="cmd">
+        <div class="cmd-bar"><span>Comprobar la instalación</span><button class="copy" type="button">Copiar</button></div>
+        <pre>openclaw --version</pre>
+      </div>
+      <div class="check"><b>Paso 1 terminado:</b> el comando devuelve un número de versión.</div>
+    </section>
+
+    <section class="step" id="paso-2">
+      <div class="step-head">
+        <span class="num">02</span>
+        <div>
+          <p class="step-kicker">El cerebro y el servicio</p>
+          <h2>Conecta Codex y deja el gateway funcionando</h2>
+          <p class="goal">El onboarding convierte tus decisiones en configuración persistente.</p>
+        </div>
+      </div>
+
+      <div class="cmd">
+        <div class="cmd-bar"><span>Iniciar el onboarding</span><button class="copy" type="button">Copiar</button></div>
+        <pre>openclaw onboard --install-daemon</pre>
+      </div>
+
+      <div class="grid">
+        <article class="panel">
+          <h3>Motor de la sesión</h3>
+          <p>Selecciona <strong>Codex</strong> e inicia sesión con tu cuenta de ChatGPT cuando se abra el navegador.</p>
+        </article>
+        <article class="panel">
+          <h3>Servicio permanente</h3>
+          <p><strong>Daemon</strong> describe el régimen de ejecución: el gateway permanece disponible en segundo plano aunque cierres la terminal.</p>
+        </article>
+      </div>
+
+      <div class="cmd">
+        <div class="cmd-bar"><span>Comprobar el gateway</span><button class="copy" type="button">Copiar</button></div>
+        <pre>openclaw gateway status</pre>
+      </div>
+      <div class="check"><b>Paso 2 terminado:</b> el estado muestra el servicio activo y Codex completa una respuesta real.</div>
+      <div class="note"><b>Si algo no coincide:</b> ejecuta <code>openclaw status</code> y después <code>openclaw doctor --fix</code>. Corrige una sola capa antes de volver a probar.</div>
+    </section>
+
+    <section class="step" id="paso-3">
+      <div class="step-head">
+        <span class="num">03</span>
+        <div>
+          <p class="step-kicker">El canal</p>
+          <h2>Conecta Telegram y autoriza tu conversación</h2>
+          <p class="goal">El token identifica al bot; el pairing decide quién puede hablar con él.</p>
+        </div>
+      </div>
+
+      <div class="lane">
+        <h3>1. Crea un bot nuevo</h3>
+        <p>En Telegram, abre <strong>@BotFather</strong>, envía <code>/newbot</code> y define un nombre visible y un usuario único. BotFather te entregará un token.</p>
+      </div>
+      <div class="warn"><b>El token es una credencial.</b> No lo compartas en el chat, no lo incluyas en capturas y nunca lo subas al repositorio. Si se filtra, revócalo en BotFather.</div>
+
+      <div class="lane">
+        <h3>2. Configura el canal</h3>
+        <p>Abre la configuración, selecciona Telegram y pega el token solamente cuando OpenClaw lo solicite.</p>
+        <div class="cmd">
+          <div class="cmd-bar"><span>Configurar Telegram</span><button class="copy" type="button">Copiar</button></div>
+          <pre>openclaw configure</pre>
+        </div>
+      </div>
+
+      <div class="lane">
+        <h3>3. Completa el pairing</h3>
+        <p>Envía <code>hola</code> al bot desde tu teléfono. Si devuelve “access not configured” y un código, el canal está protegiéndote correctamente. Autoriza ese código desde tu máquina:</p>
+        <div class="cmd">
+          <div class="cmd-bar"><span>Reemplaza TUCODIGO</span><button class="copy" type="button">Copiar</button></div>
+          <pre>openclaw pairing approve telegram TUCODIGO</pre>
+        </div>
+      </div>
+
+      <div class="check"><b>Paso 3 terminado:</b> envía <code>hola</code> otra vez. El agente debe responder a tu cuenta autorizada.</div>
+    </section>
+
+    <section class="step" id="paso-4">
+      <div class="step-head">
+        <span class="num">04</span>
+        <div>
+          <p class="step-kicker">La identidad y la prueba</p>
+          <h2>Define el carácter por chat y comprueba un efecto real</h2>
+          <p class="goal">La identidad se solicita con lenguaje natural; la validación exige evidencia fuera del chat.</p>
+        </div>
+      </div>
+
+      <p>Cuando el agente te pregunte quién debe ser, responde desde Telegram con tus propias palabras. Por ejemplo:</p>
+      <div class="sample">Te llamas Nina y tu emoji es 🦊. Respondes de forma breve y directa, en español. Si no sabes algo, lo indicas en lugar de inventarlo. Trátame siempre de tú.</div>
+
+      <div class="note"><b>Lo que ocurre detrás:</b> OpenClaw convierte esa conversación en archivos revisables del workspace. En la Sesión 2 trabajaremos con <code>IDENTITY.md</code>, <code>SOUL.md</code>, <code>AGENTS.md</code> y <code>TOOLS.md</code>.</div>
+
+      <p>Finalmente, envía esta tarea desde Telegram:</p>
+      <div class="sample">Lee el README del workspace. Crea agente-ok.md con mi nombre, la fecha, tres cosas que entendiste del proyecto y una tarea que me gustaría automatizar. Dime la ruta exacta.</div>
+
+      <div class="check"><b>Paso 4 terminado:</b> el archivo existe en el workspace, su contenido coincide con la solicitud y Telegram devuelve la ruta correcta.</div>
+    </section>
+
+    <section class="accept" id="criterio">
+      <p class="eyebrow">Criterio de aceptación de la S01</p>
+      <h2>El agente funciona cuando puedes demostrar el recorrido completo</h2>
+      <ul class="clean">
+        <li>El mensaje sale de tu cuenta autorizada de Telegram.</li>
+        <li>El gateway permanece activo aunque cierres la terminal.</li>
+        <li>Codex interpreta la tarea y OpenClaw utiliza una herramienta.</li>
+        <li><code>agente-ok.md</code> existe y la respuesta informa su ruta.</li>
+        <li>Ningún token, secreto o credencial entra al repositorio.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Agentes AI con OpenClaw + Codex · Sesión 1</span>
+      <span>Manuel Argüelles · Material del curso</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var root = document.documentElement;
+      var themeButton = document.querySelector(".theme");
+      var savedTheme;
+      try { savedTheme = localStorage.getItem("openclaw-guide-theme"); } catch (e) {}
+      if (savedTheme === "dark" || savedTheme === "light") root.dataset.theme = savedTheme;
+      else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) root.dataset.theme = "dark";
+
+      themeButton.addEventListener("click", function(){
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+        try { localStorage.setItem("openclaw-guide-theme", root.dataset.theme); } catch (e) {}
+      });
+
+      var osButtons = document.querySelectorAll(".os button");
+      function setOS(os){
+        osButtons.forEach(function(button){
+          button.setAttribute("aria-pressed", String(button.dataset.os === os));
+        });
+        document.querySelectorAll(".os-only").forEach(function(section){
+          section.hidden = section.dataset.os !== os;
+        });
+      }
+      osButtons.forEach(function(button){
+        button.addEventListener("click", function(){ setOS(button.dataset.os); });
+      });
+      if (/Win/i.test(navigator.platform || navigator.userAgent)) setOS("win");
+
+      function copyText(text){
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+        var field = document.createElement("textarea");
+        field.value = text;
+        field.setAttribute("readonly","");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand("copy");
+        field.remove();
+        return Promise.resolve();
+      }
+
+      document.querySelectorAll(".copy").forEach(function(button){
+        button.addEventListener("click", function(){
+          var text = button.closest(".cmd").querySelector("pre").textContent.trim();
+          copyText(text).then(function(){
+            var original = button.textContent;
+            button.textContent = "Copiado";
+            setTimeout(function(){ button.textContent = original; }, 1400);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+

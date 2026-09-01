@@ -6,6 +6,10 @@ Demostrar el recorrido completo:
 
 `Telegram → gateway → Codex → herramienta → archivo → respuesta`
 
+## Guía de instalación
+
+Abre [la guía paso a paso](guia-instalacion.html) para instalar OpenClaw, conectar Codex y Telegram, completar el pairing y comprobar el primer agente.
+
 ## Reto
 
 Envía por Telegram:
@@ -30,4 +34,3 @@ Crea `entregas/<tu-usuario>/S01.md` con:
 - [ ] El archivo existe en el workspace.
 - [ ] La respuesta de Telegram informa la ruta correcta.
 - [ ] No hay secretos en el commit.
-
