@@ -4,3 +4,21 @@
 !.env.example
 node_modules/
 
+# Estado operativo de OpenClaw: nunca subir desde una instalación local
+credentials/
+identity/
+devices/
+memory/
+logs/
+media/
+cron/
+state/
+tasks/
+*.sqlite
+*.sqlite-*
+*.pem
+*.key
+*secret*
+*token*
+openclaw.json
+openclaw.json.*

@@ -1,0 +1,58 @@
+{
+  "_notice": "Sanitized snapshot for teaching. Replace every placeholder locally; never commit real secrets.",
+  "openclawVersion": "2026.7.1-2",
+  "workspace": "<OPENCLAW_WORKSPACE>",
+  "toolsProfile": "coding",
+  "models": {
+    "configuredProviders": [
+      "nvidia", "groq", "cerebras", "google-ai", "huggingface", "cohere",
+      "mistral", "openrouter", "github", "cloudflare", "manixclaw-proxy", "deepseek"
+    ],
+    "primary": "openai/gpt-5.6-luna",
+    "fallbacks": ["deepseek/deepseek-v4-pro"]
+  },
+  "agents": {
+    "thinkingDefault": "<configured-locally>",
+    "heartbeat": {"every": "<configured-locally>", "model": "<configured-locally>"},
+    "memorySearch": {"provider": "<configured-locally>"},
+    "subagents": {"maxConcurrent": "<configured-locally>", "maxSpawnDepth": "<configured-locally>"}
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "botToken": "<PENDING_LOCAL_SECRET>",
+      "groups": "<GROUP_IDS_OMITTED>"
+    },
+    "whatsapp": {
+      "enabled": false,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "credentials": "<PENDING_LOCAL_PAIRING>"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {"mode": "token", "token": "<PENDING_LOCAL_SECRET>"},
+    "tailscale": {"mode": "off"}
+  },
+  "connectors": {
+    "telegram": {"pluginEnabled": true, "credentials": "pending-local-setup"},
+    "whatsapp": {"pluginEnabled": true, "credentials": "pending-local-setup"},
+    "braveWebSearch": {"pluginEnabled": true, "apiKey": "<PENDING_LOCAL_SECRET>"},
+    "openai": {"pluginEnabled": true, "credentials": "pending-local-setup"},
+    "deepseek": {"pluginEnabled": true, "credentials": "pending-local-setup"},
+    "groq": {"pluginEnabled": true, "credentials": "pending-local-setup"},
+    "nvidia": {"pluginEnabled": true, "credentials": "pending-local-setup"},
+    "anthropic": {"pluginEnabled": false, "credentials": "not-configured"},
+    "manixclaw": {"pluginEnabled": false, "credentials": "not-configured"}
+  },
+  "securityNotes": [
+    "Do not copy openclaw.json, backups, credentials, pairing, devices, logs, memory, media, cron or SQLite state.",
+    "Use environment variables or the local secret store when configuring a new machine.",
+    "Keep gateway bound to loopback unless exposure is intentional and protected."
+  ]
+}

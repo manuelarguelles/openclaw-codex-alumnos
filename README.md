@@ -19,3 +19,6 @@ Repositorio público del curso. Aquí están las consignas, recursos y espacios 
 
 Crea una carpeta con tu usuario dentro de `sXX-.../entregas/`. Nunca subas tokens, claves, `.env`, credenciales ni capturas que los muestren.
 
+## Workspace de referencia
+
+La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sanitizadas de identidad, reglas, memoria operativa y configuración. Úsala para comprender la estructura; reemplaza los placeholders únicamente en tu máquina y nunca publiques credenciales reales.
