@@ -22,3 +22,7 @@ Crea una carpeta con tu usuario dentro de `sXX-.../entregas/`. Nunca subas token
 ## Workspace de referencia
 
 La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sanitizadas de identidad, reglas, memoria operativa y configuración. Úsala para comprender la estructura; reemplaza los placeholders únicamente en tu máquina y nunca publiques credenciales reales.
+
+## Material de la sesión 2
+
+- [Cuestionario de configuración del workspace](s02-primer-agente/cuestionario-configuracion-workspace.md): 50 preguntas de alternativa múltiple. El agente las realiza, interpreta las respuestas y propone la configuración de los archivos `.md`.
