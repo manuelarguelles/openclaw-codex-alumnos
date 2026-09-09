@@ -1,0 +1,31 @@
+# Archivos locales y dependencias
+.DS_Store
+node_modules/
+
+# Variables y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*secret*
+*token*
+openclaw.json
+openclaw.json.*
+
+# Estado operativo de OpenClaw
+credentials/
+identity/
+devices/
+pairing/
+logs/
+media/
+cron/
+state/
+tasks/
+*.sqlite
+*.sqlite-*
+
+# Memoria personal: publicar solo una copia sanitizada deliberada
+MEMORY.md
+memory/

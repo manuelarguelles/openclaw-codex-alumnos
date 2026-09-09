@@ -1,0 +1,3 @@
+github_pat_FAKE_TRAINING_VALUE_NOT_A_CREDENTIAL
+
+Este valor es ficticio y solo sirve para comprobar que el gate detecta patrones sensibles antes del commit.

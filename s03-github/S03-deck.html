@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sesión 3 · GitHub como columna vertebral</title>
+  <link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<section class="slide dark mesh on">
+  <p class="eyebrow">Curso · Agentes AI con OpenClaw + Codex</p>
+  <h1>Tu agente existe en una sola máquina hasta que su historia vive en otro lugar</h1>
+  <p class="lead">Hoy convertimos una configuración editable en infraestructura versionada, revisable y recuperable.</p>
+  <span class="tag">Sesión 3 · GitHub como columna vertebral · 3 h</span>
+  <div class="foot"><span>Del archivo local al historial recuperable</span><span>01 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Promesa observable</p>
+  <h2>Al terminar, podrás versionar y recuperar un proyecto desde OpenClaw</h2>
+  <div class="cards"><div class="card"><div class="num">01</div><h3>Preparar</h3><p>Separar lo útil de los secretos en una carpeta nueva.</p></div><div class="card"><div class="num">02</div><h3>Entender</h3><p>Pedir cada paso en lenguaje simple y revisar su evidencia.</p></div><div class="card"><div class="num">03</div><h3>Recuperar</h3><p>Restaurar un archivo y clonar el mismo proyecto.</p></div></div>
+  <p class="lead">El entregable no es “tener GitHub”: es demostrar que el historial se puede usar.</p>
+  <div class="foot"><span>Resultado de la sesión</span><span>02 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Puente desde S02</p>
+  <h2>Una configuración clara sigue siendo frágil si solo existe en tu laptop</h2>
+  <div class="cards"><div class="card"><div class="num">FALLO</div><h3>La máquina se pierde</h3><p>También se pierden identidad, reglas y decisiones.</p></div><div class="card"><div class="num">CAMBIO</div><h3>Una regla se rompe</h3><p>No sabes qué línea funcionaba antes.</p></div><div class="card"><div class="num">REVISIÓN</div><h3>Otra persona pregunta</h3><p>No existe una historia que explique por qué cambió.</p></div></div>
+  <div class="foot"><span>Situación → complicación</span><span>03 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Mapa de la sesión</p>
+  <h2>Cuatro decisiones convierten archivos sueltos en infraestructura confiable</h2>
+  <div class="journey"><div><span>01</span><b>Entender</b><small>historial local</small></div><div><span>02</span><b>Proteger</b><small>frontera de secretos</small></div><div><span>03</span><b>Publicar</b><small>repo privado</small></div><div><span>04</span><b>Recuperar</b><small>prueba real</small></div></div>
+  <div class="foot"><span>Historia completa de hoy</span><span>04 / 36</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">01</p>
+  <h2>El historial convierte cambios sueltos en decisiones recuperables</h2>
+  <p class="time">0:10–0:45 · modelo mental y primera demo</p>
+  <ol><li>Distinguir Git de GitHub</li><li>Leer los estados de un archivo</li><li>Construir un commit coherente</li><li>Explicar el presente desde el historial</li></ol>
+  <div class="foot"><span>Bloque 1 de 4</span><span>05 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Dos sistemas</p>
+  <a class="mk" href="https://docs.github.com/en/get-started/git-basics/set-up-git" target="_blank" rel="noopener" aria-label="Fuente externa: configurar Git">★</a>
+  <h2>Git conserva la historia local; GitHub conserva y comparte una copia remota</h2>
+  <div class="two"><div class="concept"><h3>Git · en tu máquina</h3><p>Registra cambios, compara versiones y permite recuperar estados anteriores aunque no haya internet.</p><span class="mini-path">carpeta/.git/</span></div><div class="concept remote"><h3>GitHub · fuera de tu máquina</h3><p>Hospeda el remoto, permite colaborar y vuelve recuperable el proyecto desde otra carpeta o equipo.</p><span class="mini-path">github.com/usuario/repo</span></div></div>
+  <div class="foot"><span>Local ≠ remoto</span><span>06 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Modelo mental</p>
+  <h2>Un archivo atraviesa cuatro lugares antes de quedar recuperable fuera de tu máquina</h2>
+  <div class="stage-grid"><div><span>1</span><b>Workspace</b><small>archivo editado</small></div><div><span>2</span><b>Staging</b><small>propuesta exacta</small></div><div><span>3</span><b>Commit</b><small>decisión nombrada</small></div><div class="active"><span>4</span><b>Remoto</b><small>copia publicada</small></div></div>
+  <p class="callout">Guardar un archivo no crea historial. Hacer commit no lo publica. Hacer push sí cambia el remoto.</p>
+  <div class="foot"><span>Trabajo → staging → commit → remoto</span><span>07 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Del pedido al comando</p>
+  <h2>No usamos la terminal: entendemos la intención y OpenClaw ejecuta</h2>
+  <div class="cards"><div class="card"><div class="num">VER</div><h3>«¿Qué cambió?»</h3><pre>git status --short</pre><p>Revela el alcance antes de actuar.</p></div><div class="card"><div class="num">ELEGIR</div><h3>«Incluye solo estos»</h3><pre>git add archivo...</pre><p>Define qué entra al próximo commit.</p></div><div class="card"><div class="num">REVISAR</div><h3>«Muéstrame la propuesta»</h3><pre>git diff --cached</pre><p>Permite detectar errores o secretos.</p></div></div>
+  <div class="foot"><span>Intención → pedido → evidencia</span><span>08 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Staging</p>
+  <h2>La zona staged es una propuesta revisable, no una sala de espera automática</h2>
+  <div class="two"><div><h3>Pídeselo así</h3><p>«Prepara solo <code>README.md</code> y <code>RECOVERY-DEMO.md</code>; no incluyas nada más».</p><pre>git add README.md RECOVERY-DEMO.md</pre></div><div><h3>Luego revisa</h3><p>«Enséñame nombres, diff y búsqueda sensible; detente».</p><pre>git diff --cached --name-status
+git diff --cached</pre></div></div>
+  <p class="lead">Durante la clase no usamos <code>git add .</code> como reflejo: primero nombramos qué entra.</p>
+  <div class="foot"><span>El staging define el perímetro</span><span>09 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Commit</p>
+  <h2>Un buen commit registra una decisión coherente que otro lector puede entender</h2>
+  <div class="two"><div><h3>Pídeselo así</h3><p>«Propón un mensaje claro, muéstrame el resumen y espera mi aprobación».</p><pre>git commit -m "chore: versiona snapshot sanitizado"</pre></div><div><h3>Después, publicar</h3><p>«Publica el commit aprobado en <code>origin</code> y devuélveme URL, rama y hash».</p><pre>git push</pre><p><code>push</code> copia la historia local al remoto.</p></div></div>
+  <div class="foot"><span>Nombrar la decisión</span><span>10 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Historial</p>
+  <h2>Leer los commits explica cómo llegamos aquí antes de tocar el proyecto</h2>
+  <pre>$ git log --oneline --decorate -3
+a6e50c1 (HEAD -> main) chore: versiona configuración sanitizada
+83b112a docs: define reglas verificables del agente
+349fa91 init: crea estructura mínima</pre>
+  <div class="flow"><span class="node">349fa91</span><span class="arrow">→</span><span class="node">83b112a</span><span class="arrow">→</span><span class="node hi">a6e50c1 · HEAD</span></div>
+  <div class="foot"><span>El presente tiene antecedentes</span><span>11 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Checkpoint 1</p>
+  <h2>Entiendes Git cuando puedes ubicar un archivo sin recitar comandos</h2>
+  <table><tr><th>Pregunta</th><th>Respuesta observable</th></tr><tr><td>¿Solo fue editado?</td><td>Está en el workspace y aparece en <code>status</code>.</td></tr><tr><td>¿Entrará al próximo commit?</td><td>Aparece en el staged diff.</td></tr><tr><td>¿Ya tiene historia?</td><td>Aparece en un commit local.</td></tr><tr><td>¿Se recupera desde otro equipo?</td><td>Ese commit también existe en el remoto.</td></tr></table>
+  <div class="foot"><span>Explicar antes de ejecutar</span><span>12 / 36</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">02</p>
+  <h2>La frontera de seguridad se decide antes del primer push</h2>
+  <p class="time">0:50–1:35 · clasificación, ignore y revisión</p>
+  <ol><li>Separar configuración de estado operativo</li><li>Crear un snapshot sanitizado</li><li>Revisar staged diff y patrones sensibles</li><li>Detener la publicación si hay dudas</li></ol>
+  <div class="foot"><span>Bloque 2 de 4</span><span>13 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Límite de seguridad</p>
+  <a class="mk" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank" rel="noopener" aria-label="Fuente externa: retirar datos sensibles">★</a>
+  <h2>Un repositorio privado controla acceso, pero sigue siendo el lugar equivocado para un secreto</h2>
+  <div class="cards"><div class="card"><div class="num">COPIAS</div><h3>El historial persiste</h3><p>Borrar el archivo visible no elimina sus versiones anteriores.</p></div><div class="card"><div class="num">ACCESOS</div><h3>Los permisos cambian</h3><p>Colaboradores, integraciones y dispositivos amplían la superficie.</p></div><div class="card"><div class="num">RESPUESTA</div><h3>Rotar primero</h3><p>Si un secreto salió, revócalo antes de limpiar el historial.</p></div></div>
+  <div class="foot"><span>Fuente: GitHub Docs · Removing sensitive data</span><span>14 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Semáforo de archivos</p>
+  <h2>La decisión de versionar depende del contenido, no de que el archivo termine en <code>.md</code></h2>
+  <div class="risk-grid"><div class="safe"><b>VERDE · incluir</b><p>IDENTITY, SOUL, AGENTS, TOOLS, HEARTBEAT, BOOTSTRAP y README sanitizados.</p></div><div class="warn"><b>AMARILLO · revisar</b><p>USER, MEMORY, estados de proyecto, rutas personales y capturas.</p></div><div class="danger"><b>ROJO · excluir</b><p>openclaw.json, .env, credenciales, pairing, llaves, logs y SQLite.</p></div></div>
+  <div class="foot"><span>Clasificar antes de copiar</span><span>15 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Prevención</p>
+  <a class="mk" href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files" target="_blank" rel="noopener" aria-label="Fuente externa: ignorar archivos">★</a>
+  <h2><code>.gitignore</code> evita inclusiones futuras cuando la regla existe antes del staging</h2>
+  <pre># secretos y configuración viva
+.env
+*.pem
+*.key
+openclaw.json*
+credentials/
+pairing/
+state/
+*.sqlite*</pre>
+  <p class="lead">Las reglas compartidas viven en la raíz del repo y también se versionan.</p>
+  <div class="foot"><span>Fuente: GitHub Docs · Ignoring files</span><span>16 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Trampa frecuente</p>
+  <h2>Ignorar un archivo tarde no lo saca del historial que Git ya conoce</h2>
+  <div class="flow"><span class="node">archivo rastreado</span><span class="arrow">+</span><span class="node">regla nueva</span><span class="arrow">≠</span><span class="node hi">archivo olvidado</span></div>
+  <div class="two"><div><h3>Antes del primer commit</h3><p>Crea `.gitignore`, luego selecciona archivos.</p></div><div><h3>Si ya fue rastreado</h3><p>Detente y consulta; no improvises una reescritura de historial en clase.</p></div></div>
+  <div class="foot"><span>Prevenir cuesta menos que purgar</span><span>17 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Respuesta a incidentes</p>
+  <h2>Si un secreto llegó al remoto, la primera acción es invalidarlo</h2>
+  <div class="incident"><div><span>1</span><b>Revocar o rotar</b><small>cierra el acceso</small></div><div><span>2</span><b>Detener pushes</b><small>limita la propagación</small></div><div><span>3</span><b>Evaluar historial</b><small>coordina la limpieza</small></div><div><span>4</span><b>Prevenir recaída</b><small>ignore + revisión</small></div></div>
+  <p class="callout">Borrar el valor y hacer otro commit no invalida la credencial expuesta.</p>
+  <div class="foot"><span>Contención antes de limpieza</span><span>18 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Gate previo al commit</p>
+  <h2>La revisión combina nombres, contenido y una búsqueda sensible antes de autorizar</h2>
+  <pre>git status --short
+git diff --cached --name-status
+git diff --cached
+git grep --cached -n -I -E 'ghp_|github_pat_|sk-|api.?key|bot.?token|password'</pre>
+  <p class="lead">Demo: <code>sensitive-pattern-demo.txt</code> activa el patrón ficticio, se retira del staging y detiene el commit.</p>
+  <div class="foot"><span>Tres lentes sobre la misma propuesta</span><span>19 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Contrato de delegación</p>
+  <h2>El agente prepara la propuesta; la persona conserva la autorización de publicar</h2>
+  <div class="approval"><div><b>Agente</b><ul><li>inspecciona</li><li>crea el ignore</li><li>selecciona</li><li>muestra evidencia</li></ul></div><span class="handoff">ESPERA</span><div><b>Persona</b><ul><li>lee el diff</li><li>detecta privacidad</li><li>aprueba el commit</li><li>autoriza el push</li></ul></div></div>
+  <div class="foot"><span>Automatizar sin perder control</span><span>20 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Checkpoint 2</p>
+  <h2>La propuesta está lista solo cuando puedes nombrar cada archivo que saldrá de la máquina</h2>
+  <ul class="clean"><li>El repo vive en una carpeta nueva, no en `~/.openclaw`.</li><li>`.gitignore` existe antes del staging.</li><li>El staged diff contiene únicamente archivos aprobados.</li><li>No aparecen secretos, rutas privadas ni estado operativo.</li><li>El agente se detuvo antes del commit y del push.</li></ul>
+  <div class="foot"><span>Gate de seguridad</span><span>21 / 36</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">03</p>
+  <h2>Publicar conserva el control cuando el agente muestra su propuesta</h2>
+  <p class="time">1:40–2:25 · autenticación, commit y remoto</p>
+  <ol><li>Comprobar Git y GitHub CLI</li><li>Autenticar en el navegador</li><li>Crear repo privado desde el local</li><li>Verificar URL, rama y hash</li></ol>
+  <div class="foot"><span>Bloque 3 de 4</span><span>22 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Ruta cero · antes del preflight</p>
+  <h2>Si empiezas desde cero, instala Git local antes de conectar GitHub</h2>
+  <div class="cards"><div class="card"><div class="num">1 · CUENTA</div><h3>Regístrate y verifica tu correo</h3><p>Crea tu cuenta de GitHub, confirma el correo y recuerda tu nombre de usuario. Nunca pegues la contraseña en Telegram.</p></div><div class="card"><div class="num">2 · GIT</div><h3>Instala Git</h3><p>Usa el instalador de tu sistema operativo. Git guarda el historial local de tu proyecto.</p></div><div class="card"><div class="num">3 · GH CLI</div><h3>Instala GitHub CLI</h3><p>La CLI permite crear y consultar repos sin copiar tokens al chat.</p></div></div>
+  <pre>git --version
+gh --version</pre>
+  <p class="lead">Cuando ambos comandos responden, autentica en el navegador con <code>gh auth login --web --git-protocol https</code>.</p>
+  <div class="foot"><span>Preparar antes de diagnosticar</span><span>23 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Autenticación</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_auth_login" target="_blank" rel="noopener" aria-label="Fuente externa: gh auth login">★</a>
+  <h2>El flujo web evita convertir una credencial en texto dentro del chat</h2>
+  <pre>gh auth login --web --git-protocol https</pre>
+  <div class="flow"><span class="node">código temporal</span><span class="arrow">→</span><span class="node">navegador</span><span class="arrow">→</span><span class="node">almacén seguro</span><span class="arrow">→</span><span class="node hi">gh auth status</span></div>
+  <p class="lead">No ejecutar <code>gh auth token</code> durante la clase: ese comando imprime el token.</p>
+  <div class="foot"><span>Fuente: GitHub CLI · gh auth login</span><span>24 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Snapshot deliberado</p>
+  <h2>Una carpeta normal puede convertirse después en un repo Git, sin versionar todo el agente</h2>
+  <div class="workspace-map"><div class="workspace-tree"><pre>mi-agente-infra/
+├── .gitignore
+├── README.md
+├── RECOVERY-DEMO.md
+└── workspace/
+    ├── IDENTITY.md
+    ├── SOUL.md
+    ├── AGENTS.md
+    ├── TOOLS.md
+    ├── HEARTBEAT.md
+    └── BOOTSTRAP.md</pre></div><div class="workspace-text"><h3>No es un backup ciego</h3><p>Es una selección entendible y auditable de lo necesario para reconstruir comportamiento.</p><h3>La memoria requiere otra decisión</h3><p>`USER.md` y `MEMORY.md` solo entran después de sanitizar datos personales y confirmar su utilidad.</p></div></div>
+  <p class="lead">Puedes crear el agente primero y ejecutar después <code>git init</code> en una carpeta nueva. Git versiona solo lo que seleccionemos; no es necesario subir todo el estado vivo.</p>
+  <div class="foot"><span>Copiar menos para entender más</span><span>25 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Primer commit</p>
+  <h2>El flujo local queda cerrado antes de pedirle a GitHub que publique algo</h2>
+  <pre>git init -b main
+git add .gitignore README.md RECOVERY-DEMO.md workspace/*.md
+git diff --cached
+git commit -m "chore: versiona configuración sanitizada del agente"
+git status --short --branch</pre>
+  <p class="lead">El orden importa: inicializar → seleccionar → revisar → registrar → comprobar.</p>
+  <div class="foot"><span>Historial local primero</span><span>26 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Repo remoto</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_repo_create" target="_blank" rel="noopener" aria-label="Fuente externa: gh repo create">★</a>
+  <h2>Un solo comando puede crear el privado, conectar <code>origin</code> y publicar el commit revisado</h2>
+  <pre>gh repo create mi-agente-infra --private --source=. --remote=origin --push</pre>
+  <p class="callout">La velocidad del comando no reemplaza el gate anterior: cuando corre, ya existe un efecto externo.</p>
+  <div class="foot"><span>Fuente: GitHub CLI · gh repo create</span><span>27 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Verificación cruzada</p>
+  <h2>URL, remoto, rama y hash demuestran que local y GitHub cuentan la misma historia</h2>
+  <div class="two"><div><h3>Local</h3><pre>git remote -v
+git status --short --branch
+git rev-parse --short HEAD</pre></div><div><h3>GitHub</h3><pre>gh repo view --web</pre><p>Comprueba <b>Private</b>, rama <b>main</b> y el mensaje del último commit.</p></div></div>
+  <div class="foot"><span>Publicar también se verifica</span><span>28 / 36</span></div>
+</section>
+
+<section class="slide dark mesh">
+  <p class="eyebrow">Prompt desde Telegram</p>
+  <h2>Una delegación segura define carpeta, exclusiones, evidencia y punto de espera</h2>
+  <div class="prompt-card">Trabaja solo dentro de <b>[RUTA]/mi-agente-infra</b>. No leas ni copies secretos ni estado operativo. Incluye únicamente los Markdown que yo nombre. Antes de commit o push, muéstrame estado, nombres staged, diff y búsqueda sensible. <b>Detente y espera mi confirmación.</b></div>
+  <p class="lead">El prompt no enumera comandos por deporte: fija una frontera que el resultado permite comprobar.</p>
+  <div class="foot"><span>Delegar con criterio de aceptación</span><span>29 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Recuperación guiada</p>
+  <h2>Los fallos comunes se diagnostican en orden antes de cambiar configuración al azar</h2>
+  <table><tr><th>Señal</th><th>Siguiente comprobación</th></tr><tr><td><code>git</code> o <code>gh</code> no existe</td><td>Instalar la herramienta faltante.</td></tr><tr><td>El commit pide identidad</td><td>Configurar nombre y email verificado o `noreply`.</td></tr><tr><td><code>gh auth status</code> falla</td><td>Repetir autenticación web.</td></tr><tr><td><code>origin already exists</code></td><td>Inspeccionar <code>git remote -v</code>.</td></tr><tr><td>El push es rechazado</td><td>Revisar rama, remoto e historia existente.</td></tr></table>
+  <div class="foot"><span>Observar → explicar → corregir</span><span>30 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Checkpoint 3</p>
+  <h2>El primer push termina cuando puedes demostrar qué salió y dónde quedó</h2>
+  <ul class="clean"><li>El repo remoto está marcado como privado.</li><li><code>origin</code> apunta a la URL esperada.</li><li>La rama actual es <code>main</code>.</li><li>El hash corto coincide localmente y en GitHub.</li><li><code>git status</code> no muestra cambios olvidados.</li></ul>
+  <div class="foot"><span>Evidencia de publicación</span><span>31 / 36</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">04</p>
+  <h2>Un respaldo solo cuenta cuando alguien demuestra que puede recuperarlo</h2>
+  <p class="time">2:25–3:00 · restauración, clon y cierre</p>
+  <ol><li>Romper solo un archivo de prueba</li><li>Restaurarlo desde Git</li><li>Clonar en otra carpeta</li><li>Comparar la evidencia</li></ol>
+  <div class="foot"><span>Bloque 4 de 4</span><span>32 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Recuperación local</p>
+  <h2>Restaurar un archivo de prueba demuestra el valor del commit sin arriesgar el workspace</h2>
+  <pre>git diff -- RECOVERY-DEMO.md
+git restore -- RECOVERY-DEMO.md
+git status --short</pre>
+  <div class="two"><div><h3>Antes</h3><p>El diff muestra la modificación deliberada.</p></div><div><h3>Después</h3><p>El archivo vuelve a `HEAD` y el resto del proyecto queda intacto.</p></div></div>
+  <p class="lead">La práctica usa un archivo descartable: no se aprende recuperación destruyendo trabajo real.</p>
+  <div class="foot"><span>Volver sin borrar todo</span><span>33 / 36</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Recuperación remota</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_repo_clone" target="_blank" rel="noopener" aria-label="Fuente externa: gh repo clone">★</a>
+  <h2>Clonar en otra carpeta prueba que el proyecto ya no depende de la original</h2>
+  <pre>cd ..
+gh repo clone TU_USUARIO/mi-agente-infra recuperacion-mi-agente
+git -C recuperacion-mi-agente rev-parse --short HEAD
+git -C mi-agente-infra rev-parse --short HEAD</pre>
+  <p class="callout">Si los hashes coinciden y los archivos abren, el remoto puede reconstruir el snapshot.</p>
+  <div class="foot"><span>La prueba que faltaba en S02</span><span>34 / 36</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Criterio de aceptación</p>
+  <h2>La sesión termina con cinco evidencias, no con la frase “ya está publicado”</h2>
+  <div class="acceptance"><div><span>01</span><p>Status local limpio</p></div><div><span>02</span><p>Repo remoto privado</p></div><div><span>03</span><p>Hash corto coincidente</p></div><div><span>04</span><p>Cero secretos rastreados</p></div><div><span>05</span><p>Recuperación demostrada</p></div></div>
+  <p class="lead">Debes evidenciar ambas pruebas: restauración local y clon con hash coincidente.</p>
+  <div class="foot"><span>Definición de terminado</span><span>35 / 36</span></div>
+</section>
+
+<section class="slide dark mesh">
+  <p class="eyebrow">Puente a S04</p>
+  <h2>Ahora que cada cambio deja historia, la próxima sesión enseñará a decidir qué construir antes de editar</h2>
+  <div class="two"><div><h3>Tarea versionada</h3><p>Haz un cambio pequeño, revisa el diff y publica un commit.</p></div><div><h3>Issue de entrada</h3><p>Créala en <code>mi-agente-infra</code> y guarda su URL o captura en tu entrega S03.</p></div></div>
+  <span class="tag">Siguiente: SDD + superpowers + Kanban</span>
+  <div class="foot"><span>GitHub se vuelve columna vertebral</span><span>36 / 36</span></div>
+</section>
+
+<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas">
+  <div class="refs-head"><div><span>Referencias externas</span><h2>Fuentes oficiales de la sesión</h2></div><button id="refsClose" aria-label="Cerrar referencias">×</button></div>
+  <ol>
+    <li><a href="https://docs.github.com/en/get-started/git-basics/set-up-git" target="_blank" rel="noopener"><b>Slides 6–12</b> · Configurar y entender Git</a></li>
+    <li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository" target="_blank" rel="noopener"><b>Slides 14 y 18</b> · Datos sensibles en repositorios</a></li>
+    <li><a href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files" target="_blank" rel="noopener"><b>Slides 16–17</b> · Reglas de `.gitignore`</a></li>
+    <li><a href="https://cli.github.com/manual/gh_auth_login" target="_blank" rel="noopener"><b>Slide 24</b> · Autenticación web de GitHub CLI</a></li>
+    <li><a href="https://cli.github.com/manual/gh_repo_create" target="_blank" rel="noopener"><b>Slide 27</b> · Crear y publicar un repo privado</a></li>
+    <li><a href="https://cli.github.com/manual/gh_repo_clone" target="_blank" rel="noopener"><b>Slide 34</b> · Clonar para recuperar</a></li>
+  </ol>
+</aside>
+<div id="ctl"><button id="bTema" title="Cambiar tema (T)" aria-label="Alternar tema" aria-pressed="false">◐</button><button id="bMenos" title="Reducir tamaño (−)" aria-label="Reducir tamaño de letra">A−</button><button id="bMas" title="Aumentar tamaño (+)" aria-label="Aumentar tamaño de letra">A+</button><button id="bMarcas" title="Referencias externas (M)" aria-label="Abrir referencias externas" aria-expanded="false">★</button></div>
+<div id="bar"></div><div id="num"></div><div id="hint">← → navegar · Home / End</div>
+<script src="deck.js"></script>
+<script>
+(function(){
+  var B=document.body,esc=parseFloat(localStorage.getItem('deckEscala')||'1');
+  var typeNodes=[...document.querySelectorAll('.slide h1,.slide h2,.slide h3,.slide p,.slide li,.slide pre,.slide td,.slide th,.slide small,.slide .tag,.slide .node,.slide .num,.slide .eyebrow,.slide .time,.slide .foot span')];
+  typeNodes.forEach(function(el){el.dataset.baseFont=parseFloat(getComputedStyle(el).fontSize)});
+  function scale(save){
+    typeNodes.forEach(function(el){el.style.fontSize=(parseFloat(el.dataset.baseFont)*esc).toFixed(2)+'px'});
+    if(save!==false){try{localStorage.setItem('deckEscala',esc)}catch(e){}}
+    B.dataset.fontScale=esc.toFixed(2);
+  }
+  function zoom(d){esc=Math.min(1.2,Math.max(.85,+(esc+d).toFixed(2)));scale()}
+  function setTheme(name,save){
+    B.classList.toggle('tema-fuego',name==='fuego');
+    bTema.setAttribute('aria-pressed',name==='fuego'?'true':'false');
+    bTema.title=name==='fuego'?'Cambiar a tema índigo (T)':'Cambiar a tema fuego (T)';
+    if(save!==false){try{localStorage.setItem('deckTema',name)}catch(e){}}
+  }
+  function tema(){setTheme(B.classList.contains('tema-fuego')?'indigo':'fuego')}
+  function referencias(force){
+    var open=typeof force==='boolean'?force:!B.classList.contains('refs-open');
+    B.classList.toggle('refs-open',open);
+    B.classList.toggle('marcas',open);
+    refsPanel.setAttribute('aria-hidden',open?'false':'true');
+    bMarcas.setAttribute('aria-expanded',open?'true':'false');
+  }
+  async function auditDeck(){
+    var currentSlide=[...document.querySelectorAll('.slide')].findIndex(function(s){return s.classList.contains('on')});
+    var originalTheme=B.classList.contains('tema-fuego')?'fuego':'indigo',originalScale=esc,results=[];
+    var allSlides=[...document.querySelectorAll('.slide')],themes=['indigo','fuego'],scales=[.85,1,1.2];
+    function frame(){return new Promise(function(resolve){requestAnimationFrame(function(){requestAnimationFrame(resolve)})})}
+    for(var ti=0;ti<themes.length;ti++){
+      setTheme(themes[ti],false);
+      for(var si=0;si<scales.length;si++){
+        esc=scales[si];scale(false);
+        for(var n=0;n<allSlides.length;n++){
+          allSlides.forEach(function(s,k){s.classList.toggle('on',k===n)});await frame();
+          var slide=allSlides[n],sr=slide.getBoundingClientRect(),outside=[];
+          [...slide.children].filter(function(el){return !el.classList.contains('foot')&&!el.classList.contains('mk')}).forEach(function(el){var r=el.getBoundingClientRect();if(r.left<sr.left-1||r.right>sr.right+1||r.top<sr.top-1||r.bottom>sr.bottom+1)outside.push(el.tagName.toLowerCase()+'.'+el.className)});
+          if(slide.scrollWidth>slide.clientWidth+1||slide.scrollHeight>slide.clientHeight+1||outside.length)results.push({slide:n+1,theme:themes[ti],scale:scales[si],outside:outside,scroll:[slide.scrollWidth,slide.scrollHeight,slide.clientWidth,slide.clientHeight]});
+        }
+      }
+    }
+    setTheme(originalTheme,false);esc=originalScale;scale(false);allSlides.forEach(function(s,k){s.classList.toggle('on',k===currentSlide)});
+    B.dataset.layoutQa=results.length?'fail':'pass';
+    return {pass:results.length===0,failures:results};
+  }
+  setTheme(localStorage.getItem('deckTema')==='fuego'?'fuego':'indigo',false);scale(false);
+  bTema.onclick=function(e){e.stopPropagation();tema()};
+  bMas.onclick=function(e){e.stopPropagation();zoom(.05)};
+  bMenos.onclick=function(e){e.stopPropagation();zoom(-.05)};
+  bMarcas.onclick=function(e){e.stopPropagation();referencias()};
+  refsClose.onclick=function(e){e.stopPropagation();referencias(false)};
+  refsPanel.onclick=function(e){e.stopPropagation()};
+  addEventListener('keydown',function(e){var k=e.key.toLowerCase();if(k==='t')tema();else if(k==='m')referencias();else if(e.key==='Escape')referencias(false);else if(e.key==='+'||e.key==='=')zoom(.05);else if(e.key==='-'||e.key==='_')zoom(-.05);else if(k==='0'){esc=1;scale()}});
+  window.deckAudit=auditDeck;
+})();
+</script>
+</body>
+</html>

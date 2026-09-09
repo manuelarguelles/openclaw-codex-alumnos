@@ -6,14 +6,14 @@ Repositorio público del curso. Aquí están las consignas, recursos y espacios 
 
 1. OpenClaw + Codex + Telegram
 2. Identidad, reglas y memoria
-3. Herramientas y archivos
-4. Investigación web y fuentes
-5. Sistemas multiagente
-6. Automatizaciones
-7. Seguridad y secretos
-8. Evaluación y observabilidad
-9. Integraciones y publicación
-10. Demo final
+3. GitHub como columna vertebral
+4. SDD + superpowers + Kanban
+5. Buscador académico
+6. Skills y workflows
+7. Plataforma web
+8. Automatización con GitHub Actions
+9. Publicación con Vercel
+10. Demo day
 
 ## Entregas
 
@@ -26,3 +26,14 @@ La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sani
 ## Material de la sesión 2
 
 - [Cuestionario de configuración del workspace](s02-primer-agente/cuestionario-configuracion-workspace.md): 50 preguntas de alternativa múltiple. El agente las realiza, interpreta las respuestas y propone la configuración de los archivos `.md`.
+
+## Material de la sesión 3
+
+- [Guía web desde cero · GitHub + OpenClaw](s03-github/guia-github.html): crea tu cuenta, instala las herramientas y conecta GitHub desde el navegador sin copiar tokens.
+- [Deck · GitHub como columna vertebral](s03-github/S03-deck.html): 36 slides sobre preparación desde cero, historial, seguridad, publicación y recuperación.
+- [Laboratorio versionado y recuperable](s03-github/laboratorio.md): ruta cero para crear cuenta e instalar herramientas, más el ejercicio vivo `mi-primer-proyecto` y cuatro checkpoints ejecutados desde Telegram con revisión humana antes del push.
+- [`.gitignore` de referencia](s03-github/gitignore-openclaw.example): base conservadora para excluir secretos y estado operativo de OpenClaw.
+
+## Material de la sesión 4
+
+- [Apéndice · conexiones y comandos desde OpenClaw](s04-append/guia-conexiones.html): MCP, APIs REST, CLI, OAuth, autenticación, tokens y ejemplos con GitHub, Gmail, Vercel, Railway y APIs de LLM.
