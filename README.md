@@ -36,4 +36,6 @@ La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sani
 
 ## Material de la sesión 4
 
+- [Deck · SDD + Kanban](s04-sdd-kanban/S04-deck.html): 31 slides sobre convertir una idea en especificación breve, ordenarla en un tablero y cerrarla con evidencia.
+- [Laboratorio · especificar, ordenar y cerrar con evidencia](s04-sdd-kanban/laboratorio.md): parte de la issue puente de S03, crea el tablero del curso y cierra la primera tarea citando el criterio de aceptación.
 - [Apéndice · conexiones y comandos desde OpenClaw](s04-append/guia-conexiones.html): MCP, APIs REST, CLI, OAuth, autenticación, tokens y ejemplos con GitHub, Gmail, Vercel, Railway y APIs de LLM.

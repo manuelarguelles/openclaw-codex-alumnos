@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sesión 4 · SDD + Kanban</title>
+  <link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<section class="slide dark mesh on">
+  <p class="eyebrow">Curso · Agentes AI con OpenClaw + Codex</p>
+  <h1>Una idea sin especificación es una intención que nadie más puede ejecutar</h1>
+  <p class="lead">Hoy convertimos una idea suelta en una especificación breve, la ordenamos en un tablero y la cerramos con evidencia.</p>
+  <span class="tag">Sesión 4 · SDD + Kanban · 3 h</span>
+  <div class="foot"><span>De la idea suelta a la tarea cerrada</span><span>01 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Promesa observable</p>
+  <h2>Al terminar, podrás especificar, ordenar y cerrar una tarea con evidencia</h2>
+  <div class="cards"><div class="card"><div class="num">01</div><h3>Especificar</h3><p>Objetivo, alcance y criterio de aceptación.</p></div><div class="card"><div class="num">02</div><h3>Ordenar</h3><p>La especificación entra a un tablero con columnas.</p></div><div class="card"><div class="num">03</div><h3>Cerrar</h3><p>Evidencia de cada paso antes de marcar Hecho.</p></div></div>
+  <div class="foot"><span>Resultado de la sesión</span><span>02 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Puente desde S03</p>
+  <h2>El historial ya se puede recuperar; pero nadie sabe si tu próximo cambio va a funcionar</h2>
+  <div class="cards"><div class="card"><div class="num">SIN OBJETIVO</div><h3>«Mejora mi agente»</h3><p>No dice qué resuelve ni cómo se comprueba.</p></div><div class="card"><div class="num">SIN ALCANCE</div><h3>Todo puede cambiar</h3><p>Un cambio pequeño se vuelve reescribir todo.</p></div><div class="card"><div class="num">SIN EVIDENCIA</div><h3>«Ya quedó»</h3><p>Nadie puede comprobarlo, ni tú en una semana.</p></div></div>
+  <div class="foot"><span>Situación → complicación</span><span>03 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Mapa de la sesión</p>
+  <h2>Cuatro pasos convierten una idea suelta en una tarea que otra persona puede verificar</h2>
+  <div class="journey"><div><span>01</span><b>Especificar</b><small>objetivo y alcance</small></div><div><span>02</span><b>Ordenar</b><small>tarjeta en el tablero</small></div><div><span>03</span><b>Ejecutar</b><small>pasos con evidencia</small></div><div><span>04</span><b>Cerrar</b><small>criterio cumplido</small></div></div>
+  <div class="foot"><span>Historia completa de hoy</span><span>04 / 31</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">01</p>
+  <h2>Una especificación breve convierte una idea en algo que otra persona puede ejecutar</h2>
+  <p class="time">0:10–0:45 · de la idea a la especificación</p>
+  <ol><li>Ver qué le falta a una idea suelta</li><li>Nombrar las tres partes mínimas</li><li>Partir el trabajo en pasos pequeños</li><li>Reescribir la issue de S03 como especificación</li></ol>
+  <div class="foot"><span>Bloque 1 de 4</span><span>05 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">El problema de «arreglar esto»</p>
+  <h2>«Arreglar esto» no alcanza porque no dice qué logra, hasta dónde ni cómo se comprueba</h2>
+  <div class="two"><div><h3>Idea suelta</h3><ul><li>«Mejora mi agente»</li><li>«Que responda mejor»</li><li>«Arregla lo de ayer»</li></ul></div><div><h3>Lo que le falta</h3><ul><li>Un objetivo en una oración</li><li>Un límite de qué sí y qué no</li><li>Una forma observable de comprobarlo</li></ul></div></div>
+  <div class="foot"><span>Nombrar el hueco antes de llenarlo</span><span>06 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Especificación breve</p>
+  <h2>Tres partes mínimas bastan para que otra persona ejecute tu idea sin preguntarte nada</h2>
+  <div class="cards"><div class="card"><div class="num">OBJETIVO</div><h3>Una oración</h3><p>Qué resuelve, dicho una sola vez.</p></div><div class="card"><div class="num">ALCANCE</div><h3>Qué sí, qué no</h3><p>Evita que un cambio pequeño se vuelva infinito.</p></div><div class="card"><div class="num">CRITERIO</div><h3>Cómo se comprueba</h3><p>Una condición observable, no una sensación.</p></div></div>
+  <div class="foot"><span>Sin estas tres partes, es una intención</span><span>07 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Pasos pequeños</p>
+  <h2>Un paso cabe en pocos minutos y termina en algo comprobable, no en «sigue trabajando»</h2>
+  <div class="flow"><span class="node">paso pequeño</span><span class="arrow">→</span><span class="node">chequeo contra el criterio</span><span class="arrow">→</span><span class="node hi">evidencia</span><span class="arrow">→</span><span class="node">siguiente paso</span></div>
+  <p class="lead">Un paso grande esconde errores porque nadie lo revisa hasta que corregirlo ya resulta costoso.</p>
+  <div class="foot"><span>El tamaño del paso es una decisión</span><span>08 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Demo</p>
+  <h2>La issue de S03 se reescribe como especificación antes de tocar cualquier archivo</h2>
+  <pre>Lee la issue #N de mi-agente-infra y resúmela en una oración.
+
+Reescribe el cuerpo de la issue #N como especificación breve con tres
+secciones: Objetivo, Alcance y Criterio de aceptación. No la cierres ni la
+publiques todavía; muéstrame el texto antes de guardarlo.</pre>
+  <p class="lead">Tras aprobar el texto, el agente crea <code>especificacion.md</code> y ejecuta <code>gh issue edit N --body-file ./especificacion.md</code>.</p>
+  <div class="foot"><span>La idea real de S03, no una inventada</span><span>09 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Checkpoint 1</p>
+  <h2>Especificaste bien cuando puedes señalar las tres partes en la idea de otra persona</h2>
+  <table><tr><th>Pregunta</th><th>Respuesta observable</th></tr><tr><td>¿Cuál es el objetivo?</td><td>Cabe en una oración, sin «y también».</td></tr><tr><td>¿Cuál es el alcance?</td><td>Puede decir qué queda explícitamente afuera.</td></tr><tr><td>¿Cuál es el criterio?</td><td>Describe algo observable, no una impresión.</td></tr></table>
+  <div class="foot"><span>Explicar antes de ejecutar</span><span>10 / 31</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">02</p>
+  <h2>El tablero convierte la especificación en trabajo visible para cualquiera</h2>
+  <p class="time">0:50–1:35 · columnas, tarjetas y estado real</p>
+  <ol><li>Ver qué resuelve un tablero</li><li>Definir cuatro columnas mínimas</li><li>Crear el tablero y agregar la tarjeta</li><li>Mover la tarjeta reflejando el estado real</li></ol>
+  <div class="foot"><span>Bloque 2 de 4</span><span>11 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Por qué un tablero</p>
+  <a class="mk" href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" target="_blank" rel="noopener" aria-label="Fuente externa: about Projects">★</a>
+  <h2>Un tablero hace visible el estado real para cualquiera, no solo para quien lo escribió</h2>
+  <div class="two"><div><h3>Lista mental</h3><p>Vive en tu cabeza o en un chat disperso. Nadie más puede verificarla sin preguntarte.</p></div><div><h3>Tablero visible</h3><p>Cualquiera puede abrir la vista y ver en qué columna está cada tarea, sin interrumpirte.</p></div></div>
+  <div class="foot"><span>Fuente: GitHub Docs · About Projects</span><span>12 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Cuatro etapas</p>
+  <a class="mk" href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects" target="_blank" rel="noopener" aria-label="Fuente externa: quickstart de Projects">★</a>
+  <h2>Un campo Etapa con cuatro valores hace inequívoco el estado de cualquier tarea</h2>
+  <div class="journey"><div><span>1</span><b>Por hacer</b><small>especificada, sin empezar</small></div><div><span>2</span><b>Haciendo</b><small>en pasos con evidencia</small></div><div><span>3</span><b>Revisión</b><small>evidencia completa, sin cerrar</small></div><div><span>4</span><b>Hecho</b><small>criterio cumplido y cerrada</small></div></div>
+  <div class="foot"><span>En la vista web: agrupar por Etapa</span><span>13 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Crear el tablero</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener" aria-label="Fuente externa: gh project field-create">★</a>
+  <h2>El proyecto y el campo Etapa se crean por separado para obtener cuatro estados reales</h2>
+  <pre>gh project create --owner @me --title "Curso OpenClaw+Codex" --format json</pre>
+  <pre>gh project field-create &lt;numero&gt; --owner @me --name Etapa \
+  --data-type SINGLE_SELECT --single-select-options "Por hacer,Haciendo,Revisión,Hecho" --format json</pre>
+  <p class="lead">El proyecto nuevo solo trae Todo, In Progress y Done; el segundo comando define las etapas del curso.</p>
+  <div class="foot"><span>Fuente: GitHub CLI · gh project field-create</span><span>14 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Agregar la tarjeta</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_project_item-add" target="_blank" rel="noopener" aria-label="Fuente externa: gh project item-add">★</a>
+  <h2>La especificación entra al tablero como tarjeta, no como una copia del texto</h2>
+  <pre>gh project item-add &lt;numero-proyecto&gt; --owner @me \
+  --url https://github.com/TU_USUARIO/mi-agente-infra/issues/N --format json</pre>
+  <p class="lead">La salida devuelve el ITEM_ID. La tarjeta enlaza la issue; el campo Etapa vive en el proyecto.</p>
+  <div class="foot"><span>Fuente: GitHub CLI · gh project item-add</span><span>15 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Antes de mover nada</p>
+  <h2>Cada movimiento usa cuatro identificadores que salen de las respuestas JSON</h2>
+  <pre>gh project field-list &lt;numero-proyecto&gt; --owner @me --format json</pre>
+  <table><tr><th>Dato</th><th>Dónde aparece</th></tr><tr><td>PVT_ID</td><td>project create</td></tr><tr><td>ITEM_ID</td><td>item-add</td></tr><tr><td>FIELD_ID de Etapa</td><td>field-list</td></tr><tr><td>OPTION_ID de destino</td><td>opciones de field-list</td></tr></table>
+  <div class="foot"><span>ID del proyecto + ítem + campo + opción</span><span>16 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Estado real, no deseado</p>
+  <h2>Una tarjeta no salta de Por hacer a Hecho sin pasar por Haciendo y Revisión</h2>
+  <div class="stage-grid"><div><span>1</span><b>Por hacer</b><small>todavía sin pasos</small></div><div class="active"><span>2</span><b>Haciendo</b><small>primer paso en curso</small></div><div><span>3</span><b>Revisión</b><small>evidencia acumulada</small></div><div><span>4</span><b>Hecho</b><small>criterio comprobado</small></div></div>
+  <p class="callout">Mover la tarjeta antes de tiempo no adelanta el trabajo: solo esconde que todavía no existe evidencia.</p>
+  <div class="foot"><span>El tablero describe, no promete</span><span>17 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Demo</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener" aria-label="Fuente externa: gh project item-edit">★</a>
+  <h2>Mover la tarjeta a Haciendo se pide por chat o se arrastra en el navegador</h2>
+  <pre>gh project item-edit --project-id &lt;PVT_ID&gt; --id &lt;ITEM_ID&gt; \
+  --field-id &lt;FIELD_ID&gt; --single-select-option-id &lt;OPTION_ID&gt;</pre>
+  <p class="lead">Ambas formas son válidas; lo único que importa es que la columna coincida con el estado real del trabajo.</p>
+  <div class="foot"><span>Fuente: GitHub CLI · gh project item-edit</span><span>18 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Checkpoint 2</p>
+  <h2>El tablero está bien usado cuando cada etapa coincide con lo que ya es verdad</h2>
+  <ul class="clean"><li>El campo Etapa tiene las cuatro opciones mínimas.</li><li>La issue de S03 aparece como tarjeta en el proyecto.</li><li>La tarjeta está en «Haciendo» solo porque el primer paso ya empezó.</li><li>La vista web está agrupada por Etapa si quieres verla como columnas.</li></ul>
+  <div class="foot"><span>Gate de trazabilidad</span><span>19 / 31</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">03</p>
+  <h2>Un paso pequeño con evidencia vale más que un cambio grande sin ella</h2>
+  <p class="time">1:40–2:25 · el ciclo de la tarea y sus frenos</p>
+  <ol><li>Ver el ciclo completo de una tarea</li><li>Distinguir evidencia de afirmación</li><li>Ejecutar el primer paso y comentarlo</li><li>Reconocer los cuatro frenos</li></ol>
+  <div class="foot"><span>Bloque 3 de 4</span><span>20 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">El ciclo de una tarea</p>
+  <h2>Cada paso se ejecuta, se compara contra el criterio y deja evidencia antes del siguiente</h2>
+  <div class="flow"><span class="node">paso pequeño</span><span class="arrow">→</span><span class="node">comparar con el criterio</span><span class="arrow">→</span><span class="node hi">dejar evidencia</span><span class="arrow">→</span><span class="node">solo entonces, el siguiente paso</span></div>
+  <p class="lead">Ninguna parte del ciclo se salta: sin evidencia comentada, el siguiente paso no empieza.</p>
+  <div class="foot"><span>El mismo ciclo para cualquier tarea futura</span><span>21 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Qué cuenta como evidencia</p>
+  <h2>«Ya lo hice» no es evidencia; un antes/después comparable sí lo es</h2>
+  <div class="two"><div><h3>Evidencia real</h3><ul><li>Un diff del archivo cambiado</li><li>Una respuesta comparada antes y después</li><li>Un comando y la salida exacta que devolvió</li></ul></div><div><h3>No es evidencia</h3><ul><li>«Ya quedó»</li><li>«Lo probé y funciona»</li><li>Una captura sin fecha ni contexto</li></ul></div></div>
+  <div class="foot"><span>Comprobable por otra persona</span><span>22 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Demo</p>
+  <h2>El primer paso se ejecuta, se compara con el criterio y queda comentado en la issue</h2>
+  <pre>Ejecuta el primer paso de la especificación de la issue #N. Antes de
+guardar cualquier cambio, muéstrame qué vas a modificar y por qué cumple
+ese paso. Después de aplicarlo, compara el resultado con el criterio de
+aceptación y dime si ya se cumple o falta otro paso.</pre>
+  <pre>gh issue comment N --body "Paso 1: &lt;qué cambió&gt; · Evidencia: &lt;diff&gt; · Falta: &lt;si aplica&gt;"</pre>
+  <div class="foot"><span>Rastro verificable, paso a paso</span><span>23 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Los cuatro frenos</p>
+  <h2>Cuatro señales detienen al agente antes de seguir, aunque el pedido suene simple</h2>
+  <div class="incident"><div><span>1</span><b>Irreversible</b><small>cerrar, publicar o borrar</small></div><div><span>2</span><b>Sensible</b><small>credenciales o datos personales</small></div><div><span>3</span><b>Fuera de alcance</b><small>otro repo o issue</small></div><div><span>4</span><b>Especificación rota</b><small>criterio poco claro</small></div></div>
+  <p class="callout">Ante cualquiera de los cuatro, el agente muestra el motivo y espera; no improvisa un criterio propio.</p>
+  <div class="foot"><span>Frenos, no excepciones</span><span>24 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Contrato de delegación</p>
+  <h2>El agente ejecuta y deja evidencia; la persona revisa antes de autorizar el siguiente paso</h2>
+  <div class="approval"><div><b>Agente</b><ul><li>ejecuta el paso</li><li>compara con el criterio</li><li>comenta evidencia</li><li>se detiene ante un freno</li></ul></div><span class="handoff">ESPERA</span><div><b>Persona</b><ul><li>lee la evidencia</li><li>decide si alcanza</li><li>autoriza el siguiente paso</li><li>autoriza mover a Revisión</li></ul></div></div>
+  <div class="foot"><span>Automatizar sin perder control</span><span>25 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Checkpoint 3</p>
+  <h2>Un paso está listo cuando su evidencia responde exactamente al criterio de aceptación</h2>
+  <table><tr><th>Pregunta</th><th>Respuesta observable</th></tr><tr><td>¿Qué cambió?</td><td>Está descrito en el comentario del paso.</td></tr><tr><td>¿Cómo se comprobó?</td><td>Hay un diff, comparación o salida de comando.</td></tr><tr><td>¿Falta algo?</td><td>El comentario lo dice explícitamente o no.</td></tr></table>
+  <div class="foot"><span>Evidencia antes de avanzar</span><span>26 / 31</span></div>
+</section>
+
+<section class="slide dark mesh sep">
+  <p class="bignum">04</p>
+  <h2>Cerrar con método es demostrar el criterio, no declararlo</h2>
+  <p class="time">2:25–3:00 · revisión, cierre y tarea-puente</p>
+  <ol><li>Comparar especificación contra evidencia</li><li>Mover la tarjeta a Hecho</li><li>Cerrar la issue citando el criterio</li><li>Dejar la próxima idea especificada</li></ol>
+  <div class="foot"><span>Bloque 4 de 4</span><span>27 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Revisión final</p>
+  <h2>La especificación se relee completa antes de decidir si el criterio ya se cumple</h2>
+  <div class="two"><div><h3>Antes</h3><p>Objetivo, alcance y criterio escritos al inicio del bloque 1.</p></div><div><h3>Después</h3><p>Los comentarios de evidencia acumulados durante el bloque 3.</p></div></div>
+  <p class="lead">Si alguna parte del criterio no tiene evidencia, la tarea sigue en Revisión, no en Hecho.</p>
+  <div class="foot"><span>Comparar, no suponer</span><span>28 / 31</span></div>
+</section>
+
+<section class="slide dark">
+  <p class="eyebrow">Cierre</p>
+  <a class="mk" href="https://cli.github.com/manual/gh_issue_close" target="_blank" rel="noopener" aria-label="Fuente externa: gh issue close">★</a>
+  <h2>La tarjeta pasa a Hecho y la issue se cierra citando la evidencia, no solo «listo»</h2>
+  <pre>gh project item-edit --project-id &lt;PVT_ID&gt; --id &lt;ITEM_ID&gt; \
+  --field-id &lt;FIELD_ID&gt; --single-select-option-id &lt;OPTION_ID_HECHO&gt;
+gh issue close N --reason completed \
+  --comment "Criterio de aceptación cumplido: &lt;evidencia final&gt;"</pre>
+  <div class="foot"><span>Fuente: GitHub CLI · gh issue close</span><span>29 / 31</span></div>
+</section>
+
+<section class="slide">
+  <p class="eyebrow">Criterio de aceptación</p>
+  <h2>La sesión termina con cinco evidencias, no con la frase “ya quedó”</h2>
+  <div class="acceptance"><div><span>01</span><p>Especificación con las tres partes</p></div><div><span>02</span><p>Tarjeta visible en el tablero</p></div><div><span>03</span><p>Dos comentarios de evidencia</p></div><div><span>04</span><p>Tarjeta movida hasta Hecho</p></div><div><span>05</span><p>Issue cerrada citando el criterio</p></div></div>
+  <p class="lead">Ningún paso irreversible se ejecuta sin evidencia previa.</p>
+  <div class="foot"><span>Definición de terminado</span><span>30 / 31</span></div>
+</section>
+
+<section class="slide dark mesh">
+  <p class="eyebrow">Puente a S05</p>
+  <h2>Ahora que cada tarea se especifica y se cierra con evidencia, la próxima sesión busca fuentes con el mismo rigor</h2>
+  <div class="two"><div><h3>Segunda tarea especificada</h3><p>Elige una mejora nueva y escribe su especificación antes de pedir que se ejecute.</p></div><div><h3>Tablero vivo</h3><p>Guarda la URL del tablero y de la issue cerrada en tu entrega S04.</p></div></div>
+  <span class="tag">Siguiente: Buscador académico</span>
+  <div class="foot"><span>El método se repite, cambia el tema</span><span>31 / 31</span></div>
+</section>
+
+<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas">
+  <div class="refs-head"><div><span>Referencias externas</span><h2>Fuentes oficiales de la sesión</h2></div><button id="refsClose" aria-label="Cerrar referencias">×</button></div>
+  <ol>
+    <li><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" target="_blank" rel="noopener"><b>Slide 12</b> · Qué es un tablero de GitHub Projects</a></li>
+    <li><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects" target="_blank" rel="noopener"><b>Slide 13</b> · Quickstart de Projects</a></li>
+    <li><a href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener"><b>Slide 14</b> · Crear el campo Etapa</a></li>
+    <li><a href="https://cli.github.com/manual/gh_project_item-add" target="_blank" rel="noopener"><b>Slide 15</b> · Agregar una tarjeta</a></li>
+    <li><a href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener"><b>Slide 18</b> · Mover una tarjeta de columna</a></li>
+    <li><a href="https://cli.github.com/manual/gh_issue_close" target="_blank" rel="noopener"><b>Slide 29</b> · Cerrar una issue con evidencia</a></li>
+  </ol>
+</aside>
+<div id="ctl"><button id="bTema" title="Cambiar tema (T)" aria-label="Alternar tema" aria-pressed="false">◐</button><button id="bMenos" title="Reducir tamaño (−)" aria-label="Reducir tamaño de letra">A−</button><button id="bMas" title="Aumentar tamaño (+)" aria-label="Aumentar tamaño de letra">A+</button><button id="bMarcas" title="Referencias externas (M)" aria-label="Abrir referencias externas" aria-expanded="false">★</button></div>
+<div id="bar"></div><div id="num"></div><div id="hint">← → navegar · Home / End</div>
+<script src="deck.js"></script>
+<script>
+(function(){
+  var B=document.body,esc=parseFloat(localStorage.getItem('deckEscala')||'1');
+  var typeNodes=[...document.querySelectorAll('.slide h1,.slide h2,.slide h3,.slide p,.slide li,.slide pre,.slide td,.slide th,.slide small,.slide .tag,.slide .node,.slide .num,.slide .eyebrow,.slide .time,.slide .foot span')];
+  typeNodes.forEach(function(el){el.dataset.baseFont=parseFloat(getComputedStyle(el).fontSize)});
+  function scale(save){
+    typeNodes.forEach(function(el){el.style.fontSize=(parseFloat(el.dataset.baseFont)*esc).toFixed(2)+'px'});
+    if(save!==false){try{localStorage.setItem('deckEscala',esc)}catch(e){}}
+    B.dataset.fontScale=esc.toFixed(2);
+  }
+  function zoom(d){esc=Math.min(1.2,Math.max(.85,+(esc+d).toFixed(2)));scale()}
+  function setTheme(name,save){
+    B.classList.toggle('tema-fuego',name==='fuego');
+    bTema.setAttribute('aria-pressed',name==='fuego'?'true':'false');
+    bTema.title=name==='fuego'?'Cambiar a tema índigo (T)':'Cambiar a tema fuego (T)';
+    if(save!==false){try{localStorage.setItem('deckTema',name)}catch(e){}}
+  }
+  function tema(){setTheme(B.classList.contains('tema-fuego')?'indigo':'fuego')}
+  function referencias(force){
+    var open=typeof force==='boolean'?force:!B.classList.contains('refs-open');
+    B.classList.toggle('refs-open',open);
+    B.classList.toggle('marcas',open);
+    refsPanel.setAttribute('aria-hidden',open?'false':'true');
+    bMarcas.setAttribute('aria-expanded',open?'true':'false');
+  }
+  async function auditDeck(){
+    var currentSlide=[...document.querySelectorAll('.slide')].findIndex(function(s){return s.classList.contains('on')});
+    var originalTheme=B.classList.contains('tema-fuego')?'fuego':'indigo',originalScale=esc,results=[];
+    var allSlides=[...document.querySelectorAll('.slide')],themes=['indigo','fuego'],scales=[.85,1,1.2];
+    function frame(){return new Promise(function(resolve){requestAnimationFrame(function(){requestAnimationFrame(resolve)})})}
+    for(var ti=0;ti<themes.length;ti++){
+      setTheme(themes[ti],false);
+      for(var si=0;si<scales.length;si++){
+        esc=scales[si];scale(false);
+        for(var n=0;n<allSlides.length;n++){
+          allSlides.forEach(function(s,k){s.classList.toggle('on',k===n)});await frame();
+          var slide=allSlides[n],sr=slide.getBoundingClientRect(),outside=[];
+          [...slide.children].filter(function(el){return !el.classList.contains('foot')&&!el.classList.contains('mk')}).forEach(function(el){var r=el.getBoundingClientRect();if(r.left<sr.left-1||r.right>sr.right+1||r.top<sr.top-1||r.bottom>sr.bottom+1)outside.push(el.tagName.toLowerCase()+'.'+el.className)});
+          if(slide.scrollWidth>slide.clientWidth+1||slide.scrollHeight>slide.clientHeight+1||outside.length)results.push({slide:n+1,theme:themes[ti],scale:scales[si],outside:outside,scroll:[slide.scrollWidth,slide.scrollHeight,slide.clientWidth,slide.clientHeight]});
+        }
+      }
+    }
+    setTheme(originalTheme,false);esc=originalScale;scale(false);allSlides.forEach(function(s,k){s.classList.toggle('on',k===currentSlide)});
+    B.dataset.layoutQa=results.length?'fail':'pass';
+    return {pass:results.length===0,failures:results};
+  }
+  setTheme(localStorage.getItem('deckTema')==='fuego'?'fuego':'indigo',false);scale(false);
+  bTema.onclick=function(e){e.stopPropagation();tema()};
+  bMas.onclick=function(e){e.stopPropagation();zoom(.05)};
+  bMenos.onclick=function(e){e.stopPropagation();zoom(-.05)};
+  bMarcas.onclick=function(e){e.stopPropagation();referencias()};
+  refsClose.onclick=function(e){e.stopPropagation();referencias(false)};
+  refsPanel.onclick=function(e){e.stopPropagation()};
+  addEventListener('keydown',function(e){var k=e.key.toLowerCase();if(k==='t')tema();else if(k==='m')referencias();else if(e.key==='Escape')referencias(false);else if(e.key==='+'||e.key==='=')zoom(.05);else if(e.key==='-'||e.key==='_')zoom(-.05);else if(k==='0'){esc=1;scale()}});
+  window.deckAudit=auditDeck;
+})();
+</script>
+</body>
+</html>
