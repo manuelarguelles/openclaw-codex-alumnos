@@ -1,0 +1,31 @@
+{
+  "perfil": [
+    {
+      "id": "p1",
+      "habilidad": "SQL",
+      "evidencia": "Construí consultas para un proyecto académico."
+    },
+    {
+      "id": "p2",
+      "habilidad": "Python",
+      "evidencia": "Analicé datos de práctica."
+    }
+  ],
+  "oferta": {
+    "id": "o1",
+    "requisitos": [
+      {
+        "habilidad": "SQL",
+        "obligatorio": true
+      },
+      {
+        "habilidad": "Python",
+        "obligatorio": true
+      },
+      {
+        "habilidad": "AWS",
+        "obligatorio": false
+      }
+    ]
+  }
+}

@@ -32,3 +32,8 @@ body[data-slide-dark="true"] #num,body[data-slide-dark="true"] #hint{color:#b5c2
 .slide .card p{font-size:18px;line-height:1.5}
 .slide .clean li{font-size:20px;line-height:1.5}
 @media(max-width:800px){.slide{padding:62px 30px 90px}.slide .card p{font-size:16px;line-height:1.4}.slide .clean li{font-size:16px;line-height:1.4}.slide .cards{margin-top:22px}.slide .card{padding:14px}.slide .card .num{margin-bottom:7px}.slide .lead{font-size:16px;margin-top:18px}.slide pre{padding:14px;font-size:12px}.slide .eyebrow{font-size:10px;margin-bottom:16px}.foot{left:30px;right:30px;font-size:11px}}
+/* Referencia oficial de tablero: conserva proporciones y acceso al original. */
+.board-reference { display:block; width:min(100%,1120px); max-height:52vh; object-fit:contain; margin:20px auto 0; }
+.caption { font-size:calc(16px * var(--scale,1)); line-height:1.45; max-width:1000px; }
+@media(max-width:600px){ .board-reference{margin:12px auto;max-height:38vh;} .caption{font-size:16px;} }
+.slide>blockquote { font-size:clamp(18px,1.7vw,24px); line-height:1.45; margin:24px 0; max-width:1000px; }

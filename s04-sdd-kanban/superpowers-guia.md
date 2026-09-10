@@ -44,7 +44,7 @@ El instructor puede instalar desde la interfaz; el alumno verifica por conversac
 Es un comando del chat de Claude Code. No pegarlo en Telegram o terminal como si fuese universal. La instalación se hace por entorno.
 
 ## Prueba de activación
-Prompt: «Identifica las skills de Superpowers disponibles en esta sesión. Carga brainstorming desde la instalación y dime qué ruta leíste. Quiero mejorar la regla de finalización de mi agente; empieza por aclarar criterios y alternativas, sin implementar aún».
+Prompt: «Identifica las skills de Superpowers disponibles en esta sesión. Carga brainstorming desde la instalación y dime qué ruta leíste. Quiero crear desde cero un asistente de postulación laboral; empieza por aclarar criterios y alternativas, sin implementar aún».
 Observa una pregunta pertinente y un diseño revisable antes del código. Pedir solo «¿tienes superpowers?» no basta.
 Tras aprobar: «Usa writing-plans sobre la spec aprobada; indica tareas, archivos y pruebas». Antes del cierre: «Usa verification-before-completion y ejecuta las pruebas de nuevo».
 Registrar versión, ruta, prompt, salida y runtime. Si no aparece en catálogo, detener esa parte y recuperar instalación. No fingir que una lectura manual del README es activación.
@@ -60,21 +60,21 @@ Registrar versión, ruta, prompt, salida y runtime. Si no aparece en catálogo, 
 ### brainstorming
 - Cuándo: Antes de diseñar o construir.
 - Qué hace: Aclara objetivo, alternativas y alcance; obtiene aprobación del diseño.
-- En el caso: Pregunta qué significa terminar en la issue de S03.
+- En el caso: Pregunta qué datos acepta el asistente y cómo citará evidencia.
 - Límite: En 6.3.0 distingue spike, bounded y architectural; el ciclo documental completo es elección pedagógica de esta clase.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/brainstorming/SKILL.md
 
 ### using-git-worktrees
 - Cuándo: Antes de implementar aisladamente.
 - Qué hace: Prepara una rama/carpeta separada y comprueba baseline.
-- En el caso: Aislar la mejora de la regla sin tocar el agente activo.
+- En el caso: Aislar la construcción del asistente sin tocar el repo original.
 - Límite: Un worktree comparte el historial Git, no es una copia de seguridad ni una VM.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/using-git-worktrees/SKILL.md
 
 ### writing-plans
 - Cuándo: Con diseño aprobado.
 - Qué hace: Divide el trabajo en tareas con archivos, pruebas y resultados esperados.
-- En el caso: T1 validador, T2 regla y prueba runtime, T3 revisión.
+- En el caso: T1 contrato, T2 análisis, T3 borrador, T4 runtime, T5 review.
 - Límite: Un plan dice cómo; la spec dice qué y por qué.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/writing-plans/SKILL.md
 
@@ -95,21 +95,21 @@ Registrar versión, ruta, prompt, salida y runtime. Si no aparece en catálogo, 
 ### test-driven-development
 - Cuándo: Antes de implementar un comportamiento.
 - Qué hace: RED → GREEN → REFACTOR con fallo observado.
-- En el caso: El starter rechaza un reporte válido; implementar contrato y repetir suite.
-- Límite: Los tests del validador no certifican obediencia del modelo.
+- En el caso: El starter aún no analiza una oferta válida; implementar contrato y repetir la suite de 15 tests.
+- Límite: Los tests del núcleo local no certifican obediencia del modelo.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/test-driven-development/SKILL.md
 
 ### systematic-debugging
 - Cuándo: Ante fallo inesperado.
 - Qué hace: Investiga causa, compara patrón, prueba hipótesis y corrige.
-- En el caso: Reproducir aceptación indebida de lista vacía por every().
+- En el caso: Reproducir 0/0 como NaN cuando faltan obligatorios y comprobar la salida null definida por la spec.
 - Límite: Una corrección sin reproducción no prueba causalidad.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/systematic-debugging/SKILL.md
 
 ### verification-before-completion
 - Cuándo: Antes de decir terminado.
 - Qué hace: Exige comprobación reciente y lectura de resultados.
-- En el caso: Correr 12 tests y abrir referencias antes del dictamen.
+- En el caso: Correr 15 tests y abrir referencias antes del dictamen.
 - Límite: Un PASS viejo deja de servir si cambia el código.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/verification-before-completion/SKILL.md
 
@@ -123,14 +123,14 @@ Registrar versión, ruta, prompt, salida y runtime. Si no aparece en catálogo, 
 ### requesting-code-review
 - Cuándo: Después de un cambio relevante.
 - Qué hace: Entrega contexto, diff y criterios al revisor.
-- En el caso: Primero CA1–CA5; luego robustez y claridad.
+- En el caso: Primero CA1–CA7 (núcleo, conversación y trazabilidad); luego robustez y claridad.
 - Límite: Tests verdes no reemplazan cumplimiento de spec.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/requesting-code-review/SKILL.md
 
 ### receiving-code-review
 - Cuándo: Al recibir hallazgos.
 - Qué hace: Verifica, reproduce y decide cómo responder.
-- En el caso: Aceptar guarda de lista vacía; discutir una base de datos fuera de alcance.
+- En el caso: Aceptar guarda para cero obligatorios; discutir scraper o cloud fuera del recorte.
 - Límite: No aceptar toda sugerencia automáticamente.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/receiving-code-review/SKILL.md
 
@@ -138,7 +138,7 @@ Registrar versión, ruta, prompt, salida y runtime. Si no aparece en catálogo, 
 - Cuándo: Tras pruebas y revisión.
 - Qué hace: Presenta opciones de integración y limpieza de rama/worktree.
 - En el caso: Elegir PR o conservar rama hasta autorización.
-- Límite: No borrar una rama ni publicar por inferencia del validador.
+- Límite: No borrar una rama ni publicar por inferencia de una suite verde.
 - Fuente: https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/finishing-a-development-branch/SKILL.md
 
 ### writing-skills

@@ -30,12 +30,12 @@ WIP Haciendo = 1.
 
 | Tarjeta | Etapa | Criterios | Evidencia | Bloqueo |
 |---|---|---|---|---|
-| Mejorar una regla de mi agente | Por hacer | CA1–CA5 | Spec aprobada cuando corresponda | Registrar si existe |
+| T2 Comparar oferta y perfil | Por hacer | CA1–CA3, CA5 | Depende de T1 | Registrar número real |
 
 Historial: fecha / de → a / motivo / evidencia.
 No cambiar a Hecho hasta completar criterios, review y autorización.
 
-## reporte-cierre.json (ejemplo de formato; no evidencia real)
+## reporte-cierre.json (suplemento opcional del ejemplo anterior; no lo requiere el caso postulación)
 ```json
 {
   "criterios": ["CA1"],

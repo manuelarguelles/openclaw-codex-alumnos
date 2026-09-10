@@ -26,3 +26,7 @@ addEventListener('click', e => {
 });
 const initial = Number(new URLSearchParams(location.hash.slice(1)).get('slide'));
 show(Number.isFinite(initial) && initial > 0 ? initial-1 : 0);
+addEventListener('hashchange', () => {
+  const target = Number(new URLSearchParams(location.hash.slice(1)).get('slide'));
+  if (Number.isFinite(target) && target > 0) show(target - 1);
+});

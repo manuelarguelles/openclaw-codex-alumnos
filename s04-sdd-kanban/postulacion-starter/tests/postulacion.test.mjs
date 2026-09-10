@@ -1,0 +1,25 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {analizarOferta} from "../analizar-oferta.mjs";
+const fixture = JSON.parse(readFileSync(new URL("../fixtures.json", import.meta.url)));
+const caso = () => structuredClone(fixture);
+test("CA2 coincidencias citan hechos p1/p2 y AWS queda como brecha", () => {
+ const r=analizarOferta(caso()); assert.equal(r.coincidencias.length,2);
+ assert.deepEqual(r.coincidencias.flatMap(x=>x.evidencias.map(e=>e.id)),["p1","p2"]);
+ assert.equal(r.brechas[0].habilidad,"AWS");
+});
+test("CA3 cobertura de obligatorios completa es 100",()=>assert.equal(analizarOferta(caso()).coberturaObligatorios,100));
+test("CA3 una brecha obligatoria reduce a 50",()=>{const x=caso();x.oferta.requisitos[1].habilidad="Inglés";assert.equal(analizarOferta(x).coberturaObligatorios,50);});
+test("CA3 sin obligatorios devuelve null, no NaN ni 100",()=>{const x=caso();x.oferta.requisitos.forEach(r=>r.obligatorio=false);assert.equal(analizarOferta(x).coberturaObligatorios,null);});
+test("CA2 normaliza espacios y mayúsculas, no inventa equivalencias",()=>{const x=caso();x.oferta.requisitos[0].habilidad=" sql ";assert.equal(analizarOferta(x).coincidencias[0].habilidad,"sql");});
+test("CA2 perfil vacío produce brechas y cobertura cero",()=>{const x=caso();x.perfil=[];const r=analizarOferta(x);assert.equal(r.coincidencias.length,0);assert.equal(r.brechas.length,3);assert.equal(r.coberturaObligatorios,0);});
+test("CA1 rechaza evidencia vacía",()=>{const x=caso();x.perfil[0].evidencia=" ";assert.throws(()=>analizarOferta(x),TypeError);});
+test("CA1 rechaza ID de perfil duplicado",()=>{const x=caso();x.perfil[1].id="p1";assert.throws(()=>analizarOferta(x),TypeError);});
+test("CA1 rechaza requisitos duplicados tras normalizar",()=>{const x=caso();x.oferta.requisitos.push({habilidad:" sql ",obligatorio:false});assert.throws(()=>analizarOferta(x),TypeError);});
+test("CA1 obligatorio exige boolean, no string",()=>{const x=caso();x.oferta.requisitos[0].obligatorio="false";assert.throws(()=>analizarOferta(x),TypeError);});
+test("CA1 rechaza entrada ausente y oferta vacía",()=>{assert.throws(()=>analizarOferta(null),TypeError);const x=caso();x.oferta.requisitos=[];assert.throws(()=>analizarOferta(x),TypeError);});
+test("CA4 borrador solo usa texto de hechos con evidencia",()=>{const r=analizarOferta(caso());assert.equal(r.borrador,"[p1] Construí consultas para un proyecto académico.\n[p2] Analicé datos de práctica.");assert.equal(r.borrador.includes("AWS"),false);});
+test("CA5 no habilita envío aunque entrada lo solicite",()=>{const x=caso();x.enviar=true;const r=analizarOferta(x);assert.equal(r.envioDisponible,false);assert.equal(r.estado,"BORRADOR");});
+test("CA5 no modifica el objeto recibido",()=>{const x=caso(),antes=structuredClone(x);analizarOferta(x);assert.deepEqual(x,antes);});
+test("CA2 no equipara JavaScript con Java",()=>{const x=caso();x.perfil[0].habilidad="Java";x.oferta.requisitos[0].habilidad="JavaScript";assert.equal(analizarOferta(x).brechas.some(r=>r.habilidad==="JavaScript"),true);});
