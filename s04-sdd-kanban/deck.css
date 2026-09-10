@@ -21,3 +21,14 @@ body[data-layout-qa="fail"] #bar{background:#ea2261}
 .slide>h1,.slide>h2,.slide>.eyebrow,.slide>.lead,.slide>.flow,.slide>.two,.slide>.cards,.slide>.journey,.slide>.stage-grid,.slide>.incident,.slide>.risk-grid,.slide>.approval,.slide>.prompt-card,.slide>.acceptance,.slide>.clean,.slide>table,.slide>pre,.slide>.callout,.slide>.legend,.slide>ol,.slide>.workspace-map,.slide>.time,.slide>.bignum{margin-left:0;margin-right:0}
 .slide>.tag{align-self:flex-start}
 .foot span:last-child{flex:none;white-space:nowrap}
+.mk{opacity:.7}
+body[data-slide-dark="true"] #ctl button{color:var(--ps);border-color:var(--ps)}
+body[data-slide-dark="true"] #num,body[data-slide-dark="true"] #hint{color:#b5c2d5}
+/* S04 v2: zonas seguras y palabras largas del catálogo. */
+.slide.mesh:before{left:0;right:0}
+.slide h1{max-width:26ch;font-size:clamp(30px,4.2vw,58px)}
+.slide h2{max-width:32ch;font-size:clamp(27px,3.2vw,44px)}
+.slide pre,.slide li,.slide .card p{overflow-wrap:anywhere}
+.slide .card p{font-size:18px;line-height:1.5}
+.slide .clean li{font-size:20px;line-height:1.5}
+@media(max-width:800px){.slide{padding:62px 30px 90px}.slide .card p{font-size:16px;line-height:1.4}.slide .clean li{font-size:16px;line-height:1.4}.slide .cards{margin-top:22px}.slide .card{padding:14px}.slide .card .num{margin-bottom:7px}.slide .lead{font-size:16px;margin-top:18px}.slide pre{padding:14px;font-size:12px}.slide .eyebrow{font-size:10px;margin-bottom:16px}.foot{left:30px;right:30px;font-size:11px}}

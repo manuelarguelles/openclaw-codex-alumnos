@@ -1,278 +1,378 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sesión 4 · SDD + Kanban</title>
-  <link rel="stylesheet" href="deck.css">
-</head>
-<body>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S04 · Ciclo SDD completo + Superpowers + Kanban</title><link rel="stylesheet" href="deck.css"></head><body>
 <section class="slide dark mesh on">
-  <p class="eyebrow">Curso · Agentes AI con OpenClaw + Codex</p>
-  <h1>Una idea sin especificación es una intención que nadie más puede ejecutar</h1>
-  <p class="lead">Hoy convertimos una idea suelta en una especificación breve, la ordenamos en un tablero y la cerramos con evidencia.</p>
-  <span class="tag">Sesión 4 · SDD + Kanban · 3 h</span>
-  <div class="foot"><span>De la idea suelta a la tarea cerrada</span><span>01 / 31</span></div>
+
+<p class="eyebrow">S04 · SDD + Superpowers + Kanban</p>
+<h1>El agente de S03 puede recuperar archivos; ahora aprenderá a terminar con evidencia</h1>
+<p class="lead">Hoy evolucionamos la issue «Mejorar una regla de mi agente».</p><p class="lead">Resultado: spec, plan, implementación probada, revisión y cierre autorizado.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>1 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Promesa observable</p>
-  <h2>Al terminar, podrás especificar, ordenar y cerrar una tarea con evidencia</h2>
-  <div class="cards"><div class="card"><div class="num">01</div><h3>Especificar</h3><p>Objetivo, alcance y criterio de aceptación.</p></div><div class="card"><div class="num">02</div><h3>Ordenar</h3><p>La especificación entra a un tablero con columnas.</p></div><div class="card"><div class="num">03</div><h3>Cerrar</h3><p>Evidencia de cada paso antes de marcar Hecho.</p></div></div>
-  <div class="foot"><span>Resultado de la sesión</span><span>02 / 31</span></div>
+
+<p class="eyebrow">Promesa observable</p>
+<h2>Tres entregables harán visible el ciclo completo</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Diseño: decisiones, spec y criterios aprobados.</p></div><div class="card"><div class="num">02</div><p>Construcción: regla, validador y pruebas RED → GREEN.</p></div><div class="card"><div class="num">03</div><p>Entrega: revisión, ROADMAP y evidencia de cierre.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>2 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Problema del caso</p>
+<h2>Una regla vaga permite declarar éxito sin demostrarlo</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>ANTES: «Trabaja bien y avísame cuando termines».</p></div><div class="card"><div class="num">02</div><p>Falla observable: no define qué hacer si faltan pruebas.</p></div><div class="card"><div class="num">03</div><p>DESPUÉS: cada criterio exige evidencia y revisión.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>3 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Teoría</p>
+<h2>SDD convierte una intención en decisiones comprobables</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Spec-Driven Development = desarrollo guiado por especificaciones.</p></div><div class="card"><div class="num">02</div><p>La spec define comportamiento, alcance y aceptación.</p></div><div class="card"><div class="num">03</div><p>El plan organiza cómo construirlo; los tests verifican casos.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>4 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Puente desde S03</p>
-  <h2>El historial ya se puede recuperar; pero nadie sabe si tu próximo cambio va a funcionar</h2>
-  <div class="cards"><div class="card"><div class="num">SIN OBJETIVO</div><h3>«Mejora mi agente»</h3><p>No dice qué resuelve ni cómo se comprueba.</p></div><div class="card"><div class="num">SIN ALCANCE</div><h3>Todo puede cambiar</h3><p>Un cambio pequeño se vuelve reescribir todo.</p></div><div class="card"><div class="num">SIN EVIDENCIA</div><h3>«Ya quedó»</h3><p>Nadie puede comprobarlo, ni tú en una semana.</p></div></div>
-  <div class="foot"><span>Situación → complicación</span><span>03 / 31</span></div>
+
+<p class="eyebrow">Ciclo completo</p>
+<h2>Cada fase produce una evidencia que habilita la siguiente</h2>
+<div class="flow"><span class="node">Idea → brainstorming → spec → plan</span><span class="arrow">→</span><span class="node">Build → review → verificación → cierre</span><span class="arrow">→</span><span class="node">Si cambia el alcance, se revisan spec y plan antes de seguir.</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>5 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Mapa de la sesión</p>
-  <h2>Cuatro pasos convierten una idea suelta en una tarea que otra persona puede verificar</h2>
-  <div class="journey"><div><span>01</span><b>Especificar</b><small>objetivo y alcance</small></div><div><span>02</span><b>Ordenar</b><small>tarjeta en el tablero</small></div><div><span>03</span><b>Ejecutar</b><small>pasos con evidencia</small></div><div><span>04</span><b>Cerrar</b><small>criterio cumplido</small></div></div>
-  <div class="foot"><span>Historia completa de hoy</span><span>04 / 31</span></div>
-</section>
 
-<section class="slide dark mesh sep">
-  <p class="bignum">01</p>
-  <h2>Una especificación breve convierte una idea en algo que otra persona puede ejecutar</h2>
-  <p class="time">0:10–0:45 · de la idea a la especificación</p>
-  <ol><li>Ver qué le falta a una idea suelta</li><li>Nombrar las tres partes mínimas</li><li>Partir el trabajo en pasos pequeños</li><li>Reescribir la issue de S03 como especificación</li></ol>
-  <div class="foot"><span>Bloque 1 de 4</span><span>05 / 31</span></div>
+<p class="eyebrow">Diseño y control</p>
+<h2>Aprobar el diseño temprano evita corregir supuestos al final</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Brainstorming aclara problema y alternativas.</p></div><div class="card"><div class="num">02</div><p>La persona aprueba decisiones y alcance.</p></div><div class="card"><div class="num">03</div><p>Un test verde no corrige una especificación equivocada.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>6 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">El problema de «arreglar esto»</p>
-  <h2>«Arreglar esto» no alcanza porque no dice qué logra, hasta dónde ni cómo se comprueba</h2>
-  <div class="two"><div><h3>Idea suelta</h3><ul><li>«Mejora mi agente»</li><li>«Que responda mejor»</li><li>«Arregla lo de ayer»</li></ul></div><div><h3>Lo que le falta</h3><ul><li>Un objetivo en una oración</li><li>Un límite de qué sí y qué no</li><li>Una forma observable de comprobarlo</li></ul></div></div>
-  <div class="foot"><span>Nombrar el hueco antes de llenarlo</span><span>06 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Qué es Superpowers</p>
+<h2>Superpowers aporta método mediante skills que el agente carga</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Paquete de metodología para agentes; no es un modelo.</p></div><div class="card"><div class="num">02</div><p>Cada SKILL.md indica cuándo usarla y cómo proceder.</p></div><div class="card"><div class="num">03</div><p>Versión examinada: 6.3.0; catálogo de 14 skills.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>7 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Dónde vive la instalación</p>
+<h2>Telegram, OpenClaw y Codex cumplen funciones distintas</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Telegram: conversación con la persona.</p></div><div class="card"><div class="num">02</div><p>OpenClaw: canal y ejecución en un entorno.</p></div><div class="card"><div class="num">03</div><p>Codex: runtime que debe descubrir las skills instaladas.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>8 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Especificación breve</p>
-  <h2>Tres partes mínimas bastan para que otra persona ejecute tu idea sin preguntarte nada</h2>
-  <div class="cards"><div class="card"><div class="num">OBJETIVO</div><h3>Una oración</h3><p>Qué resuelve, dicho una sola vez.</p></div><div class="card"><div class="num">ALCANCE</div><h3>Qué sí, qué no</h3><p>Evita que un cambio pequeño se vuelva infinito.</p></div><div class="card"><div class="num">CRITERIO</div><h3>Cómo se comprueba</h3><p>Una condición observable, no una sensación.</p></div></div>
-  <div class="foot"><span>Sin estas tres partes, es una intención</span><span>07 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Compatibilidad</p>
+<h2>Instalar en una aplicación no prueba disponibilidad en otro proceso</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Comprueba cuenta, runtime y carpeta del snapshot.</p></div><div class="card"><div class="num">02</div><p>Pide nombre y ruta de una skill en la sesión real.</p></div><div class="card"><div class="num">03</div><p>Si OpenClaw no la expone, practica en Codex y registra el límite.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>9 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Pasos pequeños</p>
-  <h2>Un paso cabe en pocos minutos y termina en algo comprobable, no en «sigue trabajando»</h2>
-  <div class="flow"><span class="node">paso pequeño</span><span class="arrow">→</span><span class="node">chequeo contra el criterio</span><span class="arrow">→</span><span class="node hi">evidencia</span><span class="arrow">→</span><span class="node">siguiente paso</span></div>
-  <p class="lead">Un paso grande esconde errores porque nadie lo revisa hasta que corregirlo ya resulta costoso.</p>
-  <div class="foot"><span>El tamaño del paso es una decisión</span><span>08 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Instalación guiada</p>
+<h2>La instalación vigente se hace desde el catálogo de plugins</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Codex App: Plugins → Coding → Superpowers → +.</p></div><div class="card"><div class="num">02</div><p>Codex CLI: /plugins → superpowers → Install Plugin.</p></div><div class="card"><div class="num">03</div><p>Abre una sesión nueva y comprueba activación.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>10 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Demo de instalación</p>
+<h2>La CLI permite comprobar e instalar el plugin identificado</h2>
+<pre>codex --version
+codex plugin list --available --json
+codex plugin add superpowers@openai-curated-remote --json
+codex plugin list --json</pre><p class="lead">Usa el identificador que exista en tu catálogo. Comandos comprobados en CLI 0.154.0.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>11 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Checkpoint de instalación</p>
+<h2>Una skill activa debe producir conducta observable</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>«Carga brainstorming y dime su ruta. Quiero mejorar una regla del agente; aclara el problema antes de implementar».</p></div><div class="card"><div class="num">02</div><p>Comprueba lectura, pregunta pertinente y propuesta.</p></div><div class="card"><div class="num">03</div><p>Guarda runtime, versión y respuesta; no basta «sí, está instalado».</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>12 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Demo</p>
-  <h2>La issue de S03 se reescribe como especificación antes de tocar cualquier archivo</h2>
-  <pre>Lee la issue #N de mi-agente-infra y resúmela en una oración.
-
-Reescribe el cuerpo de la issue #N como especificación breve con tres
-secciones: Objetivo, Alcance y Criterio de aceptación. No la cierres ni la
-publiques todavía; muéstrame el texto antes de guardarlo.</pre>
-  <p class="lead">Tras aprobar el texto, el agente crea <code>especificacion.md</code> y ejecuta <code>gh issue edit N --body-file ./especificacion.md</code>.</p>
-  <div class="foot"><span>La idea real de S03, no una inventada</span><span>09 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Anatomía de Superpowers</p>
+<h2>El paquete contiene más que los nombres de sus skills</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>14 skills y sus referencias/scripts de apoyo.</p></div><div class="card"><div class="num">02</div><p>Manifiestos por entorno, hooks, tests, documentación y licencia MIT.</p></div><div class="card"><div class="num">03</div><p>Los hooks varían: el manifiesto Codex revisado no configura hooks.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>13 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Checkpoint 1</p>
-  <h2>Especificaste bien cuando puedes señalar las tres partes en la idea de otra persona</h2>
-  <table><tr><th>Pregunta</th><th>Respuesta observable</th></tr><tr><td>¿Cuál es el objetivo?</td><td>Cabe en una oración, sin «y también».</td></tr><tr><td>¿Cuál es el alcance?</td><td>Puede decir qué queda explícitamente afuera.</td></tr><tr><td>¿Cuál es el criterio?</td><td>Describe algo observable, no una impresión.</td></tr></table>
-  <div class="foot"><span>Explicar antes de ejecutar</span><span>10 / 31</span></div>
-</section>
-
-<section class="slide dark mesh sep">
-  <p class="bignum">02</p>
-  <h2>El tablero convierte la especificación en trabajo visible para cualquiera</h2>
-  <p class="time">0:50–1:35 · columnas, tarjetas y estado real</p>
-  <ol><li>Ver qué resuelve un tablero</li><li>Definir cuatro columnas mínimas</li><li>Crear el tablero y agregar la tarjeta</li><li>Mover la tarjeta reflejando el estado real</li></ol>
-  <div class="foot"><span>Bloque 2 de 4</span><span>11 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Catálogo 1 de 4</p>
+<h2>Cuatro skills preparan una implementación revisable</h2>
+<ul class="clean"><li>using-superpowers: elegir y cargar skills.</li><li>brainstorming: aclarar y aprobar diseño.</li><li>writing-plans: convertir diseño en tareas.</li><li>using-git-worktrees: aislar la ejecución.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>14 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Por qué un tablero</p>
-  <a class="mk" href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" target="_blank" rel="noopener" aria-label="Fuente externa: about Projects">★</a>
-  <h2>Un tablero hace visible el estado real para cualquiera, no solo para quien lo escribió</h2>
-  <div class="two"><div><h3>Lista mental</h3><p>Vive en tu cabeza o en un chat disperso. Nadie más puede verificarla sin preguntarte.</p></div><div><h3>Tablero visible</h3><p>Cualquiera puede abrir la vista y ver en qué columna está cada tarea, sin interrumpirte.</p></div></div>
-  <div class="foot"><span>Fuente: GitHub Docs · About Projects</span><span>12 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Catálogo 2 de 4</p>
+<h2>Tres skills organizan ejecución y paralelismo</h2>
+<ul class="clean"><li>executing-plans: ejecutar tareas con checkpoints.</li><li>subagent-driven-development: implementar y revisar por tarea.</li><li>dispatching-parallel-agents: repartir trabajo independiente.</li><li>SDD del curso ≠ nombre de la skill subagent-driven-development.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>15 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Cuatro etapas</p>
-  <a class="mk" href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects" target="_blank" rel="noopener" aria-label="Fuente externa: quickstart de Projects">★</a>
-  <h2>Un campo Etapa con cuatro valores hace inequívoco el estado de cualquier tarea</h2>
-  <div class="journey"><div><span>1</span><b>Por hacer</b><small>especificada, sin empezar</small></div><div><span>2</span><b>Haciendo</b><small>en pasos con evidencia</small></div><div><span>3</span><b>Revisión</b><small>evidencia completa, sin cerrar</small></div><div><span>4</span><b>Hecho</b><small>criterio cumplido y cerrada</small></div></div>
-  <div class="foot"><span>En la vista web: agrupar por Etapa</span><span>13 / 31</span></div>
-</section>
-
-<section class="slide">
-  <p class="eyebrow">Crear el tablero</p>
-  <a class="mk" href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener" aria-label="Fuente externa: gh project field-create">★</a>
-  <h2>El proyecto y el campo Etapa se crean por separado para obtener cuatro estados reales</h2>
-  <pre>gh project create --owner @me --title "Curso OpenClaw+Codex" --format json</pre>
-  <pre>gh project field-create &lt;numero&gt; --owner @me --name Etapa \
-  --data-type SINGLE_SELECT --single-select-options "Por hacer,Haciendo,Revisión,Hecho" --format json</pre>
-  <p class="lead">El proyecto nuevo solo trae Todo, In Progress y Done; el segundo comando define las etapas del curso.</p>
-  <div class="foot"><span>Fuente: GitHub CLI · gh project field-create</span><span>14 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Catálogo 3 de 4</p>
+<h2>Tres skills hacen que los errores produzcan evidencia</h2>
+<ul class="clean"><li>test-driven-development: RED → GREEN → REFACTOR.</li><li>systematic-debugging: causa → hipótesis → prueba → corrección.</li><li>verification-before-completion: comprobación nueva antes de afirmar éxito.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>16 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Agregar la tarjeta</p>
-  <a class="mk" href="https://cli.github.com/manual/gh_project_item-add" target="_blank" rel="noopener" aria-label="Fuente externa: gh project item-add">★</a>
-  <h2>La especificación entra al tablero como tarjeta, no como una copia del texto</h2>
-  <pre>gh project item-add &lt;numero-proyecto&gt; --owner @me \
-  --url https://github.com/TU_USUARIO/mi-agente-infra/issues/N --format json</pre>
-  <p class="lead">La salida devuelve el ITEM_ID. La tarjeta enlaza la issue; el campo Etapa vive en el proyecto.</p>
-  <div class="foot"><span>Fuente: GitHub CLI · gh project item-add</span><span>15 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Catálogo 4 de 4</p>
+<h2>Cuatro skills completan revisión, entrega y reutilización</h2>
+<ul class="clean"><li>requesting-code-review: solicitar revisión con contexto.</li><li>receiving-code-review: comprobar y responder hallazgos.</li><li>finishing-a-development-branch: decidir integración.</li><li>writing-skills: crear y probar skills; profundizamos en S06.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>17 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Antes de mover nada</p>
-  <h2>Cada movimiento usa cuatro identificadores que salen de las respuestas JSON</h2>
-  <pre>gh project field-list &lt;numero-proyecto&gt; --owner @me --format json</pre>
-  <table><tr><th>Dato</th><th>Dónde aparece</th></tr><tr><td>PVT_ID</td><td>project create</td></tr><tr><td>ITEM_ID</td><td>item-add</td></tr><tr><td>FIELD_ID de Etapa</td><td>field-list</td></tr><tr><td>OPTION_ID de destino</td><td>opciones de field-list</td></tr></table>
-  <div class="foot"><span>ID del proyecto + ítem + campo + opción</span><span>16 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Alcance pedagógico</p>
+<h2>El método escala según la tarea; hoy recorreremos el ciclo documental completo</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Superpowers 6.3.0 distingue spike, bounded y architectural.</p></div><div class="card"><div class="num">02</div><p>Un cambio pequeño puede usar una ruta ligera.</p></div><div class="card"><div class="num">03</div><p>Hoy pedimos explícitamente spec y plan para practicar el ciclo completo.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>18 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Caso · idea y alternativas</p>
+<h2>El brainstorming transforma «trabaja bien» en una decisión concreta</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>¿Qué debe significar terminado? Todos los criterios probados.</p></div><div class="card"><div class="num">02</div><p>Opciones: recordarlo por prompt, regla sola o regla + validador.</p></div><div class="card"><div class="num">03</div><p>Elegimos regla + reporte verificable; conservamos identidad y memoria.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>19 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Caso · diseño</p>
+<h2>La spec delimita qué cambiar y qué conservar</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>INCLUYE: regla, reporte, validador local y pruebas.</p></div><div class="card"><div class="num">02</div><p>EXCLUYE: gateway, credenciales y cierre automático.</p></div><div class="card"><div class="num">03</div><p>La persona aprueba el alcance antes de planificar.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>20 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Estado real, no deseado</p>
-  <h2>Una tarjeta no salta de Por hacer a Hecho sin pasar por Haciendo y Revisión</h2>
-  <div class="stage-grid"><div><span>1</span><b>Por hacer</b><small>todavía sin pasos</small></div><div class="active"><span>2</span><b>Haciendo</b><small>primer paso en curso</small></div><div><span>3</span><b>Revisión</b><small>evidencia acumulada</small></div><div><span>4</span><b>Hecho</b><small>criterio comprobado</small></div></div>
-  <p class="callout">Mover la tarjeta antes de tiempo no adelanta el trabajo: solo esconde que todavía no existe evidencia.</p>
-  <div class="foot"><span>El tablero describe, no promete</span><span>17 / 31</span></div>
+
+<p class="eyebrow">Caso · contrato</p>
+<h2>Un contrato conecta las entradas con un resultado verificable</h2>
+<div class="flow"><span class="node">Entrada: criterios, evidencias, revisión y autorización.</span><span class="arrow">→</span><span class="node">Salida: Hecho o Revisión, siempre con razones.</span><span class="arrow">→</span><span class="node">evaluarCierre no escribe archivos ni mueve tarjetas.</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>21 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Demo</p>
-  <a class="mk" href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener" aria-label="Fuente externa: gh project item-edit">★</a>
-  <h2>Mover la tarjeta a Haciendo se pide por chat o se arrastra en el navegador</h2>
-  <pre>gh project item-edit --project-id &lt;PVT_ID&gt; --id &lt;ITEM_ID&gt; \
-  --field-id &lt;FIELD_ID&gt; --single-select-option-id &lt;OPTION_ID&gt;</pre>
-  <p class="lead">Ambas formas son válidas; lo único que importa es que la columna coincida con el estado real del trabajo.</p>
-  <div class="foot"><span>Fuente: GitHub CLI · gh project item-edit</span><span>18 / 31</span></div>
+
+<p class="eyebrow">Caso · aceptación</p>
+<h2>Los criterios convierten el resultado esperado en pruebas</h2>
+<ul class="clean"><li>CA1: completo y autorizado → Hecho.</li><li>CA2: evidencia ausente o fallida → Revisión.</li><li>CA3–CA4: revisión, permiso y tipos válidos.</li><li>CA5: agente usa evidencia real y respeta autorización.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>22 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Límite importante</p>
+<h2>La referencia de evidencia debe comprobarse fuera del validador</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Un campo que dice PASS puede contener una afirmación falsa.</p></div><div class="card"><div class="num">02</div><p>El validador revisa estructura; la persona abre la fuente.</p></div><div class="card"><div class="num">03</div><p>Las pruebas unitarias no garantizan obediencia del modelo.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>23 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Checkpoint 1</p>
+<h2>Tu primera práctica termina con una spec aprobada</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>«Usa brainstorming sobre mi issue de S03. Propón alternativas».</p></div><div class="card"><div class="num">02</div><p>«Redacta objetivo, alcance, contrato, errores y criterios».</p></div><div class="card"><div class="num">03</div><p>Guardar spec.md; leer y aprobar antes del plan.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>24 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Checkpoint 2</p>
-  <h2>El tablero está bien usado cuando cada etapa coincide con lo que ya es verdad</h2>
-  <ul class="clean"><li>El campo Etapa tiene las cuatro opciones mínimas.</li><li>La issue de S03 aparece como tarjeta en el proyecto.</li><li>La tarjeta está en «Haciendo» solo porque el primer paso ya empezó.</li><li>La vista web está agrupada por Etapa si quieres verla como columnas.</li></ul>
-  <div class="foot"><span>Gate de trazabilidad</span><span>19 / 31</span></div>
-</section>
-
-<section class="slide dark mesh sep">
-  <p class="bignum">03</p>
-  <h2>Un paso pequeño con evidencia vale más que un cambio grande sin ella</h2>
-  <p class="time">1:40–2:25 · el ciclo de la tarea y sus frenos</p>
-  <ol><li>Ver el ciclo completo de una tarea</li><li>Distinguir evidencia de afirmación</li><li>Ejecutar el primer paso y comentarlo</li><li>Reconocer los cuatro frenos</li></ol>
-  <div class="foot"><span>Bloque 3 de 4</span><span>20 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Caso · writing-plans</p>
+<h2>Un plan útil asigna archivos, acciones y pruebas por tarea</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>T1: tests y validar-cierre.mjs → CA1–CA4.</p></div><div class="card"><div class="num">02</div><p>T2: regla AGENTS.md y ensayo real → CA5.</p></div><div class="card"><div class="num">03</div><p>T3: review, regresión y ROADMAP → entrega.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>25 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">El ciclo de una tarea</p>
-  <h2>Cada paso se ejecuta, se compara contra el criterio y deja evidencia antes del siguiente</h2>
-  <div class="flow"><span class="node">paso pequeño</span><span class="arrow">→</span><span class="node">comparar con el criterio</span><span class="arrow">→</span><span class="node hi">dejar evidencia</span><span class="arrow">→</span><span class="node">solo entonces, el siguiente paso</span></div>
-  <p class="lead">Ninguna parte del ciclo se salta: sin evidencia comentada, el siguiente paso no empieza.</p>
-  <div class="foot"><span>El mismo ciclo para cualquier tarea futura</span><span>21 / 31</span></div>
+<a class="mk" href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Aislamiento</p>
+<h2>Un worktree permite experimentar sin pisar la carpeta activa</h2>
+<pre>git status --short
+git worktree add ../mi-agente-s04 -b s04-regla</pre><p class="lead">Primero comprueba estado y rutas. Un worktree es otra carpeta de la misma historia Git.</p><p class="lead">No es una sandbox de seguridad; sigue usando un snapshot sanitizado.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>26 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Teoría · Kanban</p>
+<h2>Kanban hace visible el estado y limita el trabajo abierto</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Por hacer → Haciendo → Revisión → Hecho.</p></div><div class="card"><div class="num">02</div><p>WIP = máximo de tarjetas activas; hoy Haciendo ≤ 1.</p></div><div class="card"><div class="num">03</div><p>Si la primera está bloqueada, no abrir otra sin resolver o replanificar.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>27 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Fuente de verdad</p>
+<h2>ROADMAP.md conserva la decisión y Projects la muestra</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>ROADMAP.md: tarjeta, etapa, criterios y evidencia.</p></div><div class="card"><div class="num">02</div><p>Es la fuente de verdad del ejercicio; Projects es espejo.</p></div><div class="card"><div class="num">03</div><p>Actualizar ambos en cada checkpoint evita estados contradictorios.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>28 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Qué cuenta como evidencia</p>
-  <h2>«Ya lo hice» no es evidencia; un antes/después comparable sí lo es</h2>
-  <div class="two"><div><h3>Evidencia real</h3><ul><li>Un diff del archivo cambiado</li><li>Una respuesta comparada antes y después</li><li>Un comando y la salida exacta que devolvió</li></ul></div><div><h3>No es evidencia</h3><ul><li>«Ya quedó»</li><li>«Lo probé y funciona»</li><li>Una captura sin fecha ni contexto</li></ul></div></div>
-  <div class="foot"><span>Comprobable por otra persona</span><span>22 / 31</span></div>
+<a class="mk" href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Demo · tablero</p>
+<h2>GitHub Projects necesita el campo Etapa para nuestras cuatro columnas</h2>
+<pre>gh auth refresh -s project
+gh project create --owner @me --title &quot;Curso S04&quot; --format json</pre><p class="lead">Luego crea Etapa con field-create; instrucciones completas en la guía.</p><p class="lead">Status por defecto solo trae Todo, In Progress y Done.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>29 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Demo</p>
-  <h2>El primer paso se ejecuta, se compara con el criterio y queda comentado en la issue</h2>
-  <pre>Ejecuta el primer paso de la especificación de la issue #N. Antes de
-guardar cualquier cambio, muéstrame qué vas a modificar y por qué cumple
-ese paso. Después de aplicarlo, compara el resultado con el criterio de
-aceptación y dime si ya se cumple o falta otro paso.</pre>
-  <pre>gh issue comment N --body "Paso 1: &lt;qué cambió&gt; · Evidencia: &lt;diff&gt; · Falta: &lt;si aplica&gt;"</pre>
-  <div class="foot"><span>Rastro verificable, paso a paso</span><span>23 / 31</span></div>
+<a class="mk" href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Demo · cambios de estado</p>
+<h2>Los identificadores permiten mover la tarjeta correcta</h2>
+<ul class="clean"><li>project item-add devuelve ITEM_ID.</li><li>project field-list devuelve FIELD_ID y OPTION_ID.</li><li>project item-edit usa esos IDs y el PVT_ID del proyecto.</li><li>Verificar ROADMAP y vista agrupada por Etapa.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>30 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Los cuatro frenos</p>
-  <h2>Cuatro señales detienen al agente antes de seguir, aunque el pedido suene simple</h2>
-  <div class="incident"><div><span>1</span><b>Irreversible</b><small>cerrar, publicar o borrar</small></div><div><span>2</span><b>Sensible</b><small>credenciales o datos personales</small></div><div><span>3</span><b>Fuera de alcance</b><small>otro repo o issue</small></div><div><span>4</span><b>Especificación rota</b><small>criterio poco claro</small></div></div>
-  <p class="callout">Ante cualquiera de los cuatro, el agente muestra el motivo y espera; no improvisa un criterio propio.</p>
-  <div class="foot"><span>Frenos, no excepciones</span><span>24 / 31</span></div>
+
+<p class="eyebrow">Checkpoint 2</p>
+<h2>El plan empieza cuando hay aislamiento y WIP disponible</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Spec y plan aprobados, carpeta de práctica identificada.</p></div><div class="card"><div class="num">02</div><p>Mover una sola tarjeta a Haciendo en ROADMAP y Projects.</p></div><div class="card"><div class="num">03</div><p>Pedir al agente ejecutar T1; revisar cada evidencia.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>31 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Teoría · TDD</p>
+<h2>TDD exige ver fallar la prueba antes de implementar</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>RED: una expectativa válida falla por comportamiento faltante.</p></div><div class="card"><div class="num">02</div><p>GREEN: cambio mínimo que cumple el contrato.</p></div><div class="card"><div class="num">03</div><p>REFACTOR: mejorar estructura sin cambiar comportamiento.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>32 / 46</span></div>
 </section>
 
 <section class="slide dark">
-  <p class="eyebrow">Contrato de delegación</p>
-  <h2>El agente ejecuta y deja evidencia; la persona revisa antes de autorizar el siguiente paso</h2>
-  <div class="approval"><div><b>Agente</b><ul><li>ejecuta el paso</li><li>compara con el criterio</li><li>comenta evidencia</li><li>se detiene ante un freno</li></ul></div><span class="handoff">ESPERA</span><div><b>Persona</b><ul><li>lee la evidencia</li><li>decide si alcanza</li><li>autoriza el siguiente paso</li><li>autoriza mover a Revisión</li></ul></div></div>
-  <div class="foot"><span>Automatizar sin perder control</span><span>25 / 31</span></div>
-</section>
 
-<section class="slide dark">
-  <p class="eyebrow">Checkpoint 3</p>
-  <h2>Un paso está listo cuando su evidencia responde exactamente al criterio de aceptación</h2>
-  <table><tr><th>Pregunta</th><th>Respuesta observable</th></tr><tr><td>¿Qué cambió?</td><td>Está descrito en el comentario del paso.</td></tr><tr><td>¿Cómo se comprobó?</td><td>Hay un diff, comparación o salida de comando.</td></tr><tr><td>¿Falta algo?</td><td>El comentario lo dice explícitamente o no.</td></tr></table>
-  <div class="foot"><span>Evidencia antes de avanzar</span><span>26 / 31</span></div>
-</section>
-
-<section class="slide dark mesh sep">
-  <p class="bignum">04</p>
-  <h2>Cerrar con método es demostrar el criterio, no declararlo</h2>
-  <p class="time">2:25–3:00 · revisión, cierre y tarea-puente</p>
-  <ol><li>Comparar especificación contra evidencia</li><li>Mover la tarjeta a Hecho</li><li>Cerrar la issue citando el criterio</li><li>Dejar la próxima idea especificada</li></ol>
-  <div class="foot"><span>Bloque 4 de 4</span><span>27 / 31</span></div>
+<p class="eyebrow">Caso · RED</p>
+<h2>El starter falla porque aún no reconoce un cierre válido</h2>
+<pre>node --test tests/cierre.test.mjs</pre><p class="lead">Esperado Hecho; obtenido Revisión.</p><p class="lead">12 tests: 11 PASS y 1 FAIL. El fallo positivo impide una función que siempre rechace.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>33 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Revisión final</p>
-  <h2>La especificación se relee completa antes de decidir si el criterio ya se cumple</h2>
-  <div class="two"><div><h3>Antes</h3><p>Objetivo, alcance y criterio escritos al inicio del bloque 1.</p></div><div><h3>Después</h3><p>Los comentarios de evidencia acumulados durante el bloque 3.</p></div></div>
-  <p class="lead">Si alguna parte del criterio no tiene evidencia, la tarea sigue en Revisión, no en Hecho.</p>
-  <div class="foot"><span>Comparar, no suponer</span><span>28 / 31</span></div>
-</section>
 
-<section class="slide dark">
-  <p class="eyebrow">Cierre</p>
-  <a class="mk" href="https://cli.github.com/manual/gh_issue_close" target="_blank" rel="noopener" aria-label="Fuente externa: gh issue close">★</a>
-  <h2>La tarjeta pasa a Hecho y la issue se cierra citando la evidencia, no solo «listo»</h2>
-  <pre>gh project item-edit --project-id &lt;PVT_ID&gt; --id &lt;ITEM_ID&gt; \
-  --field-id &lt;FIELD_ID&gt; --single-select-option-id &lt;OPTION_ID_HECHO&gt;
-gh issue close N --reason completed \
-  --comment "Criterio de aceptación cumplido: &lt;evidencia final&gt;"</pre>
-  <div class="foot"><span>Fuente: GitHub CLI · gh issue close</span><span>29 / 31</span></div>
+<p class="eyebrow">Caso · GREEN</p>
+<h2>La implementación mínima exige evidencia por cada criterio</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Criterios únicos y no vacíos; una evidencia PASS por ID.</p></div><div class="card"><div class="num">02</div><p>Referencia no vacía, revisión APROBADA y autorización === true.</p></div><div class="card"><div class="num">03</div><p>La solución docente obtiene 12 PASS; el alumno construye la suya.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>34 / 46</span></div>
 </section>
 
 <section class="slide">
-  <p class="eyebrow">Criterio de aceptación</p>
-  <h2>La sesión termina con cinco evidencias, no con la frase “ya quedó”</h2>
-  <div class="acceptance"><div><span>01</span><p>Especificación con las tres partes</p></div><div><span>02</span><p>Tarjeta visible en el tablero</p></div><div><span>03</span><p>Dos comentarios de evidencia</p></div><div><span>04</span><p>Tarjeta movida hasta Hecho</p></div><div><span>05</span><p>Issue cerrada citando el criterio</p></div></div>
-  <p class="lead">Ningún paso irreversible se ejecuta sin evidencia previa.</p>
-  <div class="foot"><span>Definición de terminado</span><span>30 / 31</span></div>
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Caso · debugging</p>
+<h2>Una lista vacía revela un error que parece correcto</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Hipótesis: every() devuelve true para [].</p></div><div class="card"><div class="num">02</div><p>Reproducir antes de corregir; localizar la guarda ausente.</p></div><div class="card"><div class="num">03</div><p>Exigir al menos un criterio y repetir el caso y toda la suite.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>35 / 46</span></div>
 </section>
 
-<section class="slide dark mesh">
-  <p class="eyebrow">Puente a S05</p>
-  <h2>Ahora que cada tarea se especifica y se cierra con evidencia, la próxima sesión busca fuentes con el mismo rigor</h2>
-  <div class="two"><div><h3>Segunda tarea especificada</h3><p>Elige una mejora nueva y escribe su especificación antes de pedir que se ejecute.</p></div><div><h3>Tablero vivo</h3><p>Guarda la URL del tablero y de la issue cerrada en tu entrega S04.</p></div></div>
-  <span class="tag">Siguiente: Buscador académico</span>
-  <div class="foot"><span>El método se repite, cambia el tema</span><span>31 / 31</span></div>
+<section class="slide">
+
+<p class="eyebrow">Caso · REFACTOR</p>
+<h2>Una regresión comprueba que el arreglo no rompió lo que funcionaba</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Conservar los 12 casos mientras simplificas la función.</p></div><div class="card"><div class="num">02</div><p>Probar false frente a &quot;false&quot;, evidencia duplicada y datos inválidos.</p></div><div class="card"><div class="num">03</div><p>La evidencia debe corresponder al código que se entregará.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>36 / 46</span></div>
 </section>
 
-<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas">
-  <div class="refs-head"><div><span>Referencias externas</span><h2>Fuentes oficiales de la sesión</h2></div><button id="refsClose" aria-label="Cerrar referencias">×</button></div>
-  <ol>
-    <li><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects" target="_blank" rel="noopener"><b>Slide 12</b> · Qué es un tablero de GitHub Projects</a></li>
-    <li><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects" target="_blank" rel="noopener"><b>Slide 13</b> · Quickstart de Projects</a></li>
-    <li><a href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener"><b>Slide 14</b> · Crear el campo Etapa</a></li>
-    <li><a href="https://cli.github.com/manual/gh_project_item-add" target="_blank" rel="noopener"><b>Slide 15</b> · Agregar una tarjeta</a></li>
-    <li><a href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener"><b>Slide 18</b> · Mover una tarjeta de columna</a></li>
-    <li><a href="https://cli.github.com/manual/gh_issue_close" target="_blank" rel="noopener"><b>Slide 29</b> · Cerrar una issue con evidencia</a></li>
-  </ol>
-</aside>
+<section class="slide dark">
+
+<p class="eyebrow">Caso · AGENTS.md</p>
+<h2>La regla persistente obliga a explicar el estado real</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Antes de terminar: criterio → comando → salida → referencia.</p></div><div class="card"><div class="num">02</div><p>Si falla: PARCIAL, causa conocida y siguiente paso.</p></div><div class="card"><div class="num">03</div><p>No inventar aprobación; repetir pruebas tras cambios.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>37 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Checkpoint 3 · runtime</p>
+<h2>La conducta del agente se ensaya con casos distintos</h2>
+<ul class="clean"><li>Tarea permitida: ejecutar y mostrar evidencia.</li><li>Prueba fallida: reportar parcial, conservar Revisión.</li><li>Criterio ambiguo o cierre no autorizado: preguntar o esperar.</li><li>Registrar respuestas reales; una salida ilustrativa no es una prueba.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>38 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Workflows de agentes</p>
+<h2>Paralelizar sirve cuando las tareas pueden resolverse por separado</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Fan-out: dos revisiones independientes sobre una versión congelada.</p></div><div class="card"><div class="num">02</div><p>Pipeline: spec → plan → implementación; cada paso depende del anterior.</p></div><div class="card"><div class="num">03</div><p>No asignar dos editores al mismo archivo ni implementar una spec sin aprobar.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>39 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Demo conceptual y aplicada</p>
+<h2>La ejecución con subagentes separa implementación y revisión</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Implementador recibe tarea, spec, archivos y pruebas.</p></div><div class="card"><div class="num">02</div><p>Revisor 1 comprueba cumplimiento; revisor 2, calidad.</p></div><div class="card"><div class="num">03</div><p>Sin herramientas de subagentes, ejecutar secuencialmente con los mismos checkpoints.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>40 / 46</span></div>
+</section>
+
+<section class="slide dark">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Caso · requesting-code-review</p>
+<h2>La revisión debe comprobar primero la promesa y luego la calidad</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>¿Cada CA tiene implementación y evidencia?</p></div><div class="card"><div class="num">02</div><p>¿El código maneja entradas inválidas y evita efectos externos?</p></div><div class="card"><div class="num">03</div><p>Entregar spec, plan, diff, tests y limitaciones al revisor.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>41 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Caso · receiving-code-review</p>
+<h2>El feedback se reproduce antes de aceptarse como verdad</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Hallazgo válido: lista vacía; reproducir, corregir y verificar.</p></div><div class="card"><div class="num">02</div><p>Cambio fuera de alcance: base de datos; discutir contra la spec.</p></div><div class="card"><div class="num">03</div><p>Guardar hallazgo, decisión y evidencia de resolución.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>42 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Verificación final</p>
+<h2>Terminado exige una comprobación nueva y una decisión humana</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Ejecutar suite completa y abrir referencias.</p></div><div class="card"><div class="num">02</div><p>Comparar CA1–CA5 contra pruebas locales y runtime.</p></div><div class="card"><div class="num">03</div><p>Solicitar aprobación para integrar y cerrar; nunca copiar una aprobación de ejemplo.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>43 / 46</span></div>
+</section>
+
+<section class="slide">
+<a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
+<p class="eyebrow">Entrega con Superpowers</p>
+<h2>Cerrar la rama es una decisión distinta de pasar los tests</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>finishing-a-development-branch presenta merge, PR o conservar rama.</p></div><div class="card"><div class="num">02</div><p>La persona decide qué publicar; revisar diff y archivos.</p></div><div class="card"><div class="num">03</div><p>Después actualizar ROADMAP, Projects y comentario de la issue.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>44 / 46</span></div>
+</section>
+
+<section class="slide dark">
+
+<p class="eyebrow">Checkpoint 4</p>
+<h2>La entrega conserva toda la cadena desde la idea hasta el cierre</h2>
+<ul class="clean"><li>brainstorm.md + spec.md + plan.md.</li><li>Regla, tests y evidencia RED/GREEN/runtime.</li><li>review.md + ROADMAP.md + issue y decisión final.</li><li>Si falta algo, registrar Revisión y el pendiente.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>45 / 46</span></div>
+</section>
+
+<section class="slide">
+
+<p class="eyebrow">Puente a S05</p>
+<h2>La siguiente mejora reutiliza el método en el buscador académico</h2>
+<div class="cards"><div class="card"><div class="num">01</div><p>Especificar una mejora real antes de implementarla.</p></div><div class="card"><div class="num">02</div><p>Reutilizar el tablero, criterios y protocolo de evidencia.</p></div><div class="card"><div class="num">03</div><p>S05 añade búsqueda; S06 profundiza en crear skills y workflows.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>46 / 46</span></div>
+</section>
+<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas"><div class="refs-head"><div><span>Referencias externas</span><h2>Fuentes oficiales de la sesión</h2></div><button id="refsClose" aria-label="Cerrar referencias">×</button></div><ol><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 7</b>Superpowers aporta método mediante skills que el agente carga</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 8</b>Telegram, OpenClaw y Codex cumplen funciones distintas</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 9</b>Instalar en una aplicación no prueba disponibilidad en otro proceso</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 10</b>La instalación vigente se hace desde el catálogo de plugins</a></li><li><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener"><b>Slide 11</b>La CLI permite comprobar e instalar el plugin identificado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 12</b>Una skill activa debe producir conducta observable</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 13</b>El paquete contiene más que los nombres de sus skills</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 14</b>Cuatro skills preparan una implementación revisable</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 15</b>Tres skills organizan ejecución y paralelismo</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 16</b>Tres skills hacen que los errores produzcan evidencia</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 17</b>Cuatro skills completan revisión, entrega y reutilización</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 18</b>El método escala según la tarea; hoy recorreremos el ciclo documental completo</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 25</b>Un plan útil asigna archivos, acciones y pruebas por tarea</a></li><li><a href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener"><b>Slide 26</b>Un worktree permite experimentar sin pisar la carpeta activa</a></li><li><a href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener"><b>Slide 29</b>GitHub Projects necesita el campo Etapa para nuestras cuatro columnas</a></li><li><a href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener"><b>Slide 30</b>Los identificadores permiten mover la tarjeta correcta</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 32</b>TDD exige ver fallar la prueba antes de implementar</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 35</b>Una lista vacía revela un error que parece correcto</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 39</b>Paralelizar sirve cuando las tareas pueden resolverse por separado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 40</b>La ejecución con subagentes separa implementación y revisión</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 41</b>La revisión debe comprobar primero la promesa y luego la calidad</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 42</b>El feedback se reproduce antes de aceptarse como verdad</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 43</b>Terminado exige una comprobación nueva y una decisión humana</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 44</b>Cerrar la rama es una decisión distinta de pasar los tests</a></li></ol></aside>
 <div id="ctl"><button id="bTema" title="Cambiar tema (T)" aria-label="Alternar tema" aria-pressed="false">◐</button><button id="bMenos" title="Reducir tamaño (−)" aria-label="Reducir tamaño de letra">A−</button><button id="bMas" title="Aumentar tamaño (+)" aria-label="Aumentar tamaño de letra">A+</button><button id="bMarcas" title="Referencias externas (M)" aria-label="Abrir referencias externas" aria-expanded="false">★</button></div>
 <div id="bar"></div><div id="num"></div><div id="hint">← → navegar · Home / End</div>
 <script src="deck.js"></script>

@@ -1,136 +1,87 @@
-# Laboratorio S04 · Especificar, ordenar y cerrar con evidencia
-
+# Laboratorio S04 · Ciclo SDD completo con Superpowers
 ## Resultado
+Evoluciona la issue de S03 «Mejorar una regla de mi agente» en mi-agente-infra. Entrega diseño, spec, plan, implementación con pruebas, revisión y tablero actualizado. Usa Telegram cuando el runtime real exponga las skills; si no, usa Codex sobre el mismo snapshot y registra el canal verificado.
 
-Convertirás la issue `Mejorar una regla de mi agente` (de S03) en una especificación breve, la llevarás a un tablero con columnas, y la cerrarás mostrando evidencia de cada paso. Todo lo pedirás desde OpenClaw; no necesitas trabajar por terminal.
+## Material
+- superpowers-guia.md: instalación y las 14 skills.
+- plantillas.md: estructura de brainstorming, spec, plan, review, ROADMAP y entrega.
+- starter/: regla vaga, función incompleta y 12 tests.
+- github-kanban.md: comandos completos de Projects/issue.
+- Guion y solución del instructor se muestran en la demo, no se copian como entrega.
+Prerrequisitos: snapshot sanitizado de S03, Git, Node.js 22+, Codex autenticado y gh si usarás Projects. No copiar secretos ni reemplazar el AGENTS.md del workspace activo.
 
-## Tres logros de hoy
+## Checkpoint 0 · Instalar y comprobar
+Seguir superpowers-guia.md: Plugins → Superpowers; abrir sesión nueva.
+Prompt: «Identifica las skills instaladas de Superpowers, lee brainstorming y dime la ruta. Trabajaremos solo en [RUTA]/mi-agente-infra. No implementes hasta revisar el diseño».
+Evidencia: versión, entorno, ruta de skill, respuesta pertinente. Si no se carga, completar recuperación; un archivo descargado no prueba activación.
 
-- Convertir una idea en objetivo, alcance y criterio de aceptación.
-- Ordenar la tarea en un tablero con estado visible.
-- Cerrar la tarea citando evidencia, no una sensación de «ya quedó».
+## Checkpoint 1 · Idea → brainstorming → spec (0:00–1:00)
+1. Lee tu issue y conserva el problema observable. Si falta, usa el starter: «Trabaja bien y avísame cuando termines» no define evidencia.
+2. Prompt: «Usa brainstorming. ¿Qué significa terminado? Compara regla sola, recordatorio por prompt y regla con reporte verificable. No cambies archivos del agente».
+3. Responde las preguntas; guarda decisiones y alternativa elegida en brainstorm.md.
+4. Prompt: «Para este ejercicio usa el ciclo documental completo aunque la mejora sea pequeña. Redacta spec.md con objetivo, alcance, entradas/salidas, errores, criterios numerados, pruebas y límites».
+5. Revisa y aprueba expresamente la spec antes del plan. No uses la aprobación del ejemplo como si fuera tuya.
 
-## Ejercicio vivo · Mi primera tarea con método
+Contrato sugerido del caso: evaluarCierre recibe criterios no vacíos/únicos, exactamente una evidencia PASS con referencia por criterio, revisión APROBADA y autorización true. Devuelve Hecho/Revisión y razones; no cierra nada.
+CA1: positivo válido; CA2: evidencia incompleta/fallida; CA3: revisión/autorización; CA4: tipos/listas/duplicados; CA5: conducta del agente y evidencia verdadera.
 
-Usaremos toda la clase la issue creada al final de S03 en `mi-agente-infra`. Envía un pedido, observa la evidencia y espera antes de autorizar cualquier paso irreversible (cerrar, publicar).
+## Checkpoint 2 · Plan → aislamiento → Kanban (1:05–1:40)
+Prompt: «Usa writing-plans sobre la spec aprobada. Tareas pequeñas: contrato probado, regla persistente y prueba del agente, revisión/cierre. Indica archivos y comando por tarea».
+Conserva plan.md. Cada tarea tiene CA asociados y resultado verificable.
+Pide using-git-worktrees: comprobar estado primero, crear rama/carpeta de práctica y repetir pruebas de baseline. Comandos explicados:
+```bash
+git status --short
+git worktree add ../mi-agente-s04 -b s04-regla
+```
+No ejecutar si la rama/ruta existen: inspeccionar y elegir una nueva ruta. Trabaja desde el nuevo worktree.
+Lleva el starter a una subcarpeta nueva de práctica; no sobreescribas tus archivos de S03.
 
-| Momento | Pídeselo a OpenClaw | Qué debe devolverte |
+Crea ROADMAP.md con una tarjeta y cuatro etapas. Es la fuente de verdad; Projects es espejo. Aplica WIP=1: antes de pasar a Haciendo, contar tarjetas; si ya hay una, resolverla o devolverla a Por hacer con explicación.
+Sigue github-kanban.md para crear Etapa y vincular la issue. Guarda cambios de ROADMAP al pasar Por hacer → Haciendo → Revisión → Hecho; cada transición lleva motivo y evidencia.
+No necesitas cuatro tarjetas: es una tarea que cambia de estado.
+
+## Checkpoint 3 · Build con TDD, debugging y prueba del agente (1:40–2:15)
+Desde la carpeta starter de práctica:
+```bash
+node --test tests/cierre.test.mjs
+```
+Prompt: «Usa test-driven-development. Ejecuta el test antes de implementar. Explica por qué falla el caso positivo. Implementa el contrato de la spec sin cambiar los tests para hacerlos pasar».
+RED esperado del starter: 11 PASS/1 FAIL; GREEN esperado de implementación correcta: 12 PASS.
+El agente escribe JavaScript; tú debes explicar qué condición rechaza cada caso.
+Refactor: pedir simplificar la validación sin cambiar contrato; ejecutar la suite otra vez.
+Debugging: «Usa systematic-debugging: reproduce qué ocurre con una lista vacía y every(). Formula una hipótesis, compruébala y demuestra que nuestra implementación rechaza el caso».
+El error reproducible enseña causa raíz; no introducirlo en tu agente activo.
+
+Pide mejorar únicamente la regla de finalización de AGENTS.md del snapshot. Debe exigir criterio, comando, salida real, referencia, estado parcial y autorización de cierre.
+Prueba la conducta en sesión nueva del runtime y registra:
+| Caso | Pedido | Evidencia requerida |
 |---|---|---|
-| Especificar | «Reescribe la issue #N como especificación breve: objetivo, alcance, criterio de aceptación. Muéstrame el texto antes de guardarlo» | Las tres partes, claras y separadas |
-| Ordenar | «Crea el tablero del curso, agrega la issue como tarjeta y muéstrame sus columnas» | El tablero con la tarjeta visible en «Por hacer» |
-| Ejecutar | «Ejecuta el primer paso, compáralo con el criterio y deja la evidencia como comentario» | Un comentario con qué cambió y cómo se comprobó |
-| Cerrar | «Compara la especificación contra la evidencia, muéstrame el dictamen y espera mi autorización» | Primero el dictamen; solo después de tu autorización, la tarjeta en «Hecho» y la issue cerrada |
+| Permitido | Ejecuta los tests locales y reporta | Comando, salida, conteo y ruta |
+| Fallo | Con un test fallido, indica si puede cerrarse | PARCIAL/Revisión, sin cierre |
+| Ambiguo | «Mejora todo» sin criterio | Pregunta de alcance antes de cambiar |
+| Sin permiso | Prepara cierre; no autorizo publicar | Espera y no publica |
+El validador no verifica que las referencias sean verdaderas ni que el modelo obedezca. Abre las fuentes y compara; registrar prompts/respuestas reales es obligatorio para CA5.
 
-La misma secuencia sirve para cualquier tarea futura del curso: cambia el tema, no el método.
-
-## Requisito previo
-
-Necesitas el scope `project` en tu autenticación de GitHub CLI:
-
-```bash
-gh auth refresh -s project
-```
-
-Se abre en el navegador, igual que la autenticación de S03. Nunca pegues un token en Telegram.
-
-## Checkpoint 1 · Especificar
-
-Si no completaste la tarea de S03, primero crea la issue mínima:
-
-> Crea en `mi-agente-infra` una issue titulada con el problema, describiendo qué pasa hoy y qué debería pasar.
-
-Con la issue lista:
-
-> Lee la issue #N y resúmela en una oración. Reescríbela como especificación breve con tres secciones: Objetivo, Alcance (qué sí, qué no) y Criterio de aceptación observable. No la guardes todavía; muéstrame el texto.
-
-Cuando apruebes el texto, pide:
-
-> Guarda exactamente el texto aprobado como `especificacion.md` en la raíz de `mi-agente-infra`. Muéstrame la ruta y solo entonces actualiza la issue con ese archivo.
-
-El agente ejecuta desde la raíz de `mi-agente-infra`:
-
-```bash
-gh issue edit N --repo TU_USUARIO/mi-agente-infra --body-file ./especificacion.md
-gh issue view N --repo TU_USUARIO/mi-agente-infra
-```
-
-`especificacion.md` se crea en este checkpoint con tu texto aprobado; no es un archivo previo del material. Verifica que puedes señalar las tres partes sin releer todo el texto.
-
-## Checkpoint 2 · Ordenar
-
-> Crea un proyecto a mi nombre llamado "Curso OpenClaw+Codex". Añade un campo de selección `Etapa` con Por hacer, Haciendo, Revisión y Hecho. Agrega la issue #N como tarjeta y déjala en Por hacer.
-
-```bash
-gh project create --owner @me --title "Curso OpenClaw+Codex" --format json
-gh project field-create <numero-proyecto> --owner @me --name Etapa --data-type SINGLE_SELECT --single-select-options "Por hacer,Haciendo,Revisión,Hecho" --format json
-gh project item-add <numero-proyecto> --owner @me --url https://github.com/TU_USUARIO/mi-agente-infra/issues/N --format json
-gh project field-list <numero-proyecto> --owner @me --format json
-```
-
-Un proyecto nuevo trae `Todo`, `In Progress` y `Done` en el campo `Status`; no trae las cuatro etapas del curso. Por eso el segundo comando es obligatorio.
-
-Guarda el ID del proyecto (`PVT_ID`), el ID devuelto por `item-add` (`ITEM_ID`), el ID del campo `Etapa` y el ID de cada opción. Primero mueve la tarjeta a Por hacer:
-
-```bash
-gh project item-edit --project-id <PVT_ID> --id <ITEM_ID> \
-  --field-id <FIELD_ID_ETAPA> --single-select-option-id <OPTION_ID_POR_HACER>
-```
-
-Antes de empezar el primer paso, mueve la tarjeta:
-
-> Mueve la tarjeta de la issue #N a la columna Haciendo.
-
-```bash
-gh project item-edit --project-id <PVT_ID> --id <ITEM_ID> \
-  --field-id <FIELD_ID> --single-select-option-id <OPTION_ID_HACIENDO>
-```
-
-También puedes abrir el proyecto, crear una vista de tablero, agruparla por `Etapa` y arrastrar la tarjeta a mano; ambas formas son válidas.
-
-## Checkpoint 3 · Ejecutar con evidencia
-
-> Ejecuta el primer paso pequeño de la especificación. Antes de guardar cualquier cambio, muéstrame qué vas a modificar y por qué cumple ese paso. Después de aplicarlo, compara el resultado con el criterio de aceptación y dime si ya se cumple o falta otro paso.
-
-```bash
-gh issue comment N --repo TU_USUARIO/mi-agente-infra --body "Paso 1: <qué cambió> · Evidencia: <diff o comparación> · Falta: <si aplica>"
-```
-
-Repite el paso pequeño → chequeo → evidencia tantas veces como haga falta hasta cubrir el criterio completo. Cuando la evidencia esté completa, mueve la tarjeta a Revisión:
-
-```bash
-gh project item-edit --project-id <PVT_ID> --id <ITEM_ID> \
-  --field-id <FIELD_ID> --single-select-option-id <OPTION_ID_REVISION>
-```
-
-Si algún paso toca credenciales, datos personales, otro repositorio o un criterio poco claro, el agente debe detenerse y preguntar. Verifica que eso haya pasado al menos una vez durante la práctica; si nunca pasó, pide un paso que sí lo dispare a modo de prueba.
-
-## Checkpoint 4 · Cerrar con evidencia
-
-> Compara la especificación de la issue #N contra los comentarios de evidencia. Dime si el criterio de aceptación se cumple completo, parcial o no se cumple, y por qué.
-
-Si el criterio se cumple completo:
-
-```bash
-gh project item-edit --project-id <PVT_ID> --id <ITEM_ID> \
-  --field-id <FIELD_ID> --single-select-option-id <OPTION_ID_HECHO>
-gh issue close N --repo TU_USUARIO/mi-agente-infra --reason completed \
-  --comment "Criterio de aceptación cumplido: <evidencia final>"
-```
-
-Si el criterio queda parcial, la tarjeta se queda en Revisión y anotas el paso pendiente como comentario; no se cierra la issue.
+## Checkpoint 4 · Review → verificación → cierre (2:20–3:00)
+1. Prompt: «Usa requesting-code-review. Revisa spec, plan, diff y evidencia: primero cumplimiento de CA1–CA5, después calidad. Indica archivo y problema».
+2. Prompt: «Usa receiving-code-review. Reproduce cada hallazgo, corrige lo confirmado y explica los cambios fuera de alcance que no corresponden».
+3. Guarda review.md: hallazgo, severidad, decisión, prueba de resolución.
+4. Prompt: «Usa verification-before-completion; ejecuta las pruebas ahora, abre referencias y compara cada criterio». No aprobar con evidencia anterior a la última edición.
+5. Si hay subagentes reales, demostración de implementador + revisor de spec + revisor de calidad. Si no, checkpoints secuenciales; no inventar agentes.
+6. Usa finishing-a-development-branch para proponer integrar, PR o conservar rama. Revisa antes de autorizar efectos externos.
+7. Solo después de aprobación, sincroniza ROADMAP/Projects a Hecho y cierra la issue con evidencia. Si falta CA5 u otro criterio, permanece en Revisión.
 
 ## Entrega
+Crea entregas/<tu-usuario>/S04.md con enlaces a brainstorm.md, spec.md, plan.md, regla modificada, tests, evidencias RED/GREEN/regresión/runtime, review.md y ROADMAP.md.
+Incluye versión/ruta de Superpowers, canal comprobado, issue, estado final, aprobación y límites pendientes.
+Puedes entregar una tarea en Revisión con bloqueo explicado; no representa una tarea cerrada ni permite afirmar criterios cumplidos.
 
-Crea `entregas/<tu-usuario>/S04.md` con:
+## Puente S05
+Especifica una segunda mejora del asistente/buscador académico antes de pedir ejecución. Reutiliza el método; en S06 profundizarás en creación de skills y workflows.
 
-- número de la issue y su especificación final (objetivo, alcance, criterio);
-- URL del tablero y columna final de la tarjeta;
-- al menos dos comentarios de evidencia citados o resumidos;
-- confirmación de si la issue quedó cerrada o por qué sigue en Revisión;
-- una frase: «cerré esta tarea con método porque…».
-
-No pegues tokens ni credenciales.
-
-## Puente a S05
-
-Elige una segunda mejora real del agente o del workspace y escribe su especificación breve **antes** de pedirle a OpenClaw que la ejecute. La llevarás por el mismo ciclo en S05, mientras aprendes a construir un buscador académico.
+## Recuperación
+Sin repo S03: usar starter en carpeta nueva y documentar recuperación.
+Sin plugin en sesión: reiniciar sesión y comprobar instalación/usuario efectivo.
+Sin Projects: conservar ROADMAP como fuente de verdad, registrar espejo pendiente.
+Sin Node: completar instalación previa; no marcar TDD probado.
+Si el tiempo se agota, terminar checkpoints pendientes como práctica; no omitir spec, plan, TDD ni review para declarar completitud.
