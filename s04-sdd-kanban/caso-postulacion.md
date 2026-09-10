@@ -28,9 +28,9 @@ Texto libre/URL/PDF, persistencia, interfaz, autenticación, proveedor LLM y Rai
 
 ## Datos de práctica
 Perfil ficticio: p1 «SQL: construí consultas para un proyecto académico»; p2 «Python: analicé datos de práctica».
-Oferta ficticia o1: SQL y Python obligatorios; AWS deseable.
-Resultado esperado: dos coincidencias con p1/p2, brecha AWS, cobertura literal de obligatorios 100%. No es probabilidad de contratación ni valoración de una persona.
-Cambiar Python por inglés en la oferta: cobertura 50%, brecha inglés. El borrador no puede inventar inglés, AWS, certificaciones ni años de experiencia.
+Oferta ficticia o1: SQL y Python obligatorios; Excel deseable.
+Resultado esperado: dos coincidencias con p1/p2, brecha Excel, cobertura literal de obligatorios 100%. No es probabilidad de contratación ni valoración de una persona.
+Cambiar Python por inglés en la oferta: cobertura 50%, brecha inglés. El borrador no puede inventar inglés, Excel, certificaciones ni años de experiencia.
 
 ## Decisiones de discovery para el ejercicio
 Propuesta didáctica que el alumno debe confirmar, no aprobación histórica de Manu:

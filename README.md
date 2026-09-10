@@ -36,7 +36,7 @@ La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sani
 
 ## Material de la sesión 4
 
-- [Deck · SDD + Superpowers + Kanban](s04-sdd-kanban/S04-deck.html): 50 slides para crear desde cero el asistente de postulación laboral, con referencia visual de Projects.
+- [Deck · SDD + Superpowers + Kanban](s04-sdd-kanban/S04-deck.html): 51 slides para crear desde cero el asistente de postulación laboral, con referencia visual de Projects.
 - [Laboratorio · ciclo SDD completo](s04-sdd-kanban/laboratorio.md): brainstorming, spec, plan, TDD, debugging, review y cierre; ROADMAP con WIP=1 y Projects como espejo.
 - [Caso y comparación antes/después](s04-sdd-kanban/caso-postulacion.md), [escritura y lanzamiento del SDD](s04-sdd-kanban/lanzamiento-sdd.md), [starter de postulación con 15 tests](s04-sdd-kanban/postulacion-starter/).
 - [Superpowers: instalación y 14 skills](s04-sdd-kanban/superpowers-guia.md), [plantillas](s04-sdd-kanban/plantillas.md) y [GitHub Projects gratuito y Kanban](s04-sdd-kanban/github-kanban.md).

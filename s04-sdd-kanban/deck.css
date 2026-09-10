@@ -37,3 +37,5 @@ body[data-slide-dark="true"] #num,body[data-slide-dark="true"] #hint{color:#b5c2
 .caption { font-size:calc(16px * var(--scale,1)); line-height:1.45; max-width:1000px; }
 @media(max-width:600px){ .board-reference{margin:12px auto;max-height:38vh;} .caption{font-size:16px;} }
 .slide>blockquote { font-size:clamp(18px,1.7vw,24px); line-height:1.45; margin:24px 0; max-width:1000px; }
+.method-map{display:flex;flex-direction:column;gap:3px;max-width:1150px;width:100%;margin:16px auto;font-size:clamp(13px,1.2vw,18px);line-height:1.25}.method-map>div{border:1px solid var(--line);padding:7px 12px;background:var(--soft);border-radius:8px}.method-map b,.method-map span{display:block}.method-map .map-arrow{text-align:center;color:var(--p);line-height:1}.method-map+ .caption{margin-top:8px;font-size:14px}.slide .clean b{font-weight:600} .caption a{color:var(--pd);overflow-wrap:anywhere}
+@media(max-width:600px){.method-map{font-size:12px;margin:8px auto;gap:2px}.method-map>div{padding:5px 7px}.method-map+.caption{font-size:12px}.method-map .map-arrow{font-size:10px}}

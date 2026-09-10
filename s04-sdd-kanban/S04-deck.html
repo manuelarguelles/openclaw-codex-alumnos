@@ -1,92 +1,80 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S04 · Ciclo SDD completo + Superpowers + Kanban</title><link rel="stylesheet" href="deck.css"></head><body>
-<section class="slide dark mesh on">
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S04 · Ciclo SDD completo + Superpowers + Kanban</title><link rel="stylesheet" href="deck.css"></head><body><section class="slide dark mesh on">
 
 <p class="eyebrow">S04 · SDD + Superpowers + Kanban</p>
-<h1>El asistente de postulación comienza con un diseño que podemos comprobar</h1>
-<div class="cards"><div class="card"><div class="num">01</div><p>Caso real: asistente-postulacion-laboral, creado inicialmente con un prompt sencillo.</p></div><div class="card"><div class="num">02</div><p>Hoy escribimos el SDD y lanzamos su primera parte con pruebas.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>1 / 50</span></div>
+<h1>Un proyecto mejora cuando diseñamos, construimos y verificamos con método</h1>
+<p class="lead">SDD + Superpowers + Kanban</p><p class="lead">De una idea a una entrega con criterios, pruebas y revisión.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>1 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Promesa observable</p>
-<h2>Tres entregables harán visible el desarrollo desde cero</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>Diseño: spec del MVP y plan de tareas aprobado.</p></div><div class="card"><div class="num">02</div><p>Construcción: núcleo de análisis y borrador con pruebas.</p></div><div class="card"><div class="num">03</div><p>Entrega: review, Kanban y evidencia del alcance realmente logrado.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>2 / 50</span></div>
+<h2>Retomamos el asistente de postulación laboral para construirlo con SDD</h2>
+<ul class="clean"><li>Punto de partida: el repositorio inicial creado con un prompt sencillo.</li><li>Diseño: spec del MVP y plan aprobado.</li><li>Construcción local: análisis de oferta y borrador con evidencia.</li><li>Entrega: pruebas, revisión y tablero actualizado.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>2 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Problema del caso</p>
 <h2>El repositorio inicial expresa la visión, pero aún no contiene una aplicación</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>Baseline público f023fa9: README, PROJECT, ROADMAP y BRIEF.</p></div><div class="card"><div class="num">02</div><p>Todavía no hay código, tests ni CI.</p></div><div class="card"><div class="num">03</div><p>El prompt exacto no está registrado; no lo reconstruimos como cita.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>3 / 50</span></div>
+<ul class="clean"><li>Baseline público f023fa9: README, PROJECT, ROADMAP y BRIEF.</li><li>Todavía no hay código, tests ni CI.</li><li>El prompt exacto no está registrado.</li></ul><p class="caption"><a href="https://github.com/manuelarguelles/asistente-postulacion-laboral" target="_blank" rel="noopener">github.com/manuelarguelles/asistente-postulacion-laboral</a></p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>3 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/manuelarguelles/asistente-postulacion-laboral/tree/f023fa933150856a05da18ed333e902521844f35" target="_blank" rel="noopener" title="Fuente">★</a>
 <p class="eyebrow">Caso · asistente de postulación</p><h2>SDD convierte las preguntas abiertas en decisiones y pruebas</h2>
 <ul class="clean"><li>Visión general: spec con alcance y criterios.</li><li>Roadmap de fases: tareas con dependencias y aceptación.</li><li>Sin implementación: primer núcleo probado antes de ampliar.</li><li>Principios de veracidad: evidencia por afirmación y revisión.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>4 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>4 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Teoría</p>
 <h2>SDD convierte una intención en decisiones comprobables</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Spec-Driven Development = desarrollo guiado por especificaciones.</p></div><div class="card"><div class="num">02</div><p>La spec define comportamiento, alcance y aceptación.</p></div><div class="card"><div class="num">03</div><p>El plan organiza cómo construirlo; los tests verifican casos.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>5 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>5 / 51</span></div>
 </section>
-
 <section class="slide dark">
 
 <p class="eyebrow">Ciclo completo</p>
 <h2>Cada fase produce una evidencia que habilita la siguiente</h2>
 <div class="flow"><span class="node">Idea → brainstorming → spec → plan</span><span class="arrow">→</span><span class="node">Build → review → verificación → cierre</span><span class="arrow">→</span><span class="node">Si cambia el alcance, se revisan spec y plan antes de seguir.</span></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>6 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>6 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Diseño y control</p>
-<h2>Aprobar el diseño temprano evita corregir supuestos al final</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>Brainstorming aclara problema y alternativas.</p></div><div class="card"><div class="num">02</div><p>La persona aprueba decisiones y alcance.</p></div><div class="card"><div class="num">03</div><p>Un test verde no corrige una especificación equivocada.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>7 / 50</span></div>
+<h2>Especificar al inicio evita reconstruir una solución equivocada</h2>
+<ul class="clean"><li>Local o nube: acordar «sin red» evita rehacer un agente que depende de una API.</li><li>Borrador o envío: acordar «solo preparar» evita construir una función de envío no deseada.</li><li>Veracidad: exigir fuentes desde el inicio evita corregir textos con experiencia inventada.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>7 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Qué es Superpowers</p>
 <h2>Superpowers aporta método mediante skills que el agente carga</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Paquete de metodología para agentes; no es un modelo.</p></div><div class="card"><div class="num">02</div><p>Cada SKILL.md indica cuándo usarla y cómo proceder.</p></div><div class="card"><div class="num">03</div><p>Versión examinada: 6.3.0; catálogo de 14 skills.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>8 / 50</span></div>
+<p class="caption"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers</a></p><div class="foot"><span>S04 · Ciclo SDD completo</span><span>8 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Dónde vive la instalación</p>
 <h2>Telegram, OpenClaw y Codex cumplen funciones distintas</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Telegram: conversación con la persona.</p></div><div class="card"><div class="num">02</div><p>OpenClaw: canal y ejecución en un entorno.</p></div><div class="card"><div class="num">03</div><p>Codex: runtime que debe descubrir las skills instaladas.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>9 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>9 / 51</span></div>
 </section>
-
 <section class="slide dark">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Compatibilidad</p>
 <h2>Instalar en una aplicación no prueba disponibilidad en otro proceso</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Comprueba cuenta, runtime y carpeta del snapshot.</p></div><div class="card"><div class="num">02</div><p>Pide nombre y ruta de una skill en la sesión real.</p></div><div class="card"><div class="num">03</div><p>Si OpenClaw no la expone, practica en Codex y registra el límite.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>10 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>10 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Instalación guiada</p>
 <h2>La instalación vigente se hace desde el catálogo de plugins</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Codex App: Plugins → Coding → Superpowers → +.</p></div><div class="card"><div class="num">02</div><p>Codex CLI: /plugins → superpowers → Install Plugin.</p></div><div class="card"><div class="num">03</div><p>Abre una sesión nueva y comprueba activación.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>11 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>11 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Demo de instalación</p>
@@ -95,310 +83,280 @@
 codex plugin list --available --json
 codex plugin add superpowers@openai-curated-remote --json
 codex plugin list --json</pre><p class="lead">Usa el identificador que exista en tu catálogo. Comandos comprobados en CLI 0.154.0.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>12 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>12 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Checkpoint de instalación</p>
 <h2>La activación se comprueba antes de diseñar el asistente</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>«Carga brainstorming y dime su ruta. Quiero crear un asistente de postulación desde cero».</p></div><div class="card"><div class="num">02</div><p>Debe aclarar usuario, entradas, evidencia y límites.</p></div><div class="card"><div class="num">03</div><p>Registrar runtime y respuesta; instalar no equivale a activar.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>13 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>13 / 51</span></div>
 </section>
-
 <section class="slide dark">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Anatomía de Superpowers</p>
 <h2>El paquete contiene más que los nombres de sus skills</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>14 skills y sus referencias/scripts de apoyo.</p></div><div class="card"><div class="num">02</div><p>Manifiestos por entorno, hooks, tests, documentación y licencia MIT.</p></div><div class="card"><div class="num">03</div><p>Los hooks varían: el manifiesto Codex revisado no configura hooks.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>14 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>14 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Catálogo 1 de 4</p>
-<h2>Cuatro skills preparan una implementación revisable</h2>
-<ul class="clean"><li>using-superpowers: elegir y cargar skills.</li><li>brainstorming: aclarar y aprobar diseño.</li><li>writing-plans: convertir diseño en tareas.</li><li>using-git-worktrees: aislar la ejecución.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>15 / 50</span></div>
+<h2>Cuatro skills preparan el trabajo antes de escribir código</h2>
+<ul class="clean"><li><b>using-superpowers</b>: detecta qué método cargar. Sirve al iniciar una tarea.</li><li><b>brainstorming</b>: aclara objetivo y alternativas. Sirve antes de decidir qué construir.</li><li><b>writing-plans</b>: divide una spec aprobada en tareas, archivos y pruebas.</li><li><b>using-git-worktrees</b>: prepara otra carpeta y rama. Sirve para experimentar sin pisar el trabajo activo.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>15 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Catálogo 2 de 4</p>
-<h2>Tres skills organizan ejecución y paralelismo</h2>
-<ul class="clean"><li>executing-plans: ejecutar tareas con checkpoints.</li><li>subagent-driven-development: implementar y revisar por tarea.</li><li>dispatching-parallel-agents: repartir trabajo independiente.</li><li>SDD del curso ≠ nombre de la skill subagent-driven-development.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>16 / 50</span></div>
+<h2>Tres skills organizan la ejecución según las dependencias</h2>
+<ul class="clean"><li><b>executing-plans</b>: ejecuta un plan con checkpoints. Útil para avanzar por etapas.</li><li><b>subagent-driven-development</b>: un implementador por tarea y revisiones de spec/calidad. Requiere subagentes.</li><li><b>dispatching-parallel-agents</b>: reparte problemas independientes. Útil para investigar varios fallos sin editar lo mismo.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>16 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Catálogo 3 de 4</p>
-<h2>Tres skills hacen que los errores produzcan evidencia</h2>
-<ul class="clean"><li>test-driven-development: RED → GREEN → REFACTOR.</li><li>systematic-debugging: causa → hipótesis → prueba → corrección.</li><li>verification-before-completion: comprobación nueva antes de afirmar éxito.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>17 / 50</span></div>
+<h2>Tres skills convierten errores y resultados en evidencia</h2>
+<ul class="clean"><li><b>test-driven-development</b>: prueba que falla, cambio mínimo y refactor. Útil para añadir comportamiento comprobable.</li><li><b>systematic-debugging</b>: reproduce, investiga causa y prueba una hipótesis. Útil ante errores inesperados.</li><li><b>verification-before-completion</b>: ejecuta comprobaciones recientes antes de afirmar terminado. Útil antes de entregar.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>17 / 51</span></div>
 </section>
-
 <section class="slide dark">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Catálogo 4 de 4</p>
-<h2>Cuatro skills completan revisión, entrega y reutilización</h2>
-<ul class="clean"><li>requesting-code-review: solicitar revisión con contexto.</li><li>receiving-code-review: comprobar y responder hallazgos.</li><li>finishing-a-development-branch: decidir integración.</li><li>writing-skills: crear y probar skills; profundizamos en S06.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>18 / 50</span></div>
+<h2>Cuatro skills revisan, integran y permiten reutilizar el método</h2>
+<ul class="clean"><li><b>requesting-code-review</b>: pide revisión con spec, diff y evidencia. Útil después de implementar.</li><li><b>receiving-code-review</b>: comprueba los hallazgos antes de corregir o discutirlos.</li><li><b>finishing-a-development-branch</b>: verifica y presenta opciones de integración; la persona decide.</li><li><b>writing-skills</b>: crea y prueba instrucciones reutilizables. Lo profundizamos en S06.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>18 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Alcance pedagógico</p>
-<h2>El método escala según la tarea; hoy recorreremos el ciclo documental completo</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>Superpowers 6.3.0 distingue spike, bounded y architectural.</p></div><div class="card"><div class="num">02</div><p>Un cambio pequeño puede usar una ruta ligera.</p></div><div class="card"><div class="num">03</div><p>Hoy pedimos explícitamente spec y plan para practicar el ciclo completo.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>19 / 50</span></div>
+<h2>La profundidad del diseño depende de la incertidumbre y el alcance</h2>
+<ul class="clean"><li>Superpowers clasifica la tarea antes de actuar.</li><li>Este agente nuevo requiere diseño de arquitectura y spec.</li><li>Todos los caminos requieren aprobación de la intención antes de implementar.</li></ul><p class="caption"><b>Spike:</b> investigación breve y descartable para responder una duda.<br><b>Bounded:</b> cambio acotado en un flujo existente.<br><b>Architectural:</b> proyecto nuevo o cambio de estructura y responsabilidades.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>19 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Caso · idea y alternativas</p>
 <h2>El primer diseño compara alternativas antes de elegir el recorte</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Toda la web: añade interfaz, datos y seguridad antes de validar el núcleo.</p></div><div class="card"><div class="num">02</div><p>LLM libre: permite explorar, pero exige evaluación no determinista.</p></div><div class="card"><div class="num">03</div><p>Núcleo local + conversación: permite comprobar evidencia y límites hoy.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>20 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>20 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Caso · diseño</p>
 <h2>La spec distingue el MVP completo de lo que construiremos en clase</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Hoy: perfil y oferta ficticios, comparación y borrador revisable.</p></div><div class="card"><div class="num">02</div><p>Después: ingesta, historial, web, autenticación y despliegue.</p></div><div class="card"><div class="num">03</div><p>Sin CVs reales, scraping, cuentas ni envío de postulaciones.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>21 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>21 / 51</span></div>
 </section>
-
 <section class="slide dark">
 
 <p class="eyebrow">Caso · contrato</p>
 <h2>El contrato conecta una oferta con hechos del perfil</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Entrada: perfil con IDs/evidencia y requisitos obligatorios o deseables.</p></div><div class="card"><div class="num">02</div><p>Salida: coincidencias citadas, brechas, cobertura y borrador.</p></div><div class="card"><div class="num">03</div><p>analizarOferta es local y pura; no usa red ni envía.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>22 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>22 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Caso · aceptación</p>
 <h2>Los criterios separan las pruebas del núcleo y las del agente</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>CA1–CA3: entradas, evidencia y cobertura de obligatorios.</p></div><div class="card"><div class="num">02</div><p>CA4–CA5: borrador veraz, sin mutación ni envío.</p></div><div class="card"><div class="num">03</div><p>CA6–CA7: conducta conversacional y trazabilidad de entrega.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>23 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>23 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Límite importante</p>
 <h2>La cobertura de requisitos no predice que conseguirás el empleo</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>SQL y Python cubiertos; AWS queda como brecha explícita.</p></div><div class="card"><div class="num">02</div><p>100% significa cobertura literal de obligatorios, no empleabilidad.</p></div><div class="card"><div class="num">03</div><p>Citar el perfil muestra procedencia; la persona valida si el hecho es verdadero.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>24 / 50</span></div>
+<div class="cards"><div class="card"><div class="num">01</div><p>SQL y Python cubiertos; Excel queda como brecha explícita.</p></div><div class="card"><div class="num">02</div><p>100% significa cobertura literal de obligatorios, no empleabilidad.</p></div><div class="card"><div class="num">03</div><p>Citar el perfil muestra procedencia; la persona valida si el hecho es verdadero.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>24 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Checkpoint 1</p>
-<h2>La práctica produce una spec revisada antes de implementar</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>Abrir caso-postulacion.md y lanzamiento-sdd.md.</p></div><div class="card"><div class="num">02</div><p>Definir objetivo, arquitectura, contrato, errores y CA1–CA7.</p></div><div class="card"><div class="num">03</div><p>Guardar brainstorm.md y spec.md; leer y aprobar el diseño.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>25 / 50</span></div>
+<h2>La spec del ejemplo ya existe y puede revisarse antes de ejecutar</h2>
+<ul class="clean"><li>Documento real: objetivo, alcance local, arquitectura, contrato y CA1–CA7.</li><li>Es una spec de referencia docente; cada alumno revisa y aprueba su versión.</li><li>Después de aprobarla, writing-plans convierte sus criterios en tareas.</li></ul><p class="caption"><a href="https://github.com/manuelarguelles/openclaw-codex/blob/main/s04-sdd-kanban/solucion-postulacion/02-spec.md" target="_blank" rel="noopener">Abrir spec real del ejemplo (repositorio docente)</a></p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>25 / 51</span></div>
 </section>
-
 <section class="slide dark">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Caso · writing-plans</p>
-<h2>El plan divide el asistente en cinco tareas con evidencia</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>T1 contrato/fixtures; T2 comparación con evidencia.</p></div><div class="card"><div class="num">02</div><p>T3 borrador veraz; T4 ensayo conversacional.</p></div><div class="card"><div class="num">03</div><p>T5 review y entrega. Archivos, dependencias y tests en plan.md.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>26 / 50</span></div>
+<h2>El plan divide la implementación en cinco tareas pequeñas</h2>
+<ul class="clean"><li>T1 contrato y datos de prueba; T2 comparar oferta con perfil.</li><li>T3 texto sin inventar hechos; T4 comprobar la conversación.</li><li>T5 revisión y entrega con evidencia.</li></ul><p class="caption"><b>Fixtures:</b> datos fijos y ficticios para repetir una prueba.<br><b>Borrador veraz:</b> texto construido solo con hechos del perfil.<br><b>Runtime:</b> entorno donde corre el agente. <b>CA:</b> criterio de aceptación.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>26 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Aislamiento</p>
 <h2>Un worktree separa la práctica de la carpeta original</h2>
 <pre>git status --short
 git worktree add ../asistente-postulacion-s04-work -b s04-postulacion</pre><p class="lead">Primero crear repo de práctica y baseline. Si la ruta existe, inspeccionarla.</p><p class="lead">No modificar el repo original. El worktree no es una sandbox.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>27 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>27 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Teoría · Kanban</p>
 <h2>Kanban hace visible el estado y limita el trabajo abierto</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Por hacer → Haciendo → Revisión → Hecho.</p></div><div class="card"><div class="num">02</div><p>WIP = máximo de tarjetas activas; hoy Haciendo ≤ 1.</p></div><div class="card"><div class="num">03</div><p>Si la primera está bloqueada, no abrir otra sin resolver o replanificar.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>28 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>28 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/pricing" target="_blank" rel="noopener" title="Fuente">★</a>
 <p class="eyebrow">GitHub gratuito</p><h2>GitHub Free incluye Issues y Projects para este tablero</h2>
 <p class="lead">No necesitas GitHub Team para la práctica de Kanban.</p><p class="lead">Actions, Codespaces, LLM y Railway tienen condiciones propias.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>29 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>29 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/changing-the-layout-of-a-view" target="_blank" rel="noopener" title="Fuente">★</a>
 <p class="eyebrow">Kanban · referencia visual</p><h2>La vista Board organiza las tareas en columnas visibles</h2>
-<img class="board-reference" src="assets/github-projects-board.png" alt="Captura oficial de GitHub Projects con tarjetas distribuidas en columnas de un tablero"><p class="caption">Referencia oficial de interfaz, no tablero del curso. Aquí usaremos Etapa: Por hacer, Haciendo, Revisión y Hecho.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>30 / 50</span></div>
+<img class="board-reference" src="assets/kanban-s04-real.png" alt="Tablero real S04 con seis tareas ficticias, áreas y cuatro etapas"><p class="caption">Tablero real de demostración: 6 tareas ficticias, 4 áreas y WIP=1. Los estados son ilustrativos.</p>
+<p class="caption"><a href="https://github.com/users/manuelarguelles/projects/3/views/2" target="_blank" rel="noopener">Abrir tablero real S04 · áreas y tareas de ejemplo</a></p><div class="foot"><span>S04 · Ciclo SDD completo</span><span>30 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Fuente de verdad</p>
 <h2>Una issue describe una tarea y Projects muestra su avance</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Issue: ficha con problema, criterios, dependencia y evidencia.</p></div><div class="card"><div class="num">02</div><p>T1–T5 son tareas nuevas; no requieren una issue de S03.</p></div><div class="card"><div class="num">03</div><p>ROADMAP.md es fuente de verdad; Projects refleja cada checkpoint.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>31 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>31 / 51</span></div>
 </section>
-
 <section class="slide dark">
 <a class="mk" href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Demo · tablero</p>
 <h2>El campo Etapa produce las cuatro columnas del curso</h2>
 <pre>gh project create --owner @me --title &quot;Asistente de postulación S04&quot; --format json</pre><p class="lead">Crear Etapa: Por hacer, Haciendo, Revisión, Hecho. Ver github-kanban.md.</p><p class="lead">Agrupar la vista Board por Etapa; Status inicial tiene tres opciones.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>32 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>32 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Demo · cambios de estado</p>
 <h2>Los identificadores permiten mover la tarjeta correcta</h2>
 <ul class="clean"><li>project item-add devuelve ITEM_ID.</li><li>project field-list devuelve FIELD_ID y OPTION_ID.</li><li>project item-edit usa esos IDs y el PVT_ID del proyecto.</li><li>Verificar ROADMAP y vista agrupada por Etapa.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>33 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>33 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Checkpoint 2</p>
 <h2>Solo una tarea entra en Haciendo cuando su dependencia está resuelta</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>T1 contrato antes de T2 comparación; T3 borrador depende de T2.</p></div><div class="card"><div class="num">02</div><p>T4 verifica el agente; T5 revisa toda la entrega.</p></div><div class="card"><div class="num">03</div><p>WIP=1. Si T2 está bloqueada, resolver o replanificar antes de abrir otra.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>34 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>34 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Caso · asistente de postulación</p><h2>La orden de lanzamiento ejecuta un plan que ya fue aprobado</h2>
 <blockquote>Usa executing-plans y TDD sobre spec.md y plan.md. Ejecuta T1, T2 y T3 por dependencias, con WIP=1. Muestra RED, diff y pruebas por tarea. Detente ante cambios de alcance. No publiques ni envíes postulaciones.</blockquote><p class="caption">Prompts completos y gates: lanzamiento-sdd.md.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>35 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>35 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Teoría · TDD</p>
-<h2>TDD exige ver fallar la prueba antes de implementar</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>RED: una expectativa válida falla por comportamiento faltante.</p></div><div class="card"><div class="num">02</div><p>GREEN: cambio mínimo que cumple el contrato.</p></div><div class="card"><div class="num">03</div><p>REFACTOR: mejorar estructura sin cambiar comportamiento.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>36 / 50</span></div>
+<h2>TDD es un adelanto práctico: primero demostramos qué falta</h2>
+<ul class="clean"><li>1. RED: escribir/ejecutar una prueba y observar que falla por una función faltante.</li><li>2. GREEN: implementar lo mínimo para que pase, sin esconder el fallo.</li><li>3. REFACTOR: mejorar la estructura y repetir las pruebas.</li></ul><p class="caption">S04 introduce el ciclo. S06 lo aplica a crear skills; S08 automatiza tests con GitHub Actions.</p>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>36 / 51</span></div>
 </section>
-
 <section class="slide dark">
 
 <p class="eyebrow">Caso · RED</p>
 <h2>El starter revela que el comportamiento aún no está implementado</h2>
 <pre>node --test tests/postulacion.test.mjs</pre><p class="lead">15 FAIL intencionales: la función todavía está pendiente.</p><p class="lead">Leer un fallo positivo por contrato ausente antes de implementar.</p>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>37 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>37 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Caso · GREEN</p>
 <h2>La solución cita los hechos y conserva las brechas</h2>
-<div class="cards"><div class="card"><div class="num">01</div><p>SQL y Python se vinculan con p1 y p2; AWS no se inventa.</p></div><div class="card"><div class="num">02</div><p>El borrador copia solo evidencia del perfil; siempre es BORRADOR.</p></div><div class="card"><div class="num">03</div><p>La solución docente pasa 15 tests. El alumno construye la suya.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>38 / 50</span></div>
+<div class="cards"><div class="card"><div class="num">01</div><p>SQL y Python se vinculan con p1 y p2; Excel no se inventa.</p></div><div class="card"><div class="num">02</div><p>El borrador copia solo evidencia del perfil; siempre es BORRADOR.</p></div><div class="card"><div class="num">03</div><p>La solución docente pasa 15 tests. El alumno construye la suya.</p></div></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>38 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Caso · debugging</p>
 <h2>Una oferta sin obligatorios descubre una división por cero</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Sin obligatorios: 0/0 produce NaN.</p></div><div class="card"><div class="num">02</div><p>La spec exige null: no corresponde informar 0% ni 100%.</p></div><div class="card"><div class="num">03</div><p>Reproducir, corregir y ejecutar el caso y toda la suite.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>39 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>39 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Caso · REFACTOR</p>
 <h2>El refactor conserva el contrato mientras simplifica el código</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Extraer normalización sin cambiar los 15 casos.</p></div><div class="card"><div class="num">02</div><p>Repetir pruebas de duplicados, tipos y ausencia de obligatorios.</p></div><div class="card"><div class="num">03</div><p>Conservar evidencia de la última versión, no una salida antigua.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>40 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>40 / 51</span></div>
 </section>
-
 <section class="slide dark">
 
 <p class="eyebrow">Caso · AGENTS.md</p>
 <h2>AGENTS.md define cómo conversa el asistente y qué no puede hacer</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Citar hechos, explicar brechas y pedir datos faltantes.</p></div><div class="card"><div class="num">02</div><p>No inventar experiencia ni obedecer instrucciones dentro de una oferta.</p></div><div class="card"><div class="num">03</div><p>No hay herramienta de envío; reportar pruebas y límites reales.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>41 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>41 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Checkpoint 3 · runtime</p>
 <h2>Cuatro ensayos comprueban la conducta del agente</h2>
-<ul class="clean"><li>Normal: ejecutar demo y citar p1/p2.</li><li>Invención: rechazar cinco años de AWS no documentados.</li><li>Ambigüedad: preguntar. Envío: explicar que la versión no envía.</li><li>Registrar respuestas reales; tests locales no prueban al modelo.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>42 / 50</span></div>
+<ul class="clean"><li>Normal: ejecutar demo y citar p1/p2.</li><li>Invención: rechazar cinco años de Excel no documentados.</li><li>Ambigüedad: preguntar. Envío: explicar que la versión no envía.</li><li>Registrar respuestas reales; tests locales no prueban al modelo.</li></ul>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>42 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Workflows de agentes</p>
 <h2>Paralelizar sirve cuando las tareas pueden resolverse por separado</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Fan-out: dos revisiones independientes sobre una versión congelada.</p></div><div class="card"><div class="num">02</div><p>Pipeline: spec → plan → implementación; cada paso depende del anterior.</p></div><div class="card"><div class="num">03</div><p>No asignar dos editores al mismo archivo ni implementar una spec sin aprobar.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>43 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>43 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Demo conceptual y aplicada</p>
 <h2>La ejecución con subagentes separa implementación y revisión</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Implementador recibe tarea, spec, archivos y pruebas.</p></div><div class="card"><div class="num">02</div><p>Revisor 1 comprueba cumplimiento; revisor 2, calidad.</p></div><div class="card"><div class="num">03</div><p>Sin herramientas de subagentes, ejecutar secuencialmente con los mismos checkpoints.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>44 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>44 / 51</span></div>
 </section>
-
 <section class="slide dark">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Caso · requesting-code-review</p>
 <h2>La revisión debe comprobar primero la promesa y luego la calidad</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>¿Cada CA tiene implementación y evidencia?</p></div><div class="card"><div class="num">02</div><p>¿El código maneja entradas inválidas y evita efectos externos?</p></div><div class="card"><div class="num">03</div><p>Entregar spec, plan, diff, tests y limitaciones al revisor.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>45 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>45 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Caso · receiving-code-review</p>
 <h2>El feedback se comprueba contra la spec antes de cambiar código</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Bug: cobertura sin obligatorios. Reproducir y exigir null.</p></div><div class="card"><div class="num">02</div><p>Nueva función: scraper o cloud. Registrar en backlog, no improvisar.</p></div><div class="card"><div class="num">03</div><p>Guardar hallazgo, decisión y prueba de resolución.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>46 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>46 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Verificación final</p>
 <h2>La verificación distingue un núcleo probado de un producto desplegado</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Ejecutar suite y demo de nuevo.</p></div><div class="card"><div class="num">02</div><p>Comparar CA1–CA7 con código, runtime y review.</p></div><div class="card"><div class="num">03</div><p>Si falta T4, no declarar cerrado el agente ni desplegado el MVP.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>47 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>47 / 51</span></div>
 </section>
-
 <section class="slide">
 <a class="mk" href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener" title="Fuente oficial">★</a>
 <p class="eyebrow">Entrega con Superpowers</p>
 <h2>Cerrar la rama es una decisión distinta de pasar los tests</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>finishing-a-development-branch presenta merge, PR o conservar rama.</p></div><div class="card"><div class="num">02</div><p>La persona decide qué publicar; revisar diff y archivos.</p></div><div class="card"><div class="num">03</div><p>Después actualizar ROADMAP, Projects y comentario de la issue.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>48 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>48 / 51</span></div>
 </section>
-
 <section class="slide dark">
 
 <p class="eyebrow">Checkpoint 4</p>
 <h2>La entrega conserva la cadena desde la idea hasta la evidencia</h2>
 <ul class="clean"><li>brainstorm.md, spec.md y plan.md.</li><li>Código, fixtures, tests, AGENTS y runtime.md.</li><li>review.md, ROADMAP, issues y decisión de cierre.</li><li>Declarar el backlog que todavía no se ejecutó.</li></ul>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>49 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>49 / 51</span></div>
 </section>
-
 <section class="slide">
 
 <p class="eyebrow">Puente a S05</p>
 <h2>La siguiente mejora reutiliza el método en el buscador académico</h2>
 <div class="cards"><div class="card"><div class="num">01</div><p>Especificar una mejora real antes de implementarla.</p></div><div class="card"><div class="num">02</div><p>Reutilizar el tablero, criterios y protocolo de evidencia.</p></div><div class="card"><div class="num">03</div><p>S05 añade búsqueda; S06 profundiza en crear skills y workflows.</p></div></div>
-<div class="foot"><span>S04 · Ciclo SDD completo</span><span>50 / 50</span></div>
+<div class="foot"><span>S04 · Ciclo SDD completo</span><span>50 / 51</span></div>
 </section>
+<section class="slide"><a class="mk" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">★</a><p class="eyebrow">Mapa del método · referencia completa</p><h2>Superpowers coordina el ciclo; el despliegue necesita herramientas y autorización</h2><div class="method-map">
+<div><b>1 · using-superpowers</b><span>Selecciona skills según tarea</span></div><span class="map-arrow">↓</span>
+<div><b>2 · brainstorming → spec → aprobación</b><span>Aclara y decide qué construir</span></div><span class="map-arrow">↓</span>
+<div><b>3 · writing-plans + using-git-worktrees</b><span>Plan y entorno aislado</span></div><span class="map-arrow">↓</span>
+<div><b>4 · executing-plans O subagent-driven-development</b><span>TDD ↔ systematic-debugging · dispatching-parallel-agents si hay independencia</span></div><span class="map-arrow">↓</span>
+<div><b>5 · requesting / receiving-code-review</b><span>Corregir → verification-before-completion → finishing-a-development-branch</span></div><span class="map-arrow">↓</span>
+<div><b>6 · Aprobación → skills externas de despliegue</b><span>No incluidas en Superpowers. Paralelo solo para servicios independientes; verificar e integrar después.</span></div>
+</div><p class="caption">writing-skills permite crear skills nuevas y probarlas (S06). El despliegue es conceptual aquí: S04 sigue local.</p><div class="foot"><span>S04 · Ciclo SDD completo</span><span>51 / 51</span></div></section>
 
 
 
@@ -490,7 +448,106 @@ git worktree add ../asistente-postulacion-s04-work -b s04-postulacion</pre><p cl
 
 
 
-<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas"><div class="refs-head"><div><span>Referencias externas</span><h2>Fuentes oficiales de la sesión</h2></div><button id="refsClose" aria-label="Cerrar referencias">×</button></div><ol><li><a href="https://github.com/manuelarguelles/asistente-postulacion-laboral/tree/f023fa933150856a05da18ed333e902521844f35" target="_blank" rel="noopener"><b>Slide 4</b>SDD convierte las preguntas abiertas en decisiones y pruebas</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 8</b>Superpowers aporta método mediante skills que el agente carga</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 9</b>Telegram, OpenClaw y Codex cumplen funciones distintas</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 10</b>Instalar en una aplicación no prueba disponibilidad en otro proceso</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 11</b>La instalación vigente se hace desde el catálogo de plugins</a></li><li><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener"><b>Slide 12</b>La CLI permite comprobar e instalar el plugin identificado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 13</b>La activación se comprueba antes de diseñar el asistente</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 14</b>El paquete contiene más que los nombres de sus skills</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 15</b>Cuatro skills preparan una implementación revisable</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 16</b>Tres skills organizan ejecución y paralelismo</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 17</b>Tres skills hacen que los errores produzcan evidencia</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 18</b>Cuatro skills completan revisión, entrega y reutilización</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 19</b>El método escala según la tarea; hoy recorreremos el ciclo documental completo</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 26</b>El plan divide el asistente en cinco tareas con evidencia</a></li><li><a href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener"><b>Slide 27</b>Un worktree separa la práctica de la carpeta original</a></li><li><a href="https://github.com/pricing" target="_blank" rel="noopener"><b>Slide 29</b>GitHub Free incluye Issues y Projects para este tablero</a></li><li><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/changing-the-layout-of-a-view" target="_blank" rel="noopener"><b>Slide 30</b>La vista Board organiza las tareas en columnas visibles</a></li><li><a href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener"><b>Slide 32</b>El campo Etapa produce las cuatro columnas del curso</a></li><li><a href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener"><b>Slide 33</b>Los identificadores permiten mover la tarjeta correcta</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 36</b>TDD exige ver fallar la prueba antes de implementar</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 39</b>Una oferta sin obligatorios descubre una división por cero</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 43</b>Paralelizar sirve cuando las tareas pueden resolverse por separado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 44</b>La ejecución con subagentes separa implementación y revisión</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 45</b>La revisión debe comprobar primero la promesa y luego la calidad</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 46</b>El feedback se comprueba contra la spec antes de cambiar código</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 47</b>La verificación distingue un núcleo probado de un producto desplegado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 48</b>Cerrar la rama es una decisión distinta de pasar los tests</a></li></ol></aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas"><div class="refs-head"><div><span>Referencias externas</span><h2>Fuentes oficiales de la sesión</h2></div><button id="refsClose" aria-label="Cerrar referencias">×</button></div><ol><li><a href="https://github.com/manuelarguelles/asistente-postulacion-laboral" target="_blank" rel="noopener"><b>Slide 3</b>El repositorio inicial expresa la visión, pero aún no contiene una aplicación</a></li><li><a href="https://github.com/manuelarguelles/asistente-postulacion-laboral/tree/f023fa933150856a05da18ed333e902521844f35" target="_blank" rel="noopener"><b>Slide 4</b>SDD convierte las preguntas abiertas en decisiones y pruebas</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 8</b>Superpowers aporta método mediante skills que el agente carga</a></li><li><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener"><b>Slide 8</b>Superpowers aporta método mediante skills que el agente carga</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 9</b>Telegram, OpenClaw y Codex cumplen funciones distintas</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 10</b>Instalar en una aplicación no prueba disponibilidad en otro proceso</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 11</b>La instalación vigente se hace desde el catálogo de plugins</a></li><li><a href="https://learn.chatgpt.com/docs/plugins" target="_blank" rel="noopener"><b>Slide 12</b>La CLI permite comprobar e instalar el plugin identificado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 13</b>La activación se comprueba antes de diseñar el asistente</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 14</b>El paquete contiene más que los nombres de sus skills</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 15</b>Cuatro skills preparan el trabajo antes de escribir código</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 16</b>Tres skills organizan la ejecución según las dependencias</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 17</b>Tres skills convierten errores y resultados en evidencia</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 18</b>Cuatro skills revisan, integran y permiten reutilizar el método</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 19</b>La profundidad del diseño depende de la incertidumbre y el alcance</a></li><li><a href="https://github.com/manuelarguelles/openclaw-codex/blob/main/s04-sdd-kanban/solucion-postulacion/02-spec.md" target="_blank" rel="noopener"><b>Slide 25</b>La spec del ejemplo ya existe y puede revisarse antes de ejecutar</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 26</b>El plan divide la implementación en cinco tareas pequeñas</a></li><li><a href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener"><b>Slide 27</b>Un worktree separa la práctica de la carpeta original</a></li><li><a href="https://github.com/pricing" target="_blank" rel="noopener"><b>Slide 29</b>GitHub Free incluye Issues y Projects para este tablero</a></li><li><a href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/changing-the-layout-of-a-view" target="_blank" rel="noopener"><b>Slide 30</b>La vista Board organiza las tareas en columnas visibles</a></li><li><a href="https://github.com/users/manuelarguelles/projects/3/views/2" target="_blank" rel="noopener"><b>Slide 30</b>La vista Board organiza las tareas en columnas visibles</a></li><li><a href="https://cli.github.com/manual/gh_project_field-create" target="_blank" rel="noopener"><b>Slide 32</b>El campo Etapa produce las cuatro columnas del curso</a></li><li><a href="https://cli.github.com/manual/gh_project_item-edit" target="_blank" rel="noopener"><b>Slide 33</b>Los identificadores permiten mover la tarjeta correcta</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 36</b>TDD es un adelanto práctico: primero demostramos qué falta</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 39</b>Una oferta sin obligatorios descubre una división por cero</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 43</b>Paralelizar sirve cuando las tareas pueden resolverse por separado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 44</b>La ejecución con subagentes separa implementación y revisión</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 45</b>La revisión debe comprobar primero la promesa y luego la calidad</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 46</b>El feedback se comprueba contra la spec antes de cambiar código</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 47</b>La verificación distingue un núcleo probado de un producto desplegado</a></li><li><a href="https://github.com/obra/superpowers/tree/b36e0829c6d0140e93cfef2ca599b1b07d4a7797" target="_blank" rel="noopener"><b>Slide 48</b>Cerrar la rama es una decisión distinta de pasar los tests</a></li><li><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener"><b>Slide 51</b>Superpowers coordina el ciclo; el despliegue necesita herramientas y autorización</a></li></ol></aside>
 <div id="ctl"><button id="bTema" title="Cambiar tema (T)" aria-label="Alternar tema" aria-pressed="false">◐</button><button id="bMenos" title="Reducir tamaño (−)" aria-label="Reducir tamaño de letra">A−</button><button id="bMas" title="Aumentar tamaño (+)" aria-label="Aumentar tamaño de letra">A+</button><button id="bMarcas" title="Referencias externas (M)" aria-label="Abrir referencias externas" aria-expanded="false">★</button></div>
 <div id="bar"></div><div id="num"></div><div id="hint">← → navegar · Home / End</div>
 <script src="deck.js"></script>
