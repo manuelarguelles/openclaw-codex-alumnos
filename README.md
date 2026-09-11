@@ -15,6 +15,13 @@ Repositorio público del curso. Aquí están las consignas, recursos y espacios 
 9. Publicación con Vercel
 10. Demo day
 
+## Adelantos de las sesiones 5 y 6
+
+- [S05 · Buscador académico](s05-buscador-academico/): 24 slides, ejercicio con datos sintéticos y mini-spec del proyecto integrador.
+- [S06 · Skills y workflows](s06-skills-workflows/): 24 slides, skill editable, casos de prueba, workflow y objetivo acotado.
+
+Versiones v0.1 de preparación. Las demos multifuente, la evaluación del runtime y el ensayo desde Telegram siguen pendientes. Cada consigna distingue lo disponible de lo que falta verificar.
+
 ## Entregas
 
 Crea una carpeta con tu usuario dentro de `sXX-.../entregas/`. Nunca subas tokens, claves, `.env`, credenciales ni capturas que los muestren.

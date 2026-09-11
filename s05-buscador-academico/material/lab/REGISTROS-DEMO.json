@@ -1,0 +1,27 @@
+{
+  "tipo": "fixture-sintetica-no-citable",
+  "consulta": "tutoria IA",
+  "registros": [
+    {
+      "id": "demo-001",
+      "titulo": "Tutoría con IA",
+      "anio": 2024,
+      "fuente": "fuente-A",
+      "doi": null
+    },
+    {
+      "id": "demo-001",
+      "titulo": "Tutoría con IA",
+      "anio": 2024,
+      "fuente": "fuente-B",
+      "doi": null
+    },
+    {
+      "id": "demo-002",
+      "titulo": "Tutoría digital",
+      "anio": 2023,
+      "fuente": "fuente-A",
+      "doi": null
+    }
+  ]
+}
