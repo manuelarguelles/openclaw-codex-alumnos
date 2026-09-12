@@ -1,4 +1,4 @@
-# Registro de evaluación · sin ejecutar
+# Registro de evaluación · plantilla para tu práctica
 Contrato vigente: [workflow/SPEC.md](workflow/SPEC.md). Los números CA de esta tabla corresponden a ese contrato, no a la plantilla histórica.
 Fecha:
 Interfaz y runtime:

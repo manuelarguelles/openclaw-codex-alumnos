@@ -77,3 +77,9 @@ En la llamada explícita nombra `$redactar-postulacion` e informa que los pasos 
 Antes de redactar las instrucciones, conserva un control sin skill. Para aislar descripción, mantén prompt, cuerpo, modelo, permisos y archivos iguales entre A/B; la única diferencia debe ser esa descripción. Como ampliación docente o tarea posterior, ejecuta cinco repeticiones por variante y caso, con contexto nuevo; lee cada resultado. Esa evaluación robusta no forma parte del mínimo de aula ni se declara ejecutada por disponer del procedimiento. Registra comando/prompt exacto, versión de runtime/modelo, hash del SKILL.md, modalidad, selección observada o `unverified`, salida íntegra y juicio por CA. La rúbrica cuenta selección correcta, exclusión correcta y cumplimiento del contrato por separado; informa numeradores y denominadores, sin asumir mejoras.
 
 Los criterios de `casos.json` son expectativas. Solo un registro de ejecución acredita resultados. Si el control ya evita inventar Python, conserva ese éxito: una salida mejor estructurada puede deberse a un prompt más específico, sin demostrar un efecto causal de la selección de skills.
+
+## Recuperación de formato y evidencia
+
+La respuesta final de cada etapa es un único objeto JSON. Sus explicaciones y peticiones de datos pertenecen a los campos del contrato; el archivo no incluye prosa exterior. Comprueba siempre el archivo íntegro. Si el validador rechaza texto adicional, conserva la versión fallida y pide otra versión: no extraigas silenciosamente el primer objeto. Si la respuesta es needs_input, la etapa termina aunque el JSON sea válido.
+
+Ante una petición de inventar experiencia, conserva la brecha y formula en questions qué evidencia permitiría añadirla. Una respuesta honesta puede todavía incumplir el contrato por omitir esa pregunta. Consulta [ensayos del instructor](../ENSAYOS.md).

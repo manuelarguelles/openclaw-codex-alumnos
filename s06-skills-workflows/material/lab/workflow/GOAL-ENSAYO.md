@@ -1,6 +1,8 @@
 # Ensayo acotado de trabajo persistente
 
-Estado de este guion: **no ejecutado**. Leer este documento o ejecutar el workflow no crea un objetivo. La persona debe iniciarlo expresamente en otra sesión autorizada y en una copia de práctica.
+Estado: **ensayo docente ejecutado el 12-sep-2026**, como tarea acotada dentro de un objetivo nativo autorizado por la persona. Se observó RED, corrección, GREEN y parada de cambios del ejercicio; el objetivo general continuó. Consulta el [registro de ensayos](../ENSAYOS.md).
+
+Leer este documento no crea un objetivo. Para tu práctica, inicia expresamente un objetivo en una sesión compatible y una copia nueva. También puedes autorizar expresamente esta tarea dentro de un objetivo ya activo; registra esa diferencia de alcance.
 
 La documentación oficial [Long-running work](https://learn.chatgpt.com/docs/long-running-work), consultada el 2026-09-11, describe `/goal` en la app de escritorio, CLI interactiva y extensión IDE. Conserva los permisos del entorno. En la app, la fila de progreso permite pausar, reanudar, editar o limpiar el objetivo. Comprueba disponibilidad en tu cuenta y canal; este material no presupone un requisito Pro universal. En una terminal primero abre `codex`; `/goal` se introduce en esa conversación interactiva, no como comando del shell ni como prueba mediante `codex exec`.
 

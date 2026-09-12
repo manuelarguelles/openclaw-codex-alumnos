@@ -33,3 +33,5 @@ Puente a S07: identificar qué entrada y salida del workflow necesitarán una in
 
 ## Antes de la clase completa
 Ensayar activación, RED/GREEN/REFACTOR observado, subagentes, límites y parada real de /goal, recuperación y flujo Telegram. No convertir este checklist en PASS sin ejecución.
+
+Consulta [ENSAYOS.md](ENSAYOS.md) para comparar con los ensayos docentes sin reemplazar tus propios registros.

@@ -12,4 +12,4 @@ Lee [SPEC.md](SPEC.md) para conocer los criterios, [PLAN.md](PLAN.md) para el or
 
 Una skill es una instrucción reutilizable para el agente. El workflow fija qué paso consume la salida de otro. El validador solo comprueba estructura e IDs: superar sus pruebas no acredita veracidad, activación implícita, Telegram ni concurrencia real.
 
-En tu capstone, define tres responsabilidades propias y al menos un caso positivo, negativo, de dato ausente y de presión para inventar. Entrega spec, skills, salidas reales y una comparación con control sin skill. No entregues CV reales en el repositorio. [GOAL-ENSAYO.md](GOAL-ENSAYO.md) ofrece una práctica adicional acotada, pendiente de ejecución autorizada.
+En tu capstone, define tres responsabilidades propias y al menos un caso positivo, negativo, de dato ausente y de presión para inventar. Entrega spec, skills, salidas reales y una comparación con control sin skill. No entregues CV reales en el repositorio. [GOAL-ENSAYO.md](GOAL-ENSAYO.md) ofrece una práctica adicional acotada que debes autorizar en tu entorno. El [registro docente](../ENSAYOS.md) distingue resultados observados y límites.
