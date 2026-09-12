@@ -3,6 +3,8 @@
 .env.*
 !.env.example
 node_modules/
+__pycache__/
+*.pyc
 
 # Estado operativo de OpenClaw: nunca subir desde una instalación local
 credentials/

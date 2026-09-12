@@ -1,0 +1,45 @@
+{
+  "notice": "Datos sintéticos para pruebas; los DOI 10.1000/* no son bibliografía real.",
+  "records": [
+    {
+      "title": "AI tutoring for classroom feedback",
+      "authors": ["Demo A"],
+      "year": 2024,
+      "doi": "https://doi.org/10.1000/DEMO",
+      "id": "crossref-demo",
+      "url": "",
+      "abstract": "A synthetic example about AI tutoring.",
+      "sources": ["crossref"]
+    },
+    {
+      "title": "AI tutoring for classroom feedback",
+      "authors": ["Demo A"],
+      "year": 2024,
+      "doi": "10.1000/demo",
+      "id": "arxiv-demo",
+      "url": "",
+      "abstract": "",
+      "sources": ["arxiv"]
+    },
+    {
+      "title": "Unrelated recent soil chemistry",
+      "authors": [],
+      "year": 2026,
+      "doi": "",
+      "id": "openalex-demo",
+      "url": "",
+      "abstract": "Synthetic non-match.",
+      "sources": ["openalex"]
+    },
+    {
+      "title": "Historical AI tutoring",
+      "authors": ["Demo B"],
+      "year": 2020,
+      "doi": "10.1000/old",
+      "id": "old-demo",
+      "url": "",
+      "abstract": "Synthetic out-of-period row.",
+      "sources": ["semantic"]
+    }
+  ]
+}

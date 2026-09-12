@@ -1,11 +1,11 @@
-# S05 · Buscador académico · Adelanto v0.1
+# S05 · Buscador académico · Preparación ampliada v0.2
 Autor: Manu. 2026-09-11.
 
-- [Deck HTML de 24 slides](material/slides/S05-deck.html)
+- [Deck HTML de 48 slides](material/slides/S05-deck.html)
 - [Consigna y checkpoints](material/lab/CONSIGNA.md)
-- [Recursos de práctica](material/lab/)
+- [Buscador: instalación, spec, plan y tests](material/lab/buscador/README.md)
+- [Citas: aceptar y rechazar con evidencia](material/lab/VERIFICAR-CITAS.md)
 
 Descarga o clona el repositorio y abre el HTML en tu navegador. GitHub muestra el código del HTML, no una presentación alojada.
 
-Este adelanto recorre el contenido previsto y entrega ejercicios y plantillas. No acredita la demo completa ni el funcionamiento del agente desde Telegram.
-Pendiente: adaptación pública del buscador, llamadas reales a las seis fuentes con sus roles correctos, pruebas automáticas, citas verificadas y ensayo integral.
+Incluye buscador local, cinco adaptadores de descubrimiento y enriquecimiento por DOI con Unpaywall, pruebas y mini-spec del capstone. Los accesos externos y Telegram se verifican por separado. No presentes datos sintéticos o capturas como una nueva consulta en vivo. Preparación ampliada, no certificación de clase completa.

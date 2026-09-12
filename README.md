@@ -17,10 +17,10 @@ Repositorio público del curso. Aquí están las consignas, recursos y espacios 
 
 ## Adelantos de las sesiones 5 y 6
 
-- [S05 · Buscador académico](s05-buscador-academico/): 24 slides, ejercicio con datos sintéticos y mini-spec del proyecto integrador.
-- [S06 · Skills y workflows](s06-skills-workflows/): 24 slides, skill editable, casos de prueba, workflow y objetivo acotado.
+- [S05 · Buscador académico](s05-buscador-academico/): 48 slides, buscador ejecutable, tests, ejemplos de citas y mini-spec propia.
+- [S06 · Skills y workflows](s06-skills-workflows/): 48 slides, tres skills, validador, casos y objetivo acotado con código y tests.
 
-Versiones v0.1 de preparación. Las demos multifuente, la evaluación del runtime y el ensayo desde Telegram siguen pendientes. Cada consigna distingue lo disponible de lo que falta verificar.
+Preparación ampliada v0.2, aún no certificada como clase completa. Hay pruebas locales y ensayos explícitos; la evaluación A/B de S06, `/goal` y el recorrido por Telegram conservan pendientes específicos. Cada consigna distingue ejecución real, captura y resultado esperado.
 
 ## Entregas
 

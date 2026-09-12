@@ -1,0 +1,54 @@
+{
+  "mode": "replay_captured_http_response",
+  "records": [
+    {
+      "title": "AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting",
+      "authors": [
+        "Greg Kestin",
+        "Kelly Miller",
+        "Anna Klales",
+        "Timothy Milbourne",
+        "Gregorio Ponti"
+      ],
+      "year": 2025,
+      "doi": "10.1038/s41598-025-97652-6",
+      "id": "10.1038/s41598-025-97652-6",
+      "url": "https://doi.org/10.1038/s41598-025-97652-6",
+      "abstract": "",
+      "sources": [
+        "crossref"
+      ],
+      "metadata_provenance": {
+        "title": [
+          {
+            "source": "crossref",
+            "value": "AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting"
+          }
+        ],
+        "authors": [
+          {
+            "source": "crossref",
+            "value": [
+              "Greg Kestin",
+              "Kelly Miller",
+              "Anna Klales",
+              "Timothy Milbourne",
+              "Gregorio Ponti"
+            ]
+          }
+        ],
+        "year": [
+          {
+            "source": "crossref",
+            "value": 2025
+          }
+        ]
+      },
+      "conflicts": [],
+      "rank_reason": "2/2 query tokens in title/abstract",
+      "warnings": [],
+      "citation": "Greg Kestin, Kelly Miller, Anna Klales, Timothy Milbourne, Gregorio Ponti (2025). AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting. https://doi.org/10.1038/s41598-025-97652-6",
+      "citation_status": "unverified"
+    }
+  ]
+}
