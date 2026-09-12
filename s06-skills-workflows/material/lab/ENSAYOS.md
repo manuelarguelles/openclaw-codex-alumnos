@@ -35,3 +35,11 @@ La solución y las trazas completas permanecen en el material docente. El objeti
 ## Comprobaciones independientes
 
 Las pruebas anteriores no acreditan por sí mismas recepción y respuesta desde Telegram ni disponibilidad de todas las cuentas y canales del alumnado. Antes de clase, comprueba el canal y el acceso a la copia que usarás. Los estados de preparación y los registros del docente deben indicar esa comprobación por separado.
+
+## Recorrido por Telegram observado
+
+El 12-sep-2026 se envió una petición sintética por Telegram al bot docente y se recibió su respuesta tras ejecutar los recursos del repositorio del alumnado. S05 consultó Crossref y OpenAlex en vivo: ambos respondieron y el resultado consolidado tuvo dos registros; sus citas siguen sin verificar. S06 guardó el análisis, materializó el borrador con SQL/E1 y Python como brecha, y ejecutó el validador.
+
+Dos intentos locales de crear el JSON dejaron el borrador vacío y la validación falló. Añadir `-n` a `jq` permitió construirlo sin entrada estándar; el resultado final pasó. Se conservaron los fallos y la recuperación. Fue una invocación explícita con un solo autor y análisis persistido; no demuestra descubrimiento implícito ni dos autores independientes dentro de Telegram.
+
+El recorrido docente está observado. Cada alumno comprueba por separado su instalación, cuenta y canal.

@@ -8,4 +8,4 @@ Autor: Manu. 2026-09-11.
 
 Descarga o clona el repositorio y abre el HTML en tu navegador. GitHub muestra el código del HTML, no una presentación alojada.
 
-Incluye buscador local, cinco adaptadores de descubrimiento y enriquecimiento por DOI con Unpaywall, pruebas y mini-spec del capstone. Los accesos externos y Telegram se verifican por separado. No presentes datos sintéticos o capturas como una nueva consulta en vivo. Preparación ampliada, no certificación de clase completa.
+Incluye buscador local, cinco adaptadores de descubrimiento y enriquecimiento por DOI con Unpaywall, pruebas y mini-spec del capstone. El recorrido docente por Telegram consultó Crossref y OpenAlex; cada alumno verifica sus accesos por separado. No presentes datos sintéticos o capturas como una nueva consulta en vivo. Preparación docente verificada el 12-sep-2026.
