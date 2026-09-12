@@ -20,7 +20,7 @@ Repositorio público del curso. Aquí están las consignas, recursos y espacios 
 - [S05 · Buscador académico](s05-buscador-academico/): 48 slides, buscador ejecutable, tests, ejemplos de citas y mini-spec propia.
 - [S06 · Skills y workflows](s06-skills-workflows/): 48 slides, tres skills, validador, casos y objetivo acotado con código y tests.
 
-Preparación ampliada v0.2, aún no certificada como clase completa. Hay pruebas locales y ensayos explícitos; la evaluación A/B de S06, `/goal` y el recorrido por Telegram conservan pendientes específicos. Cada consigna distingue ejecución real, captura y resultado esperado.
+Preparación ampliada v0.2, aún no certificada como clase completa. Hay pruebas locales y ensayos de selección, refactor, concurrencia y `/goal`; el recorrido por Telegram todavía requiere comprobación. Cada consigna distingue ejecución real, captura y resultado esperado.
 
 ## Entregas
 
