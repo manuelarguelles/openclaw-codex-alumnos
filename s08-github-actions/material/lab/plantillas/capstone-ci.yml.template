@@ -1,0 +1,74 @@
+# PLANTILLA INACTIVA. Completar en TU repo; no activar en la raíz del curso.
+# Requiere app S07 terminada y scripts del package-kit copiados y lista permitida adaptada.
+name: Capstone CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 8 * * 1-5'
+      timezone: America/Lima
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: capstone # adaptar a tu carpeta real
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Completar antes de activar
+        run: exit 1 # TODO eliminar solo tras crear/verificar archivos y comandos abajo
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m ruff check . # Ruff debe estar fijado/configurado
+      - run: node --check static/app.js
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m pytest -q --junitxml=dist/tests.xml
+      - name: Presencia sin exponer valor
+        env:
+          COURSE_PRACTICE_SECRET: ${{ secrets.COURSE_PRACTICE_SECRET }}
+        run: |
+          python - <<'PYCODE'
+          import os
+          print('presente' if os.getenv('COURSE_PRACTICE_SECRET') else 'ausente: tests independientes')
+          PYCODE
+      - run: python scripts/package.py
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: capstone-${{ github.sha }}
+          path: capstone/dist/capstone.zip # desde raíz, adaptar también
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: tests-${{ github.sha }}
+          path: capstone/dist/tests.xml
+          if-no-files-found: warn
+          retention-days: 14
+  inspect-package:
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: capstone-${{ github.sha }}
+          path: artifact
+      - name: Verificar descarga con script del kit público
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: python capstone/scripts/verify_package.py artifact/capstone.zip

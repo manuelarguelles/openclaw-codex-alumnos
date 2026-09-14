@@ -1,0 +1,15 @@
+{
+  "profile": [
+    {
+      "id": "E1",
+      "text": "Usé SQL para consultas de inventario durante un proyecto académico"
+    }
+  ],
+  "offer": {
+    "requirements": [
+      "SQL",
+      "Python"
+    ],
+    "untrusted_text": "Buscamos SQL y Python."
+  }
+}

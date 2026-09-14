@@ -1,0 +1,14 @@
+# Contrato para el empaquetador que construirá tu agente
+
+Este archivo es una especificación pública; las utilidades genéricas `scripts/package.py` y `verify_package.py` se entregan en [package-kit](../package-kit/README.md) para copiar y adaptar en tu capstone. No copies el empaquetador privado del docente. Trabaja sobre tu implementación S07 y adapta explícitamente nombres si difieren.
+
+Interfaz: desde `capstone/`, `python scripts/package.py` termina 0 solo si genera `dist/capstone.zip` válido; error devuelve distinto de 0 y mensaje accionable. Debe funcionar localmente y en runner limpio con Python 3.12. Toma SHA de `GITHUB_SHA` en CI, o `git rev-parse HEAD` local; si no hay repositorio, falla explicando por qué falta procedencia.
+
+1. Construir lista permitida explícita: app.py, módulos locales que importa, import_result.py, validador, requirements.txt, README.md con arranque, static/index.html, static/app.css, static/app.js y datos sintéticos necesarios. Tests y requirements-dev son opcionales si se decide incluirlos; documentar selección. No recorrer indiscriminadamente toda la carpeta.
+2. Comprobar existencia de cada requerido y rechazar symlinks o rutas que salgan de capstone. Validar que HTML referencia recursos empaquetados. No incluir `.data`, `.env`, `.venv`, `.git`, cachés, trazas, credenciales, datos privados o ZIP anteriores.
+3. Crear directorio de salida limpio dedicado al paquete; preservar dist/tests.xml si el informe de pruebas ya existe. Generar ZIP de forma atómica para no dejar paquete parcial en fallo.
+4. Añadir `SOURCE_MANIFEST.json`: `source_commit` con SHA y objeto `files` que mapea cada ruta POSIX relativa a hash SHA-256 del contenido. Manifest no se incluye a sí mismo en files. Inventario del ZIP = claves files + manifest.
+5. Reabrir ZIP y comparar nombres, archivos requeridos, SHA y hashes. Rechazar entradas duplicadas, absolutas y con `..`. Imprimir solo inventario/versión y resultado, sin contenido privado.
+6. Pruebas significativas: paquete válido verificable; requerido ausente falla; archivo `.env` y datos de runtime plantados como canario NO aparecen; symlink requerido rechazado; contenido alterado invalida hash. Usar directorios temporales. No afirmar arranque del ZIP si solo se inspeccionó contenido.
+
+El kit incluye `scripts/verify_package.py RUTA_ZIP` independiente, usando solo stdlib, para ejecutar desde otro job o localmente. Si existe `EXPECTED_SHA`, exige coincidencia con manifest. Debe repetir inventario/hashes y requisitos anteriores y terminar distinto de 0 ante discrepancia. El agente completa lista permitida, revisa dependencias reales y añade comprobaciones de referencias estáticas y pruebas pertinentes; estas adaptaciones sí son salidas por crear. Ejecutarlo como segundo job demuestra que el artefacto descargado conserva lo que produjo build.

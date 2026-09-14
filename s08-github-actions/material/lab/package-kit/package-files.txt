@@ -1,0 +1,9 @@
+# Lista inicial pública. El agente debe añadir los módulos reales importados.
+# Si tu implementación usa otros nombres, adaptar también mínimo del verificador.
+app.py
+requirements.txt
+README.md
+static/index.html
+static/app.css
+static/app.js
+# Añadir import_result.py, validador y cada módulo local requerido por TU app.

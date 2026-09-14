@@ -48,3 +48,10 @@ La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sani
 - [Caso y comparación antes/después](s04-sdd-kanban/caso-postulacion.md), [escritura y lanzamiento del SDD](s04-sdd-kanban/lanzamiento-sdd.md), [starter de postulación con 15 tests](s04-sdd-kanban/postulacion-starter/).
 - [Superpowers: instalación y 14 skills](s04-sdd-kanban/superpowers-guia.md), [plantillas](s04-sdd-kanban/plantillas.md) y [GitHub Projects gratuito y Kanban](s04-sdd-kanban/github-kanban.md).
 - [Apéndice · conexiones y comandos desde OpenClaw](s04-append/guia-conexiones.html): MCP, APIs REST, CLI, OAuth, autenticación, tokens y ejemplos con GitHub, Gmail, Vercel, Railway y APIs de LLM.
+
+## Material de las sesiones 7 y 8
+
+- [S07 · Web del capstone](s07-web-capstone/): 44 diapositivas, mini-spec, datos, soporte de persistencia y ejemplo de transferencia a otro dominio. Implementación y QA verificados; falta cerrar el ensayo docente por Telegram antes de declarar la sesión lista.
+- [S08 · GitHub Actions](s08-github-actions/): 38 diapositivas, práctica8A–8H, plantilla y kit de empaquetado. Preparación verificada: tres jueces independientes y QA completos; push, PR, manual y dos ciclos de fallo/recuperación observados. Cron configurado, sin afirmar ejecución programada observada.
+
+Cada sesión dura180 minutos con descansos incluidos. Continúa tu propio capstone; la aplicación laboral es el ejemplo docente.
