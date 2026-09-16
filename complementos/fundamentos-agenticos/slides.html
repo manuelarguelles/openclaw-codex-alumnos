@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fundamentos agénticos · OpenClaw</title><style data-source="deck.css">
 :root{--p:#533afd;--pd:#4434d4;--ps:#9d91ff;--ink:#0d253d;--ink2:#273951;--muted:#64748d;--soft:#f6f9fc;--line:#e3e8ee;--dark:#0d253d;--pink:#f96bee;--font:system-ui,-apple-system,"Segoe UI",sans-serif}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{background:#1c1e54;color:var(--ink);font-family:var(--font);overflow:hidden}.slide{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;padding:5.5vh 6vw 9vh;background:#fff;overflow:hidden}.slide.on{display:flex}.slide.dark{background:var(--dark);color:#fff}.slide.mesh:before{content:"";position:absolute;top:-30%;left:-10%;right:-10%;height:75%;background:radial-gradient(60% 80% at 25% 40%,#533afd55,transparent 60%),radial-gradient(50% 70% at 70% 20%,#f96bee33,transparent 62%);filter:blur(6px);pointer-events:none}.slide>*{position:relative;z-index:1}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}.dark .eyebrow{color:var(--ps)}h1{font-size:clamp(38px,5.6vw,64px);font-weight:300;line-height:1.03;letter-spacing:-1.4px;max-width:19ch}h2{font-size:clamp(28px,3.9vw,46px);font-weight:300;line-height:1.1;letter-spacing:-.9px;max-width:23ch}.lead{font-size:clamp(17px,1.6vw,21px);font-weight:300;line-height:1.45;color:var(--ink2);max-width:62ch;margin-top:26px}.dark .lead{color:#c9d4e2}.foot{position:absolute;left:6vw;right:6vw;bottom:4.4vh;display:flex;justify-content:space-between;gap:24px;font-size:13px;color:var(--muted)}.dark .foot{color:#7f8ea3}.sep{justify-content:center}.sep .bignum{font-size:clamp(80px,12vw,150px);font-weight:300;letter-spacing:-5px;color:var(--ps)}.sep h2{margin-top:14px}.sep .time{font-size:14px;color:#93a2b6;margin-top:22px}.sep ol{margin-top:26px;padding-left:20px;display:flex;flex-direction:column;gap:9px;font-size:15px;color:#c9d4e2}.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px}.two h3,.card h3{font-size:15px;font-weight:400;color:var(--pd);margin-bottom:12px}.dark .two h3,.dark .card h3{color:var(--ps)}.two p,.two li,.card p{font-size:14.5px;font-weight:300;line-height:1.5;color:var(--ink2)}.dark .two p,.dark .two li,.dark .card p{color:#c9d4e2}.two ul{list-style:none;display:flex;flex-direction:column;gap:10px}.two li{padding-left:16px;position:relative}.two li:before{content:"·";position:absolute;left:2px;color:var(--p)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.card{border:1px solid var(--line);border-radius:11px;padding:22px 20px;background:var(--soft)}.dark .card{background:#ffffff0d;border-color:#ffffff22}.card .num{font-size:12px;letter-spacing:.1em;color:var(--pd);margin-bottom:20px}.dark .card .num{color:var(--ps)}.flow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:38px}.node{border:1px solid var(--line);background:var(--soft);border-radius:9px;padding:15px 19px;font-size:15px;font-weight:300}.node.hi{border-color:var(--p);background:#f0eeff;color:var(--pd)}.dark .node{background:#ffffff0d;border-color:#ffffff24;color:#dbe3ec}.dark .node.hi{border-color:var(--ps);background:#533afd2e;color:#c8c1ff}.arrow{color:var(--muted)}.recap{display:flex;flex-direction:column;gap:16px;margin-top:30px}.recap div{display:flex;gap:16px;align-items:baseline}.recap .i{font-size:13px;color:var(--p);min-width:22px}.recap p{font-size:clamp(15px,1.5vw,18.5px);font-weight:300;color:var(--ink2);max-width:65ch}.dark .recap p{color:#c9d4e2}pre{background:#0b1b2d;border:1px solid #ffffff1a;border-radius:9px;padding:18px 20px;margin-top:24px;overflow-x:auto;font:clamp(12.5px,1.25vw,15.5px)/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:#dbe7f3;white-space:pre-wrap}pre .kw{color:#a99bff}pre .st{color:#79d5ae}pre .cm{color:#6d8199;font-style:italic}.slide:not(.dark) pre{background:var(--soft);border-color:var(--line);color:var(--ink2)}.slide:not(.dark) pre .kw{color:var(--pd)}code{font:inherit;background:var(--soft);padding:2px 6px;border-radius:4px;color:var(--pd)}.dark code{background:#ffffff17;color:#b7abff}.clean{list-style:none;display:flex;flex-direction:column;gap:15px;margin-top:30px}.clean li{font-size:clamp(15px,1.5vw,19px);font-weight:300;line-height:1.4;color:var(--ink2);padding-left:26px;position:relative;max-width:65ch}.clean li:before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--p)}.dark .clean li{color:#c9d4e2}.tag{display:inline-block;border:1px solid var(--p);border-radius:999px;padding:5px 15px;color:var(--pd);font-size:12px;margin-top:26px}.dark .tag{border-color:var(--ps);color:var(--ps)}.callout{border-left:3px solid var(--p);padding:17px 20px;background:#f0eeff;color:var(--ink2);font-size:clamp(16px,1.5vw,20px);line-height:1.4;margin-top:30px;max-width:65ch}.dark .callout{background:#533afd29;color:#dbe3ec}table{width:100%;max-width:78ch;margin-top:30px;border-collapse:collapse;font-size:clamp(14px,1.5vw,17px);font-weight:300;color:var(--ink2)}th{text-align:left;font-weight:400;color:var(--pd);font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:0 24px 10px 0;border-bottom:1px solid var(--line)}td{padding:12px 24px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:none}th:first-child,td:first-child{width:34%;color:var(--ink);font-weight:400}.dark table{color:#c9d4e2}.dark th{color:var(--ps);border-color:#ffffff22}.dark td{border-color:#ffffff22}.dark th:first-child,.dark td:first-child{color:#fff}
 .workspace-map{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;max-width:1400px;align-items:start;margin-top:26px}.workspace-tree{max-height:520px;overflow-y:auto}.workspace-text h3{margin:0 0 10px;font-size:16px;font-weight:400;color:var(--p)}.workspace-text p{margin:0 0 18px;font-size:15px;line-height:1.5;color:var(--ink2)}.dark .workspace-text h3{color:var(--ps)}.dark .workspace-text p{color:#c9d4e2}@media(max-width:1000px){.workspace-map{grid-template-columns:1fr}}
 #ctl{position:fixed;right:16px;top:14px;z-index:120;display:flex;gap:6px;opacity:.75;transition:opacity .25s}#ctl:hover{opacity:1}#ctl button{font-family:var(--font);font-size:13px;font-weight:400;line-height:1;width:30px;height:30px;border-radius:7px;cursor:pointer;border:1px solid var(--p);background:transparent;color:var(--p)}#ctl button:hover{border-color:var(--pd);background:var(--ps);color:#fff}.dark #ctl button{border-color:var(--ps);color:var(--ps)}.dark #ctl button:hover{border-color:var(--ps);background:var(--ps);color:var(--dark)}#ctl button:focus-visible{outline:2px solid var(--p);outline-offset:2px}.mk{position:absolute;left:6vw;top:2.6vh;font-size:15px;opacity:.2;transition:opacity .2s;user-select:none}.mk:hover{opacity:.9}body.marcas .mk{opacity:.95}
@@ -66,3 +68,134 @@ body.refs-open #ctl{visibility:hidden}.mk{opacity:1}
 .glossary-terms b{color:var(--pd);font-weight:600}
 .glossary .source-link .mk{position:fixed;top:20px;left:6vw}
 @media(max-width:600px){.glossary-terms{gap:13px;margin-top:18px}.glossary-terms p{font-size:15px;line-height:1.35}.glossary h2{font-size:25px}}
+
+</style></head><body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.slide h2{max-width:38ch}.lesson-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;margin-top:24px}.lesson-terms p{font-size:20px;line-height:1.4}.lesson-terms b{display:block;color:var(--pd);margin-bottom:6px}.dark .lesson-terms b{color:var(--ps)}.dark .lesson-terms p{color:#c9d4e2}.lesson-flow{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:stretch}.lesson-flow p{border:1px solid var(--line);border-radius:10px;padding:16px;font-size:21px;flex:1 1 170px}.lesson-flow b{display:block;color:var(--pd);font-size:14px;margin-bottom:10px}.caption{margin-top:22px}.slide pre{font-size:18px;line-height:1.5}.slide .lead{margin-top:18px}.slide .mk{top:20px}.source-link{display:none}@media(max-width:600px){.lesson-terms{grid-template-columns:1fr;gap:12px;margin-top:18px}.lesson-terms p{font-size:15px;line-height:1.3}.lesson-terms b{margin-bottom:3px}.lesson-flow{gap:8px;margin-top:18px}.lesson-flow p{font-size:15px;padding:10px;flex:1 1 125px}.lesson-flow b{margin-bottom:4px}.slide h2{font-size:25px}.slide pre{font-size:12px}.caption{font-size:13px;margin-top:16px}}
+</style><section class="slide dark on"><a class="mk" href="https://docs.openclaw.ai/concepts/agent-loop" target="_blank" rel="noopener" aria-label="Fuente de esta diapositiva">★</a><p class="eyebrow">Fundamentos · Modelo, acción y coordinación</p><h2>Un agente decide acciones y comprueba sus resultados</h2><div class="lesson-terms"><p><b>Modelo</b>Interpreta el objetivo y propone el siguiente paso.</p><p><b>Herramientas</b>Consultan información o ejecutan acciones concretas.</p><p><b>Ciclo del agente</b>Observa el resultado y decide continuar, preguntar o terminar.</p></div><p class="caption">Ejemplo: buscar estudios, revisar lo encontrado y ajustar la consulta si falta evidencia.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>01 / 7</span></div></section>
+<section class="slide dark"><a class="mk" href="https://docs.openclaw.ai/concepts/architecture" target="_blank" rel="noopener" aria-label="Fuente de esta diapositiva">★</a><p class="eyebrow">Fundamentos · Modelo, acción y coordinación</p><h2>OpenClaw coordina el recorrido entre el chat y las acciones</h2><div class="lesson-flow"><p><b>01 →</b>Telegram o web</p><p><b>02 →</b>Gateway recibe y enruta</p><p><b>03 →</b>Agente + sesión + contexto</p><p><b>04 →</b>Modelo ↔ herramientas ↔ resultados</p><p><b>05 →</b>Respuesta al usuario</p></div><p class="caption">Gateway = servicio de entrada. Sesión = historial de la tarea. OpenClaw aporta ejecución, estado y coordinación; el modelo propone acciones.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>02 / 7</span></div></section>
+<section class="slide"><a class="mk" href="https://docs.openclaw.ai/tools/subagents" target="_blank" rel="noopener" aria-label="Fuente de esta diapositiva">★</a><p class="eyebrow">Fundamentos · Modelo, acción y coordinación</p><h2>Main y los subagentes tienen responsabilidades distintas</h2><div class="lesson-terms"><p><b>Main</b>Agente predeterminado. Su sesión principal conserva la conversación; ser coordinador depende de sus instrucciones.</p><p><b>Agentes configurados</b>Identidades con reglas, recursos y sesiones propias.</p><p><b>Subagente</b>Trabajo delegado en otra sesión: recibe un encargo acotado y devuelve resultados al coordinador.</p></div><p class="caption">Ejemplo: un revisor comprueba fuentes y otro relevancia. El coordinador reúne la evidencia. Un subagente no exige otro modelo.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>03 / 7</span></div></section>
+<section class="slide"><a class="mk" href="https://a2a-protocol.org/latest/topics/what-is-a2a/" target="_blank" rel="noopener" aria-label="Fuente de esta diapositiva">★</a><p class="eyebrow">Fundamentos · Modelo, acción y coordinación</p><h2>Comunicarse dentro de OpenClaw no equivale al estándar A2A</h2><div class="lesson-terms"><p><b>Delegar</b>sessions_spawn inicia trabajo en una sesión hija.</p><p><b>Comunicar</b>sessions_send envía a otra sesión; permisos y agentToAgent regulan el acceso entre agentes.</p><p><b>A2A externo</b>Estándar para conectar sistemas de agentes distintos. Requiere una integración compatible y probada.</p></div><p class="caption">Crear varios agentes no demuestra que colaboren: hay que definir encargo, entrada, salida y límites.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>04 / 7</span></div></section>
+<section class="slide"><a class="mk" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener" aria-label="Fuente de esta diapositiva">★</a><p class="eyebrow">Patrones · Del buscador a la solución</p><h2>La solución depende de quién decide los pasos</h2><div class="lesson-terms"><p><b>Chatbot</b>Responde y conversa; la persona conduce.</p><p><b>Workflow o pipeline</b>Ejecuta etapas diseñadas de antemano.</p><p><b>Copiloto</b>Propone y trabaja con revisión humana en puntos clave.</p><p><b>Agente con herramientas</b>Elige acciones y adapta el recorrido según los resultados.</p></div><p class="caption">Son patrones combinables. «Copiloto» describe aquí el control compartido, no un producto.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>05 / 7</span></div></section>
+<section class="slide dark"><p class="eyebrow">Patrones · Del buscador a la solución</p><h2>El buscador académico combina un flujo fijo y una capa de agente</h2><div class="lesson-terms"><p><b>Núcleo del buscador</b>Consulta fuentes → unifica formatos → quita duplicados → ordena resultados.</p><p><b>Capa OpenClaw</b>Interpreta la petición, usa la skill, ejecuta herramientas y explica lo encontrado.</p><p><b>Decisión dinámica</b>Si falta evidencia, puede reformular la búsqueda o pedir una precisión al usuario.</p></div><p class="caption">Una skill es un procedimiento reutilizable. Varias consultas a APIs no equivalen a varios agentes.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>06 / 7</span></div></section>
+<section class="slide"><p class="eyebrow">Patrones · Del buscador a la solución</p><h2>El siguiente paso es conversar y actuar sobre los resultados</h2><div class="lesson-terms"><p><b>Conversar</b>«Compara estos tres estudios y cita la evidencia». </p><p><b>Decidir con la persona</b>«¿Los quieres sobre secundaria o educación superior?». </p><p><b>Actuar y comprobar</b>«Guárdalos en mi biblioteca». Usa una herramienta de guardado, vuelve a leer y confirma qué cambió.</p></div><p class="caption">Evolución propuesta, no función ya entregada en S05. Requiere acceso al contenido, tools, permisos y una condición de fin.</p><div class="foot"><span>OpenClaw · Fundamentos · Manu</span><span>07 / 7</span></div></section>
+<aside id="refsPanel" aria-hidden="true" aria-label="Referencias externas"><div class="refs-head"><h2>Fuentes y documentación</h2><button id="refsClose" aria-label="Cerrar referencias">×</button></div><ol><li><a href="https://docs.openclaw.ai/concepts/agent-loop" target="_blank" rel="noopener"><b>Slide 1</b>Un agente decide acciones y comprueba sus resultados</a></li><li><a href="https://docs.openclaw.ai/concepts/architecture" target="_blank" rel="noopener"><b>Slide 2</b>OpenClaw coordina el recorrido entre el chat y las acciones</a></li><li><a href="https://docs.openclaw.ai/tools/subagents" target="_blank" rel="noopener"><b>Slide 3</b>Main y los subagentes tienen responsabilidades distintas</a></li><li><a href="https://a2a-protocol.org/latest/topics/what-is-a2a/" target="_blank" rel="noopener"><b>Slide 4</b>Comunicarse dentro de OpenClaw no equivale al estándar A2A</a></li><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener"><b>Slide 5</b>La solución depende de quién decide los pasos</a></li></ol></aside><div id="ctl"><button id="bTema" title="Cambiar tema (T)" aria-label="Alternar tema" aria-pressed="false">◐</button><button id="bMenos" title="Reducir tamaño (−)" aria-label="Reducir tamaño de letra">A−</button><button id="bMas" title="Aumentar tamaño (+)" aria-label="Aumentar tamaño de letra">A+</button><button id="bMarcas" title="Referencias externas (M)" aria-label="Abrir referencias externas" aria-expanded="false">★</button></div>
+<div id="bar"></div><div id="num"></div><div id="hint">← → navegar · Home / End</div>
+<script data-source="deck.js">
+const slides = [...document.querySelectorAll('.slide')];
+let i = 0;
+const bar = document.querySelector('#bar'), num = document.querySelector('#num'), hint = document.querySelector('#hint');
+function show(n) {
+  i = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach((s,k) => {
+    s.classList.toggle('on', k === i);
+    const foot = s.querySelector('.foot span:last-child');
+    if (foot) foot.textContent = String(k+1).padStart(2,'0') + ' / ' + slides.length;
+  });
+  document.body.dataset.slideDark = String(slides[i].classList.contains('dark'));
+  bar.style.width = ((i+1)/slides.length*100) + '%';
+  num.textContent = (i+1) + ' / ' + slides.length;
+  hint.style.opacity = i ? '0' : '.6';
+  history.replaceState(null, '', '#slide='+(i+1));
+}
+addEventListener('keydown', e => {
+  if (document.body.classList.contains('refs-open')) return;
+  if (['ArrowRight','PageDown',' '].includes(e.key)) { e.preventDefault(); show(i+1); }
+  else if (['ArrowLeft','PageUp'].includes(e.key)) { e.preventDefault(); show(i-1); }
+  else if (e.key==='Home') show(0);
+  else if (e.key==='End') show(slides.length-1);
+});
+addEventListener('click', e => {
+  if (!e.target.closest('a,button,#refsPanel')) show(i+1);
+});
+const initial = Number(new URLSearchParams(location.hash.slice(1)).get('slide'));
+show(Number.isFinite(initial) && initial > 0 ? initial-1 : 0);
+addEventListener('hashchange', () => {
+  const target = Number(new URLSearchParams(location.hash.slice(1)).get('slide'));
+  if (Number.isFinite(target) && target > 0) show(target - 1);
+});
+
+</script>
+<script>
+(function(){
+  var B=document.body,esc=parseFloat(localStorage.getItem('deckEscala-fundamentos')||'1');
+  var typeNodes=[...document.querySelectorAll('.slide h1,.slide h2,.slide h3,.slide p,.slide li,.slide pre,.slide td,.slide th,.slide small,.slide .tag,.slide .node,.slide .num,.slide .eyebrow,.slide .time,.slide .foot span,.parallel-branches span,.map-direction')];
+  typeNodes.forEach(function(el){el.dataset.baseFont=parseFloat(getComputedStyle(el).fontSize)});
+  function scale(save){
+    typeNodes.forEach(function(el){el.style.fontSize=(parseFloat(el.dataset.baseFont)*esc).toFixed(2)+'px'});
+    if(save!==false){try{localStorage.setItem('deckEscala-fundamentos',esc)}catch(e){}}
+    B.dataset.fontScale=esc.toFixed(2);
+  }
+  function zoom(d){esc=Math.min(1.2,Math.max(.85,+(esc+d).toFixed(2)));scale()}
+  function setTheme(name,save){
+    B.classList.toggle('tema-fuego',name==='fuego');
+    bTema.setAttribute('aria-pressed',name==='fuego'?'true':'false');
+    bTema.title=name==='fuego'?'Cambiar a tema índigo (T)':'Cambiar a tema fuego (T)';
+    if(save!==false){try{localStorage.setItem('fundamentosTema',name)}catch(e){}}
+  }
+  function tema(){setTheme(B.classList.contains('tema-fuego')?'indigo':'fuego')}
+  function referencias(force){
+    var open=typeof force==='boolean'?force:!B.classList.contains('refs-open');
+    B.classList.toggle('refs-open',open);
+    B.classList.toggle('marcas',open);
+    refsPanel.setAttribute('aria-hidden',open?'false':'true');
+    bMarcas.setAttribute('aria-expanded',open?'true':'false');
+  }
+  async function auditDeck(){
+    var currentSlide=[...document.querySelectorAll('.slide')].findIndex(function(s){return s.classList.contains('on')});
+    var originalTheme=B.classList.contains('tema-fuego')?'fuego':'indigo',originalScale=esc,results=[];
+    var allSlides=[...document.querySelectorAll('.slide')],themes=['indigo','fuego'],scales=[.85,1,1.2];
+    function frame(){return new Promise(function(resolve){requestAnimationFrame(function(){requestAnimationFrame(resolve)})})}
+    for(var ti=0;ti<themes.length;ti++){
+      setTheme(themes[ti],false);
+      for(var si=0;si<scales.length;si++){
+        esc=scales[si];scale(false);
+        for(var n=0;n<allSlides.length;n++){
+          allSlides.forEach(function(s,k){s.classList.toggle('on',k===n)});await frame();
+          var slide=allSlides[n],sr=slide.getBoundingClientRect(),outside=[];
+          [...slide.children].filter(function(el){return !el.classList.contains('foot')&&!el.classList.contains('mk')}).forEach(function(el){var r=el.getBoundingClientRect();if(r.left<sr.left+19||r.right>sr.right-19||r.top<sr.top+55||r.bottom>slide.querySelector('.foot').getBoundingClientRect().top-4)outside.push(el.tagName.toLowerCase()+'.'+el.className)});
+          if(slide.scrollWidth>slide.clientWidth+1||slide.scrollHeight>slide.clientHeight+1||outside.length)results.push({slide:n+1,theme:themes[ti],scale:scales[si],outside:outside,scroll:[slide.scrollWidth,slide.scrollHeight,slide.clientWidth,slide.clientHeight]});
+        }
+      }
+    }
+    setTheme(originalTheme,false);esc=originalScale;scale(false);allSlides.forEach(function(s,k){s.classList.toggle('on',k===currentSlide)});
+    B.dataset.layoutQa=results.length?'fail':'pass';
+    return {pass:results.length===0,failures:results};
+  }
+  setTheme(localStorage.getItem('fundamentosTema')==='fuego'?'fuego':'indigo',false);scale(false);
+  bTema.onclick=function(e){e.stopPropagation();tema()};
+  bMas.onclick=function(e){e.stopPropagation();zoom(.05)};
+  bMenos.onclick=function(e){e.stopPropagation();zoom(-.05)};
+  bMarcas.onclick=function(e){e.stopPropagation();referencias()};
+  refsClose.onclick=function(e){e.stopPropagation();referencias(false)};
+  refsPanel.onclick=function(e){e.stopPropagation()};
+  addEventListener('keydown',function(e){var k=e.key.toLowerCase();if(k==='t')tema();else if(k==='m')referencias();else if(e.key==='Escape')referencias(false);else if(e.key==='+'||e.key==='=')zoom(.05);else if(e.key==='-'||e.key==='_')zoom(-.05);else if(k==='0'){esc=1;scale()}});
+  window.deckAudit=auditDeck;
+})();
+</script>
+</body>
+</html>

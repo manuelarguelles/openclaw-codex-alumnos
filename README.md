@@ -17,8 +17,8 @@ Repositorio público del curso. Aquí están las consignas, recursos y espacios 
 
 ## Adelantos de las sesiones 5 y 6
 
-- [S05 · Buscador académico](s05-buscador-academico/): 48 slides, buscador ejecutable, tests, ejemplos de citas y mini-spec propia.
-- [S06 · Skills y workflows](s06-skills-workflows/): 48 slides, tres skills, validador, casos y objetivo acotado con código y tests.
+- [S05 · Buscador académico](s05-buscador-academico/): 62 slides, buscador ejecutable, tests, ejemplos de citas y mini-spec propia.
+- [S06 · Skills y workflows](s06-skills-workflows/): 62 slides, tres skills, validador, casos y objetivo acotado con código y tests.
 
 Preparación S05/S06 verificada el 12-sep-2026: pruebas locales, selección, refactor, concurrencia, `/goal` y recorrido real por Telegram. Cada consigna distingue ejecución real, captura y resultado esperado. Cada alumno verifica su propia instalación y acceso.
 
@@ -55,3 +55,7 @@ La carpeta [`openclaw-workspace/`](openclaw-workspace/) contiene plantillas sani
 - [S08 · GitHub Actions](s08-github-actions/): 38 diapositivas, práctica8A–8H, plantilla y kit de empaquetado. Preparación verificada: tres jueces independientes y QA completos; push, PR, manual y dos ciclos de fallo/recuperación observados. Cron configurado, sin afirmar ejecución programada observada.
 
 Cada sesión dura180 minutos con descansos incluidos. Continúa tu propio capstone; la aplicación laboral es el ejemplo docente.
+
+## Complemento independiente · Fundamentos agénticos
+
+[7 slides: arquitectura OpenClaw y patrones de solución](complementos/fundamentos-agenticos/slides.html). Integrados como introducción / recordatorio en S05.
