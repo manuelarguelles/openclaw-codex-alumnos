@@ -1,6 +1,6 @@
 ---
 name: "skill-creator-z"
-description: "Use when creating or improving a reusable skill that needs domain research, source comparison, repository discovery, evaluation, and iterative hardening."
+description: "Create and improve reusable skills with domain research, source comparison, evaluation, hardening, and parallel delegated reviews using task-specific priming."
 ---
 
 # Skill Creator Z
@@ -63,6 +63,41 @@ El resultado propone una arquitectura de fuentes y política de citación/atribu
 ### Ejemplo: skill para mejorar CVs
 
 Investigar mercado y buenas prácticas de CV, ATS, sesgos, privacidad, evidencia profesional, formatos y fuentes actuales. Comparar herramientas y repositorios existentes. Separar optimización legítima de inventar experiencia, títulos, métricas o competencias.
+
+## Fase 1.25 — Delegación paralela y priming
+
+Cuando existan revisiones independientes, usa `dispatching-parallel-agents` —o la capacidad equivalente de subagentes del runtime— para ejecutarlas en paralelo. El paralelismo no es solo lanzar varias tareas: cada subagente debe recibir un contexto construido específicamente para su encargo.
+
+### Regla de priming
+
+- El coordinador conserva el contexto completo; cada subagente recibe solo la skill, archivos, ejemplos y criterios que necesita para su revisión.
+- No envíes la conversación completa por comodidad. Elimina secretos, datos personales, decisiones no relacionadas y contexto que pueda sesgar la revisión.
+- Cada encargo debe declarar objetivo, alcance de lectura, pregunta concreta, formato de salida y criterio de parada.
+- Divide por responsabilidad y evita que dos subagentes escriban el mismo archivo. Las revisiones deben ser independientes y preferentemente de solo lectura.
+- Lanza las tareas independientes en paralelo, no secuencialmente. Mientras esperan, el coordinador puede preparar la síntesis o una tarea no solapada.
+- Si la capacidad de paralelismo no está disponible, declara la limitación y no presentes una ejecución secuencial como paralela.
+
+### Prompt reusable de revisión
+
+```text
+Tengo tres revisiones independientes que hacer sobre [NOMBRE_SKILL]. Usa dispatching-parallel-agents para lanzar un subagente por cada una, en paralelo; no las hagas tú mismo. Dale a cada subagente SOLO el contexto que necesita para SU revisión, no toda esta conversación:
+
+1. Activación: revisa si la description puede disparar la skill en momentos equivocados (falsos positivos) o no dispararla cuando debería (falsos negativos). Encargo: leer solo SKILL.md y 3–5 frases de ejemplo que te paso.
+2. Veracidad: revisa si la salida puede inventar datos que no estén en el perfil o la oferta de entrada. Encargo: leer solo el contrato de entrada/salida y un caso de ejemplo.
+3. Permisos: revisa si alguna instrucción amplía el alcance más allá de leer perfil y oferta, por ejemplo enviar algo o modificar datos. Encargo: leer solo la sección de límites de SKILL.md.
+
+Cuando los tres terminen, junta los hallazgos en una sola lista e indica cuál subagente encontró algo real, cuál no encontró nada y cuál evidencia lo sustenta. No descartes un “sin hallazgos”: sirve para comprobar si el encargo estaba bien acotado.
+```
+
+### Síntesis y control de calidad
+
+Después de recibir los resultados, crea una tabla `subagente → alcance → hallazgo → evidencia → severidad → acción`. Separa `hallazgo real`, `falso positivo`, `sin hallazgo` y `fuera de alcance`. No conviertas tres revisiones parciales en una afirmación de auditoría completa.
+
+El coordinador debe comprobar que cada hallazgo provenga del contexto permitido, resolver contradicciones con una nueva verificación acotada y registrar qué subagente leyó qué. Si un agente intenta leer archivos fuera de su encargo, detén esa rama y marca la desviación.
+
+### Cuándo aplicar este patrón
+
+Úsalo para activación, veracidad, permisos, seguridad, compatibilidad, fuentes o evaluaciones que puedan separarse. No lo uses para fragmentar una decisión que depende de una única cadena causal ni para multiplicar agentes sin una assertion discriminante.
 
 ## Fase 1.5 — Decisión de alcance
 
